@@ -17,7 +17,7 @@ export function CheckoutModal({
   planName,
   basePrice,
 }: CheckoutModalProps) {
-  const [paymentMethod, setPaymentMethod] = useState<"pix" | "card">("pix");
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -28,13 +28,7 @@ export function CheckoutModal({
 
   const totalPrice = basePrice;
 
-  const mockPixKey = "00020126580014br.gov.bcb.pix0136seu-site-unico-pagamentos-pix-789a6bc5204000053039865405" + 
-    totalPrice.toFixed(2).replace(".", "") + "5802BR5925SEU SITE UNICO TREINAMENTOS6009SAO PAULO62070503***6304E8A1";
-
-  const handleCopyPix = () => {
-    navigator.clipboard.writeText(mockPixKey);
-    toast.success("Código Copia e Cola Pix copiado para a área de transferência!");
-  };
+  
 
   const handleFinishPurchase = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -212,94 +206,6 @@ export function CheckoutModal({
               </div>
             </div>
 
-            {/* Payment Method Selector */}
-            <div className="space-y-3">
-              <h5 className="text-xs font-bold uppercase tracking-wider text-slate-300">
-                2. Forma de Pagamento
-              </h5>
-              <div className="grid grid-cols-2 gap-3">
-                <button
-                  type="button"
-                  onClick={() => setPaymentMethod("pix")}
-                  className={cn(
-                    "p-3 rounded-xl border flex items-center justify-center gap-2 text-sm font-semibold transition-all cursor-pointer",
-                    paymentMethod === "pix"
-                      ? "bg-cyan-500/15 border-cyan-400 text-cyan-300 shadow-md shadow-cyan-950/40"
-                      : "bg-slate-900 border-slate-700 text-slate-400 hover:text-white"
-                  )}
-                >
-                  <QrCode className="w-4 h-4" />
-                  Pix (Liberação Imediata)
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setPaymentMethod("card")}
-                  className={cn(
-                    "p-3 rounded-xl border flex items-center justify-center gap-2 text-sm font-semibold transition-all cursor-pointer",
-                    paymentMethod === "card"
-                      ? "bg-cyan-500/15 border-cyan-400 text-cyan-300 shadow-md shadow-cyan-950/40"
-                      : "bg-slate-900 border-slate-700 text-slate-400 hover:text-white"
-                  )}
-                >
-                  <CreditCard className="w-4 h-4" />
-                  Cartão de Crédito
-                </button>
-              </div>
-
-              {paymentMethod === "pix" ? (
-                <div className="p-4 rounded-2xl bg-black/40 border border-slate-800 text-center space-y-3">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold">
-                    <Zap className="w-3 h-3" /> Chave Pix Gerada Instantaneamente
-                  </div>
-                  <div className="bg-white p-3 rounded-xl inline-block mx-auto shadow-md">
-                    {/* Simulated visual QR pattern */}
-                    <div className="w-32 h-32 bg-slate-950 flex flex-col items-center justify-center p-2 rounded relative">
-                      <QrCode className="w-24 h-24 text-white" />
-                      <span className="text-[8px] text-cyan-400 font-bold uppercase tracking-wider mt-1">PIX SEGURO</span>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <button
-                      type="button"
-                      onClick={handleCopyPix}
-                      className="w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-600 flex items-center justify-center gap-2 transition-colors cursor-pointer"
-                    >
-                      <Copy className="w-3.5 h-3.5" />
-                      Copiar Código Copia e Cola Pix
-                    </button>
-                    <p className="text-[11px] text-slate-400">
-                      Abra o app do seu banco, escolha <strong>Pix Copia e Cola</strong> e efetue o pagamento. O acesso é liberado em menos de 1 minuto.
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <div className="space-y-2.5 p-4 rounded-2xl bg-black/40 border border-slate-800">
-                  <input
-                    type="text"
-                    placeholder="Número do cartão: 0000 0000 0000 0000"
-                    className="w-full px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400"
-                  />
-                  <div className="grid grid-cols-2 gap-2">
-                    <input
-                      type="text"
-                      placeholder="Validade (MM/AA)"
-                      className="w-full px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400"
-                    />
-                    <input
-                      type="text"
-                      placeholder="CVV (3 dígitos)"
-                      className="w-full px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400"
-                    />
-                  </div>
-                  <select className="w-full px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400">
-                    <option value="1">1x de R$ {totalPrice.toFixed(2).replace(".", ",")} sem juros</option>
-                    <option value="2">2x de R$ {(totalPrice / 2).toFixed(2).replace(".", ",")} sem juros</option>
-                    <option value="3">3x de R$ {(totalPrice / 3).toFixed(2).replace(".", ",")} sem juros</option>
-                  </select>
-                </div>
-              )}
-            </div>
-
             {/* Guarantee Badge */}
             <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-300">
               <ShieldCheck className="w-6 h-6 text-emerald-400 shrink-0" />
@@ -320,7 +226,7 @@ export function CheckoutModal({
                 <>
                   <Lock className="w-4 h-4 shrink-0" />
                   <span className="whitespace-nowrap">
-                    Concluir Inscrição Segura (R$ {totalPrice.toFixed(2).replace(".", ",")})
+                    Ir para Pagamento Seguro (R$ {totalPrice.toFixed(2).replace(".", ",")})
                   </span>
                   <ArrowRight className="w-4 h-4 shrink-0" />
                 </>
@@ -332,3 +238,4 @@ export function CheckoutModal({
     </div>
   );
 }
+
