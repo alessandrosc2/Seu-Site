@@ -1,0 +1,6 @@
+{
+  "name": "Seu Site Único",
+  "description": "Método guiado com Inteligência Artificial para pequenos negócios e renda extra com criação de sites profissionais.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
