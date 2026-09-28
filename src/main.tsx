@@ -4,6 +4,9 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import App from './App.tsx';
 import Login from './Login.tsx';
 import DashboardApp from './dashboard-app/App.tsx';
+import TermosDeUso from './pages/TermosDeUso.tsx';
+import PoliticaDePrivacidade from './pages/PoliticaDePrivacidade.tsx';
+import PoliticaDeReembolso from './pages/PoliticaDeReembolso.tsx';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './lib/firebase';
 import './index.css';
@@ -33,6 +36,9 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/termos-de-uso" element={<TermosDeUso />} />
+        <Route path="/politica-de-privacidade" element={<PoliticaDePrivacidade />} />
+        <Route path="/politica-de-reembolso" element={<PoliticaDeReembolso />} />
         <Route path="/dashboard/*" element={
           <PrivateRoute>
             <DashboardApp />

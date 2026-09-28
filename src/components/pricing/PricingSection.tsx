@@ -182,7 +182,7 @@ export function PricingSection() {
             </div>
 
             <a
-              href="https://wa.me/5583999999999?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20voc%C3%AA%20criar%20o%20site%20do%20meu%20neg%C3%B3cio."
+              href="https://wa.me/5583993595124?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20voc%C3%AA%20criar%20o%20site%20do%20meu%20neg%C3%B3cio."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold text-sm sm:text-base transition-all shadow-lg shadow-emerald-500/25 active:scale-[0.98] group cursor-pointer"

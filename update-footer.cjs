@@ -1,44 +1,9 @@
-import { Toaster } from "sonner";
-import { ScrollGlobe } from "@/components/ui/landing-page";
-import { WordRevealSection } from "@/components/scrollytelling/WordRevealSection";
-import { ConversionScienceSection } from "@/components/analytics/ConversionScienceSection";
-import { InteractiveSelector } from "@/components/ui/interactive-selector";
-import { AudienceSwitcher } from "@/components/scrollytelling/AudienceSwitcher";
-import { PricingSection } from "@/components/pricing/PricingSection";
-import { ShieldCheck, Heart, Sparkles, MessageCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+const fs = require('fs');
 
-export default function App() {
-  return (
-    <main className="w-full min-h-screen bg-[#070d1e] text-white selection:bg-cyan-500 selection:text-slate-950 font-sans">
-      <Toaster position="top-right" richColors theme="dark" />
+let content = fs.readFileSync('src/App.tsx', 'utf8');
 
-      {/* Beat 1: O Método Guiado das 4 Fases com o Globo 3D em Scrollytelling */}
-      <ScrollGlobe />
-
-      {/* Beat 2: O Dilema da Presença Digital & Comparativo com Sites Genéricos */}
-      <WordRevealSection />
-
-      {/* Beat 3: Showcase de Nichos & Profissionais — Seletor Sanfonado Interativo */}
-      <div id="nichos">
-        <InteractiveSelector />
-      </div>
-
-      {/* Beat 4: A Ciência dos Dados & O Custo Invisível de Não Ter um Site (CRO/Bento Grid) */}
-      <ConversionScienceSection />
-
-      {/* Beat 5: Dois Públicos, Um Só Produto & Calculadora Interativa de Renda Extra */}
-      <div id="calculadora">
-        <AudienceSwitcher />
-      </div>
-
-      {/* Beat 6: Tabela de Preços, Order Bump, Saída WhatsApp e FAQ */}
-      <div id="pricing">
-        <PricingSection />
-      </div>
-
-      {/* Modern Footer */}
-      <footer className="py-14 border-t border-white/10 bg-[#050814] text-slate-400 text-sm">
+const footerRegex = /<footer[\s\S]*?<\/footer>/;
+const newFooter = `<footer className="py-14 border-t border-white/10 bg-[#050814] text-slate-400 text-sm">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-white/5">
             <div>
@@ -90,7 +55,9 @@ export default function App() {
             </div>
           </div>
         </div>
-      </footer>
-    </main>
-  );
-}
+      </footer>`;
+
+content = content.replace(footerRegex, newFooter);
+
+fs.writeFileSync('src/App.tsx', content, 'utf8');
+console.log('Footer updated successfully.');
