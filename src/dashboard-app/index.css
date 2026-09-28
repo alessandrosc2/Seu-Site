@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    border-color: #203252;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #080D20;
+    color: #F5F7FF;
+  }
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom glow and gradient helpers matching the brand identity */
+.bg-brand-primary {
+  background-color: #080D20;
+}
+.bg-brand-secondary {
+  background-color: #0B1535;
+}
+.bg-brand-card {
+  background-color: #111B36;
+}
+.bg-brand-card-highlight {
+  background-color: #152342;
+}
+.border-brand {
+  border-color: #203252;
+}
+
+.text-brand-primary {
+  color: #F5F7FF;
+}
+.text-brand-secondary {
+  color: #AAB6CC;
+}
+.text-brand-tertiary {
+  color: #71809B;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #00D4E8, #1769FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-cta {
+  background: linear-gradient(135deg, #00D4E8 0%, #1769FF 100%);
+  color: #F5F7FF;
+  box-shadow: 0 4px 20px -2px rgba(0, 212, 232, 0.25);
+  transition: all 0.2s ease;
+}
+.btn-cta:hover {
+  background: linear-gradient(135deg, #19E1F2 0%, #3180FF 100%);
+  box-shadow: 0 6px 25px 0 rgba(0, 212, 232, 0.4);
+  transform: translateY(-1px);
+}
+.btn-cta:active {
+  transform: translateY(0);
+}
+
+.glow-cyan-subtle {
+  box-shadow: 0 0 25px rgba(0, 212, 232, 0.12);
+}
+
+.glow-blue-subtle {
+  box-shadow: 0 0 25px rgba(23, 105, 255, 0.15);
+}
+
+/* Custom scrollbar for dark UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080D20;
+}
+::-webkit-scrollbar-thumb {
+  background: #203252;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2b436e;
+}
+

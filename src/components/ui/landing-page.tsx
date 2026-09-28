@@ -318,6 +318,12 @@ export function ScrollGlobe({
 
         <div className="flex items-center gap-2 sm:gap-3">
           <a
+            href="/login"
+            className="hidden sm:inline-flex px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold hover:bg-cyan-500/10 hover:border-cyan-500/50 transition-all whitespace-nowrap"
+          >
+            Acessar Área
+          </a>
+          <a
             href="#pricing"
             className="px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs sm:text-sm font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all shadow-sm shadow-cyan-500/25 hover:scale-105 whitespace-nowrap"
           >
