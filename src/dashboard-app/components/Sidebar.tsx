@@ -12,10 +12,14 @@ import {
   ArrowRight,
   TrendingUp,
   Sparkles,
-  Search
+  Search,
+  LogOut
 } from 'lucide-react';
 import { MODULES } from '../data/curriculum';
 import { useProject } from '../context/ProjectContext';
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../../lib/firebase';
+import { signOut } from 'firebase/auth';
 
 export const Sidebar: React.FC<{
   isOpenMobile?: boolean;
@@ -36,6 +40,17 @@ export const Sidebar: React.FC<{
   } = useProject();
 
   const { percentage, completedCount, totalCount } = calculateProgress();
+
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate('/');
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
+  };
 
   const handleNav = (action: () => void) => {
     action();
@@ -302,7 +317,7 @@ export const Sidebar: React.FC<{
           </div>
 
           {/* Reset button */}
-          <div className="pt-2 border-t border-[#203252]/60">
+          <div className="pt-2 border-t border-[#203252]/60 space-y-2">
             <button
               type="button"
               onClick={() => setIsResetModalOpen(true)}
@@ -311,6 +326,14 @@ export const Sidebar: React.FC<{
             >
               <RotateCcw className="w-3 h-3" />
               <span>Reiniciar Projeto (Limpar Dados)</span>
+            </button>
+            <button
+              type="button"
+              onClick={handleLogout}
+              className="w-full py-1.5 px-2 rounded text-[11px] font-semibold bg-[#111B36] hover:bg-red-500/10 text-red-400 hover:text-red-300 border border-[#203252] hover:border-red-500/30 transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+            >
+              <LogOut className="w-3 h-3" />
+              <span>Sair da Conta</span>
             </button>
           </div>
         </div>
