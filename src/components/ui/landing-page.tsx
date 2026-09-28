@@ -344,7 +344,7 @@ export function ScrollGlobe({
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-16 z-40 bg-[#070d1e]/98 backdrop-blur-xl border-b border-white/10 md:hidden animate-fadeIn p-6 flex flex-col justify-between">
+        <div id="mobile-menu" className="fixed inset-0 top-16 z-40 bg-[#070d1e]/98 backdrop-blur-xl border-b border-white/10 md:hidden animate-fadeIn p-6 flex flex-col justify-between">
           <nav className="flex flex-col space-y-4 pt-2">
             <a 
               href="#metodo" 

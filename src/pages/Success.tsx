@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Success() {
+  useEffect(() => {
+    const meta = document.createElement('meta');
+    meta.name = "robots";
+    meta.content = "noindex";
+    document.head.appendChild(meta);
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#070d1e] text-white flex items-center justify-center py-12 px-6">
       <div className="max-w-md w-full bg-slate-900/60 p-8 sm:p-12 rounded-3xl border border-white/10 text-center space-y-6">

@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /login
+Disallow: /success
 Disallow: /dashboard
 
 Sitemap: https://seusite-unico.vercel.app/sitemap.xml

@@ -1,0 +1,27 @@
+# Seu Site Único
+
+## Visão Geral
+**Nome do produto:** Seu Site Único
+**Propósito:** Método guiado para criação de sites profissionais utilizando Inteligência Artificial.
+**URL Atual:** https://seusite-unico.vercel.app/
+
+**Aviso Importante:** Este produto **não é uma plataforma de e-commerce**. O foco é estrito na criação de sites institucionais e de apresentação.
+
+## Público-Alvo
+- Empresas
+- Negócios locais
+- Prestadores de serviços
+- Autônomos
+- Profissionais liberais
+
+## Funcionalidades e Características Principais
+- Briefing Mestre Inteligente para extração de contexto do negócio.
+- Prompts prontos de alta conversão (Copywriting e Design via IA).
+- Foco em presença digital profissional sem necessidade de conhecimento técnico.
+- Trilha de Renda Extra: Ensina a criar e vender sites para terceiros.
+
+## Principais Páginas Públicas
+- `/` - Landing Page Principal (Método, Nichos, Calculadora, Planos)
+- `/termos-de-uso` - Termos de Uso
+- `/politica-de-privacidade` - Política de Privacidade
+- `/politica-de-reembolso` - Política de Reembolso e Garantia
