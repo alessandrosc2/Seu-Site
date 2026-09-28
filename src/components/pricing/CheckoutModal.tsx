@@ -3,6 +3,8 @@ import { Check, ShieldCheck, Lock, QrCode, CreditCard, Copy, X, Sparkles, ArrowR
 import confetti from "canvas-confetti";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { db } from "@/lib/firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 interface CheckoutModalProps {
   isOpen: boolean;
@@ -40,6 +42,21 @@ export function CheckoutModal({
     setIsLoading(true);
     
     try {
+      // 1. Salvar os dados (Lead) no Firebase para Remarketing / Checkout Abandonado
+      try {
+        await addDoc(collection(db, "leads"), {
+          name,
+          email,
+          phone,
+          planName,
+          status: 'checkout_initiated', // status inicial
+          createdAt: serverTimestamp(),
+        });
+      } catch (dbError) {
+        console.error("Erro ao salvar lead no Firebase (ignorando para não travar a venda):", dbError);
+      }
+
+      // 2. Chamar a API do Mercado Pago
       const response = await fetch('/api/create-preference', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -47,8 +64,7 @@ export function CheckoutModal({
           name,
           email,
           planName,
-          price: basePrice,
-          orderBumps
+          price: basePrice
         })
       });
 
