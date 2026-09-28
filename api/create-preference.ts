@@ -14,16 +14,25 @@ export default async function handler(req: any, res: any) {
   const client = new MercadoPagoConfig({ accessToken });
   const preference = new Preference(client);
 
-  const { email, name, planName, price, orderBumps } = req.body;
-  const unitPrice = Number(price) || 97.00;
+  const { email, name, planKey, orderBumps } = req.body;
+  
+  const PLANS = {
+    completo: { title: 'Plano Completo', price: 47.90 },
+  };
+
+  if (!planKey || !(planKey in PLANS)) {
+    return res.status(400).json({ message: 'Invalid or missing planKey' });
+  }
+
+  const selectedPlan = PLANS[planKey as keyof typeof PLANS];
   
   // Prepare additional items if order bumps are selected
   const items = [
     {
-      id: 'seu-site-unico-vitalicio',
-      title: planName || 'Seu Site Único - Acesso Completo',
+      id: `seu-site-unico-${planKey}`,
+      title: selectedPlan.title,
       quantity: 1,
-      unit_price: unitPrice,
+      unit_price: selectedPlan.price,
       currency_id: 'BRL',
     }
   ];

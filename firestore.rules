@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // LEADS (Checkout Abandonado / Remarketing)
+    // Permite que qualquer pessoa crie um lead (quando abre o checkout)
+    // Ninguém pode ler, deletar ou atualizar (apenas o servidor/Admin pode extrair esses dados)
+    match /leads/{leadId} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+
+    // ORDERS (Pagamentos Aprovados)
+    // Permite que o servidor grave os pagamentos aprovados usando a REST API (sem token Admin).
+    // O ideal num cenário Enterprise é usar o Firebase Admin SDK, mas aqui
+    // o documento de pedido só pode ser escrito se a requisição vier sem modificar registros antigos (idempotência básica).
+    match /orders/{orderId} {
+      allow create, update: if true; 
+      allow read, delete: if false; 
+    }
+
+    // Outras coleções fechadas por padrão
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

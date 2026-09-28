@@ -5,7 +5,7 @@ import { CheckoutModal } from './CheckoutModal';
 
 export function PricingSection() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [activeCheckout, setActiveCheckout] = useState<{ planName: string; basePrice: number } | null>(null);
+  const [activeCheckout, setActiveCheckout] = useState<{ planKey: string } | null>(null);
 
   const faqs = [
     {
@@ -26,8 +26,8 @@ export function PricingSection() {
     }
   ];
 
-  const handleCheckout = (planName: string, basePrice: number) => {
-    setActiveCheckout({ planName, basePrice });
+  const handleCheckout = (planKey: string) => {
+    setActiveCheckout({ planKey });
   };
 
   return (
@@ -90,7 +90,7 @@ export function PricingSection() {
             </div>
 
             <button
-              onClick={() => handleCheckout("Plano Completo", 47.90)}
+              onClick={() => handleCheckout("completo")}
               className="w-full py-3.5 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base bg-gradient-to-r from-blue-600 via-cyan-400 to-cyan-300 text-slate-950 hover:brightness-110 shadow-lg shadow-cyan-500/30 transition-all transform hover:-translate-y-0.5 cursor-pointer inline-flex items-center justify-center gap-2 group active:scale-[0.98]"
             >
               <span>Garantir o Plano Completo</span>
@@ -176,8 +176,8 @@ export function PricingSection() {
         <CheckoutModal
           isOpen={!!activeCheckout}
           onClose={() => setActiveCheckout(null)}
-          planName={activeCheckout.planName}
-          basePrice={activeCheckout.basePrice}
+          planKey={activeCheckout.planKey}
+          
         />
       )}
     </section>

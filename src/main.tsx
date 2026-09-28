@@ -7,6 +7,7 @@ import DashboardApp from './dashboard-app/App.tsx';
 import TermosDeUso from './pages/TermosDeUso.tsx';
 import PoliticaDePrivacidade from './pages/PoliticaDePrivacidade.tsx';
 import PoliticaDeReembolso from './pages/PoliticaDeReembolso.tsx';
+import Success from './pages/Success.tsx';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './lib/firebase';
 import './index.css';
@@ -36,6 +37,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/success" element={<Success />} />
         <Route path="/termos-de-uso" element={<TermosDeUso />} />
         <Route path="/politica-de-privacidade" element={<PoliticaDePrivacidade />} />
         <Route path="/politica-de-reembolso" element={<PoliticaDeReembolso />} />
