@@ -1,27 +1,11 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
-import { Check, Star, MessageCircle, ChevronDown, ShieldCheck, Sparkles, X, ArrowRight, ArrowDown } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { toast } from "sonner";
-import { CheckoutModal } from "./CheckoutModal";
+import React, { useState } from 'react';
+import { Check, ArrowRight, Sparkles, ChevronDown, MessageCircle, ArrowDown } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { CheckoutModal } from './CheckoutModal';
 
 export function PricingSection() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [showExitModal, setShowExitModal] = useState(false);
-  const [exitModalDismissed, setExitModalDismissed] = useState(false);
   const [activeCheckout, setActiveCheckout] = useState<{ planName: string; basePrice: number } | null>(null);
-
-  // Exit intent detection
-  useEffect(() => {
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 10 && !exitModalDismissed) {
-        setShowExitModal(true);
-      }
-    };
-    document.addEventListener("mouseleave", handleMouseLeave);
-    return () => document.removeEventListener("mouseleave", handleMouseLeave);
-  }, [exitModalDismissed]);
 
   const faqs = [
     {
@@ -54,72 +38,24 @@ export function PricingSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-500/10 text-cyan-300 border border-blue-500/20 mb-4 uppercase tracking-widest">
             <Sparkles className="w-3.5 h-3.5" />
-            Planos e Acesso Imediato
+            Acesso Imediato
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Escolha o plano ideal para você
+            Garanta sua Presença Digital
           </h2>
           <p className="text-slate-300 text-base sm:text-lg">
             Acesso vitalício ao manual online interativo, prompts atualizados e suporte.
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12 items-stretch">
-          
-          {/* Plano Básico */}
-          <div className="flex flex-col justify-between p-8 sm:p-10 rounded-3xl bg-slate-900/60 border border-white/10 backdrop-blur-xl hover:border-white/20 transition-all">
-            <div>
-              <span className="text-xs font-semibold uppercase text-slate-400 tracking-wider">Essencial</span>
-              <h3 className="text-2xl font-bold text-white mt-1 mb-2">Plano Básico</h3>
-              <p className="text-slate-400 text-sm mb-6">Ideal para quem quer criar e colocar o próprio site no ar rapidamente.</p>
-              
-              <div className="mb-6">
-                <span className="text-xs text-slate-400">Por apenas</span>
-                <div className="text-4xl font-bold text-white tracking-tight">
-                  R$ 27<span className="text-xl font-medium text-slate-400">,90</span>
-                </div>
-                <span className="text-[11px] text-slate-400">pagamento único sem mensalidade</span>
-              </div>
-
-              <div className="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6 mb-8">
-                <div className="flex items-center gap-2.5">
-                  <Check className="w-4 h-4 text-cyan-400 shrink-0" />
-                  <span><strong>Fase 1:</strong> Construir (Briefing Mestre & Prompts)</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <Check className="w-4 h-4 text-cyan-400 shrink-0" />
-                  <span><strong>Fase 2:</strong> Publicar (Domínio, HTTPS e WhatsApp)</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <Check className="w-4 h-4 text-cyan-400 shrink-0" />
-                  <span>Checklist de revisão mobile</span>
-                </div>
-                <div className="flex items-center gap-2.5 text-slate-500">
-                  <span>Opção de upgrade pagando a diferença (R$ 20,00)</span>
-                </div>
-              </div>
-            </div>
-
-            <button
-              onClick={() => handleCheckout("Básico", 27.90)}
-              className="w-full py-3.5 sm:py-4 px-6 rounded-xl font-semibold text-sm bg-white/10 text-white hover:bg-white/20 border border-white/15 transition-all cursor-pointer inline-flex items-center justify-center gap-2 group active:scale-[0.98]"
-            >
-              <span>Começar com o Básico</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
-            </button>
-          </div>
-
-          {/* Plano Completo (Mais Escolhido) */}
-          <div className="relative flex flex-col justify-between p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-blue-950/80 to-slate-900/95 border-2 border-cyan-400 backdrop-blur-xl shadow-[0_0_50px_rgba(34,211,238,0.2)]">
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 text-slate-950 text-xs font-extrabold uppercase tracking-wider shadow-md">
-              Mais Escolhido
-            </div>
-
+        {/* Pricing Single Card */}
+        <div className="flex justify-center max-w-lg mx-auto mb-16">
+          {/* Plano Completo (Único) */}
+          <div className="relative w-full flex flex-col justify-between p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-blue-950/80 to-slate-900/95 border-2 border-cyan-400 backdrop-blur-xl shadow-[0_0_50px_rgba(34,211,238,0.2)]">
             <div>
               <span className="text-xs font-semibold uppercase text-cyan-300 tracking-wider">Experiência Completa</span>
               <h3 className="text-2xl font-bold text-white mt-1 mb-2">Plano Completo</h3>
-              <p className="text-slate-300 text-sm mb-6">Para quem quer dominar o SEO local, mensurar resultados e evoluir seu site continuamente.</p>
+              <p className="text-slate-300 text-sm mb-6">Para quem quer criar o site, dominar o SEO local, mensurar resultados e evoluir continuamente.</p>
               
               <div className="mb-6">
                 <span className="text-xs text-cyan-300">Por apenas</span>
@@ -148,13 +84,13 @@ export function PricingSection() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Check className="w-4 h-4 text-cyan-400 shrink-0" />
-                  <span><strong>Bônus 02:</strong> Guia de Melhorias (Saiba como e onde pedir melhorias dentro do seu site)</span>
+                  <span><strong>Bônus 02:</strong> Extensão de Vendas no Checkout (Order Bump)</span>
                 </div>
               </div>
             </div>
 
             <button
-              onClick={() => handleCheckout("Completo", 47.90)}
+              onClick={() => handleCheckout("Plano Completo", 47.90)}
               className="w-full py-3.5 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base bg-gradient-to-r from-blue-600 via-cyan-400 to-cyan-300 text-slate-950 hover:brightness-110 shadow-lg shadow-cyan-500/30 transition-all transform hover:-translate-y-0.5 cursor-pointer inline-flex items-center justify-center gap-2 group active:scale-[0.98]"
             >
               <span>Garantir o Plano Completo</span>
@@ -163,7 +99,7 @@ export function PricingSection() {
           </div>
         </div>
 
-        {/* Alternative Route — Done For You (WhatsApp) */}
+        {/* Alternative Route - Done For You (WhatsApp) */}
         <div className="max-w-3xl mx-auto p-6 sm:p-10 rounded-3xl bg-slate-900/40 border border-emerald-500/30 backdrop-blur-xl text-center mb-20 shadow-xl">
           <span className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">
             <MessageCircle className="w-4 h-4" /> Saída Alternativa
@@ -172,7 +108,7 @@ export function PricingSection() {
             Não quer aprender sozinho? Eu faço o seu site pra você.
           </h3>
           <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-6 leading-relaxed">
-            Sites simples, rápidos e profissionais a partir de <strong className="text-emerald-300">R$ 200,00</strong> — o valor varia de acordo com o tamanho do seu projeto.
+            Sites simples, rápidos e profissionais a partir de <strong className="text-emerald-300">R$ 200,00</strong> - o valor varia de acordo com o tamanho do seu projeto.
           </p>
           
           <div className="flex flex-col items-center justify-center max-w-md mx-auto">
@@ -234,66 +170,6 @@ export function PricingSection() {
         </div>
 
       </div>
-
-      {/* Exit Intent Modal */}
-      {showExitModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-          <div className="relative w-full max-w-lg bg-slate-900 border border-cyan-400/50 p-8 rounded-3xl shadow-[0_0_80px_rgba(34,211,238,0.3)] text-center">
-            <button
-              onClick={() => {
-                setShowExitModal(false);
-                setExitModalDismissed(true);
-              }}
-              className="absolute top-4 right-4 text-slate-400 hover:text-white"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">Condição Especial de Saída</span>
-            <h3 className="text-2xl font-bold text-white mt-2 mb-3">
-              Não vá embora sem o site do seu negócio!
-            </h3>
-            <p className="text-slate-300 text-sm mb-6">
-              Garanta acesso imediato com desconto exclusivo nesta sessão:
-            </p>
-            <div className="grid grid-cols-2 gap-4 mb-6 text-left">
-              <div 
-                onClick={() => {
-                  setShowExitModal(false);
-                  setExitModalDismissed(true);
-                  handleCheckout("Básico Promocional", 19.90);
-                }}
-                className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/30 cursor-pointer transition-all"
-              >
-                <span className="text-xs text-slate-400 block">Básico de R$ 27,90 por</span>
-                <span className="text-xl font-bold text-white">R$ 19,90</span>
-                <span className="text-[10px] text-cyan-400 mt-1 block">Clique para escolher</span>
-              </div>
-              <div 
-                onClick={() => {
-                  setShowExitModal(false);
-                  setExitModalDismissed(true);
-                  handleCheckout("Completo Promocional", 39.90);
-                }}
-                className="p-4 rounded-xl bg-cyan-950/40 border border-cyan-500/40 hover:border-cyan-400 cursor-pointer transition-all"
-              >
-                <span className="text-xs text-cyan-300 block">Completo de R$ 47,90 por</span>
-                <span className="text-xl font-bold text-cyan-400">R$ 39,90</span>
-                <span className="text-[10px] text-cyan-300 mt-1 block">Clique para escolher</span>
-              </div>
-            </div>
-            <button
-              onClick={() => {
-                setShowExitModal(false);
-                setExitModalDismissed(true);
-                handleCheckout("Completo Promocional", 39.90);
-              }}
-              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-400 text-slate-950 font-bold text-sm hover:brightness-110 shadow-lg cursor-pointer"
-            >
-              Aproveitar Plano Completo por R$ 39,90
-            </button>
-          </div>
-        </div>
-      )}
 
       {/* Interactive Checkout Modal */}
       {activeCheckout && (
