@@ -56,10 +56,10 @@ export function PricingSection() {
             <Sparkles className="w-3.5 h-3.5" />
             Planos e Acesso Imediato
           </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Escolha o plano ideal para você
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="text-slate-300 text-base sm:text-lg">
             Acesso vitalício ao manual online interativo, prompts atualizados e suporte.
           </p>
         </div>
@@ -76,7 +76,7 @@ export function PricingSection() {
               
               <div className="mb-6">
                 <span className="text-xs text-slate-400">Por apenas</span>
-                <div className="text-4xl font-extrabold text-white">
+                <div className="text-4xl font-bold text-white tracking-tight">
                   R$ 27<span className="text-xl font-medium text-slate-400">,90</span>
                 </div>
                 <span className="text-[11px] text-slate-400">pagamento único sem mensalidade</span>
@@ -122,7 +122,7 @@ export function PricingSection() {
               
               <div className="mb-6">
                 <span className="text-xs text-cyan-300">Por apenas</span>
-                <div className="text-4xl font-extrabold text-cyan-400">
+                <div className="text-4xl font-bold text-cyan-400 tracking-tight">
                   R$ 47<span className="text-xl font-medium text-cyan-200">,90</span>
                 </div>
                 <span className="text-[11px] text-slate-300">pagamento único vitalício</span>
@@ -186,8 +186,8 @@ export function PricingSection() {
         {/* FAQ Accordion */}
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest block mb-2">Tire suas dúvidas</span>
-            <h3 className="text-3xl sm:text-4xl font-black text-white">
+            <span className="text-xs font-semibold text-cyan-400 uppercase tracking-widest block mb-2">Tire suas dúvidas</span>
+            <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
               Perguntas Frequentes
             </h3>
           </div>

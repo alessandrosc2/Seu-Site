@@ -47,12 +47,12 @@ export default function App() {
                   Seu Site <span className="text-cyan-400">Único</span>
                 </span>
               </div>
-              <p className="text-xs text-slate-400 max-w-md leading-relaxed">
+              <p className="text-sm text-slate-300 max-w-md leading-relaxed">
                 Método guiado com Inteligência Artificial para pequenos negócios e profissionais que desejam presença profissional na internet e faturamento com criação de sites locais.
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-6 text-xs text-slate-300">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-slate-300">
               <a href="#metodo" className="hover:text-cyan-400 transition-colors">O Método</a>
               <a href="#nichos" className="hover:text-cyan-400 transition-colors">Nichos</a>
               <a href="#calculadora" className="hover:text-cyan-400 transition-colors">Calculadora</a>

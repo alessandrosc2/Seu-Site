@@ -18,10 +18,10 @@ export function AudienceSwitcher() {
           <Sparkles className="w-3.5 h-3.5" />
           Dois Públicos em Um Só Produto
         </span>
-        <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
           Quem se beneficia do método?
         </h2>
-        <p className="text-slate-400 text-base sm:text-lg max-w-xl mx-auto">
+        <p className="text-slate-300 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
           O mesmo manual guiado atende quem precisa de um site para sua própria empresa e quem quer monetizar criando para outros.
         </p>
 
@@ -61,10 +61,10 @@ export function AudienceSwitcher() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
                 <span className="text-xs font-semibold uppercase text-cyan-400 tracking-wider">Para o seu negócio</span>
-                <h3 className="text-2xl sm:text-3xl font-bold mt-2 mb-4 text-white">
+                <h3 className="text-2xl sm:text-3xl font-bold mt-2 mb-4 text-white tracking-tight">
                   Saia do amadorismo e tenha presença profissional
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6 font-light">
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
                   Seus clientes pesquisam no Google antes de comprar. Se você não tem um site próprio com domínio oficial, está perdendo vendas todos os dias para a concorrência.
                 </p>
                 <div className="space-y-3 text-sm text-slate-300">
@@ -104,10 +104,10 @@ export function AudienceSwitcher() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
                 <span className="text-xs font-semibold uppercase text-emerald-400 tracking-wider">Oportunidade de Mercado</span>
-                <h3 className="text-2xl sm:text-3xl font-bold mt-2 mb-4 text-white">
+                <h3 className="text-2xl sm:text-3xl font-bold mt-2 mb-4 text-white tracking-tight">
                   Ofereça sites para empresas da sua cidade
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6 font-light">
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
                   Aprenda a mapear empresas sem site pelo Google Maps, faça abordagens respeitando a LGPD e entregue sites profissionais cobrando a partir de R$ 200 cada.
                 </p>
                 <div className="space-y-3 text-sm text-slate-300">

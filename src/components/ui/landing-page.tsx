@@ -413,7 +413,7 @@ export function ScrollGlobe({
             )}>
               {/* Badge */}
               <div className={cn(
-                "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-5",
+                "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-5",
                 "bg-cyan-950/70 border border-cyan-500/30 text-cyan-300 backdrop-blur-md shadow-sm",
                 section.align === "center" && "mx-auto",
                 section.align === "right" && "ml-auto"
@@ -424,22 +424,22 @@ export function ScrollGlobe({
 
               {/* Title & Subtitle */}
               <h2 className={cn(
-                "font-black tracking-tight mb-5 leading-tight text-white",
+                "font-bold tracking-tight mb-5 leading-[1.15] text-white",
                 index === 0 
-                  ? "text-3xl sm:text-4xl md:text-5xl lg:text-6xl" 
-                  : "text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+                  ? "text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem]" 
+                  : "text-2xl sm:text-3xl md:text-4xl lg:text-[3rem]"
               )}>
                 {section.subtitle ? (
                   <div className="space-y-2">
-                    <span className="bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent block pb-2 leading-tight">
+                    <span className="bg-gradient-to-r from-white via-slate-100 to-slate-200 bg-clip-text text-transparent block pb-1 leading-tight">
                       {section.title}
                     </span>
-                    <span className="text-cyan-400 text-[0.55em] font-bold tracking-wider uppercase block pb-1">
+                    <span className="text-cyan-400 text-[0.55em] font-semibold tracking-wider uppercase block pb-1">
                       {section.subtitle}
                     </span>
                   </div>
                 ) : (
-                  <span className="bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent block pb-2 leading-tight">
+                  <span className="bg-gradient-to-r from-white via-slate-100 to-slate-200 bg-clip-text text-transparent block pb-1 leading-tight">
                     {section.title}
                   </span>
                 )}
@@ -447,7 +447,7 @@ export function ScrollGlobe({
 
               {/* Description */}
               <div className={cn(
-                "text-slate-300/90 leading-relaxed mb-8 sm:mb-10 text-base sm:text-lg lg:text-xl font-normal max-w-2xl",
+                "text-slate-300 leading-relaxed mb-8 sm:mb-10 text-base sm:text-lg lg:text-xl font-normal max-w-2xl",
                 section.align === "center" ? "mx-auto text-center" : "",
                 section.align === "right" ? "ml-auto text-right" : ""
               )}>

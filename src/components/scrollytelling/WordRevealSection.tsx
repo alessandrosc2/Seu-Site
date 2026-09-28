@@ -6,20 +6,35 @@ import { cn } from "@/lib/utils";
 
 export function WordRevealSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const headlineRef = useRef<HTMLHeadingElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  const headline = "Mais de 50% dos pequenos negócios brasileiros ainda não têm site próprio. A maioria fica invisível no Google ou presa a modelos genéricos e sem personalidade.";
+  const headline = "Mais de 50% das empresas brasileiras não têm site próprio. A maioria fica invisível no Google, deixando dinheiro na mesa.";
   const words = headline.split(" ");
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const total = rect.height - windowHeight * 0.4;
-      const current = -rect.top + windowHeight * 0.2;
-      const p = Math.min(Math.max(current / total, 0), 1);
-      setScrollProgress(p);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (!headlineRef.current) return;
+          const rect = headlineRef.current.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+
+          // Start illuminating as soon as the headline enters 85% of the viewport (natural entry)
+          // Finish completely by 35% of the viewport (still well within the upper-middle view!)
+          // This eliminates the lag completely: the whole text lights up in plain sight before scrolling away.
+          const start = windowHeight * 0.85;
+          const end = windowHeight * 0.35;
+
+          const progress = (start - rect.top) / (start - end);
+          const clamped = Math.min(Math.max(progress, 0), 1);
+          setScrollProgress(clamped);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -28,25 +43,25 @@ export function WordRevealSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative bg-[#070d1e] text-white py-28 px-4 sm:px-6 lg:px-8 overflow-hidden border-t border-b border-white/10">
-      <div className="max-w-5xl mx-auto text-center mb-20">
+    <section ref={containerRef} className="relative bg-[#070d1e] text-white py-24 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden border-t border-b border-white/10">
+      <div className="max-w-5xl mx-auto text-center mb-16 sm:mb-20">
         <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-500/10 text-cyan-300 border border-blue-500/20 mb-8 uppercase tracking-widest">
           <Zap className="w-3.5 h-3.5 text-cyan-400" />
           O Dilema da Presença Digital
         </span>
 
         {/* Scroll-scrubbed kinetic text */}
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.2] max-w-4xl mx-auto mb-6">
+        <h2 ref={headlineRef} className="text-3xl sm:text-5xl lg:text-5xl font-semibold tracking-[-0.03em] leading-[1.3] max-w-4xl mx-auto mb-6 text-slate-100">
           {words.map((word, i) => {
-            const wordThreshold = i / words.length;
+            const wordThreshold = i / (words.length * 0.95);
             const isLit = scrollProgress >= wordThreshold;
             return (
               <span
                 key={i}
                 className={cn(
-                  "inline-block mr-2.5 transition-all duration-300",
+                  "inline-block mr-2 sm:mr-3 transition-colors duration-200",
                   isLit 
-                    ? "text-white opacity-100 filter drop-shadow-[0_0_12px_rgba(255,255,255,0.3)] scale-[1.02]" 
+                    ? "text-white opacity-100" 
                     : "text-slate-600 opacity-30"
                 )}
               >
