@@ -65,9 +65,8 @@ export function CheckoutModal({
           <div className="flex items-center gap-2.5">
             <img 
               src="/logo-site.png" 
-              onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/logo.svg'; }}
               alt="Seu Site Único" 
-              className="w-6 h-6 object-contain" 
+              className="w-7 h-7 object-contain" 
             />
             <div className="flex items-center gap-1.5">
               <Lock className="w-3.5 h-3.5 text-cyan-400" />
