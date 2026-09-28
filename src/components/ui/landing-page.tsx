@@ -288,7 +288,7 @@ export function ScrollGlobe({
         <a href="#metodo" className="flex items-center gap-3 group cursor-pointer">
           <div className="relative w-11 h-11 rounded-2xl bg-cyan-950/60 border border-cyan-500/40 p-1 flex items-center justify-center shadow-lg shadow-cyan-500/25 group-hover:border-cyan-400 group-hover:scale-105 transition-all">
             <img 
-              src="/logo-site.png" 
+              src="/logo-site.png?v=20260928" 
               alt="Logo Seu Site Único" 
               className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(0,240,255,0.6)]" 
             />
