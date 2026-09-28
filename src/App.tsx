@@ -37,13 +37,13 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-white/5">
             <div>
-              <div className="flex items-center gap-3 mb-2">
+              <div className="flex items-center gap-3.5 mb-2.5">
                 <img 
                   src="/logo-site.png" 
                   alt="Seu Site Único" 
-                  className="w-10 h-10 object-contain" 
+                  className="w-14 h-14 object-contain" 
                 />
-                <span className="font-extrabold text-lg tracking-tight text-white">
+                <span className="font-normal text-2xl tracking-tight text-white">
                   Seu Site <span className="text-cyan-400">Único</span>
                 </span>
               </div>
