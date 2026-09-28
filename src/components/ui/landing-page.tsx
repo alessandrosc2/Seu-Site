@@ -290,7 +290,7 @@ export function ScrollGlobe({
       <header className="fixed top-0 left-0 right-0 z-50 h-16 sm:h-20 flex items-center justify-between px-4 sm:px-8 lg:px-12 bg-[#070d1e]/90 backdrop-blur-md border-b border-white/10">
         <a href="#metodo" className="flex items-center gap-2.5 sm:gap-3.5 group cursor-pointer shrink-0">
           <img 
-            src="/logo-site.png" 
+            src="/logo-site.webp" 
             alt="Logo Seu Site Único" 
             className="w-9 h-9 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform" 
           />
@@ -507,13 +507,30 @@ export function ScrollGlobe({
               </div>
 
               {/* Title & Subtitle */}
-              <h2 className={cn(
-                "font-bold tracking-tight mb-5 leading-[1.15] text-white",
-                index === 0 
-                  ? "text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem]" 
-                  : "text-2xl sm:text-3xl md:text-4xl lg:text-[3rem]"
-              )}>
-                {section.subtitle ? (
+              {index === 0 ? (
+                <h1 className={cn(
+                  "font-bold tracking-tight mb-5 leading-[1.15] text-white",
+                  "text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem]"
+                )}>
+                  {section.subtitle ? (
+                    <div className="space-y-2">
+                      <span className="bg-gradient-to-r from-white via-slate-100 to-slate-200 bg-clip-text text-transparent block pb-1 leading-tight">
+                        {section.title}
+                      </span>
+                      <span className="text-cyan-400 text-[0.55em] font-semibold tracking-wider uppercase block pb-1">
+                        {section.subtitle}
+                      </span>
+                    </div>
+                  ) : (
+                    section.title
+                  )}
+                </h1>
+              ) : (
+                <h2 className={cn(
+                  "font-bold tracking-tight mb-5 leading-[1.15] text-white",
+                  "text-2xl sm:text-3xl md:text-4xl lg:text-[3rem]"
+                )}>
+                  {section.subtitle ? (
                   <div className="space-y-2">
                     <span className="bg-gradient-to-r from-white via-slate-100 to-slate-200 bg-clip-text text-transparent block pb-1 leading-tight">
                       {section.title}
@@ -527,7 +544,7 @@ export function ScrollGlobe({
                     {section.title}
                   </span>
                 )}
-              </h2>
+              </h2> )}
 
               {/* Description */}
               <div className={cn(

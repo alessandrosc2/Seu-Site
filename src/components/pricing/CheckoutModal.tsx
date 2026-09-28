@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Lock, X, ShieldCheck, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
@@ -25,6 +25,18 @@ export function CheckoutModal({
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
 
   if (!isOpen) return null;
 
@@ -93,13 +105,13 @@ export function CheckoutModal({
       />
 
       {/* Modal Content */}
-      <div className="relative w-full max-w-xl bg-[#0a1128] border border-cyan-900/50 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-300">
+      <div role="dialog" aria-modal="true" aria-labelledby="checkout-title" ref={modalRef} tabIndex={-1} className="relative w-full max-w-xl focus:outline-none bg-[#0a1128] border border-cyan-900/50 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-300">
         
         {/* Header */}
         <div className="bg-slate-900/80 px-6 py-4 border-b border-white/5 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <img 
-              src="/logo-site.png" 
+              src="/logo-site.webp" 
               alt="Seu Site Único" 
               className="w-7 h-7 object-contain" 
             />
@@ -125,7 +137,7 @@ export function CheckoutModal({
               <span className="text-[11px] font-bold uppercase tracking-wider text-cyan-400">
                 Plano Selecionado
               </span>
-              <h4 className="text-lg font-bold text-white">{plan.title}</h4>
+              <h4 id="checkout-title" className="text-lg font-bold text-white">{plan.title}</h4>
               <p className="text-xs text-slate-400">Acesso vitalício + Suporte</p>
             </div>
             <div className="text-right">
@@ -143,32 +155,24 @@ export function CheckoutModal({
             </h5>
             <div className="space-y-2.5">
               <div>
-                <label className="text-xs text-slate-400 mb-1 block">Nome Completo</label>
-                <input
-                  type="text"
-                  required
-                  value={name}
+                <label htmlFor="checkout-name" className="text-xs text-slate-400 mb-1 block">Nome Completo</label>
+                <input id="checkout-name" name="name" autoComplete="name" type="text" required value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Seu nome"
                   className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                 />
               </div>
               <div>
-                <label className="text-xs text-slate-400 mb-1 block">E-mail (onde receberá o acesso)</label>
-                <input
-                  type="email"
-                  required
-                  value={email}
+                <label htmlFor="checkout-email" className="text-xs text-slate-400 mb-1 block">E-mail (onde receberá o acesso)</label>
+                <input id="checkout-email" name="email" autoComplete="email" type="email" required value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="seuemail@exemplo.com"
                   className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                 />
               </div>
               <div>
-                <label className="text-xs text-slate-400 mb-1 block">WhatsApp (para suporte VIP)</label>
-                <input
-                  type="tel"
-                  value={phone}
+                <label htmlFor="checkout-phone" className="text-xs text-slate-400 mb-1 block">WhatsApp (para suporte VIP)</label>
+                <input id="checkout-phone" name="phone" autoComplete="tel" type="tel" value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="(DDD) 99999-9999"
                   className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"

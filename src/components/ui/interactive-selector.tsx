@@ -92,7 +92,33 @@ export const InteractiveSelector: React.FC<InteractiveSelectorProps> = ({
     }
   };
 
+  
+  const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
+    let newIndex = index;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      newIndex = (index + 1) % options.length;
+      e.preventDefault();
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      newIndex = (index - 1 + options.length) % options.length;
+      e.preventDefault();
+    } else if (e.key === 'Enter' || e.key === ' ') {
+      handleOptionClick(index);
+      e.preventDefault();
+      return;
+    }
+    
+    if (newIndex !== index) {
+      handleOptionClick(newIndex);
+      // Wait for re-render then focus
+      setTimeout(() => {
+        const tabs = document.querySelectorAll('[role="tab"]');
+        if (tabs[newIndex]) (tabs[newIndex] as HTMLElement).focus();
+      }, 0);
+    }
+  };
+
   useEffect(() => {
+
     const timers: NodeJS.Timeout[] = [];
     options.forEach((_, i) => {
       const timer = setTimeout(() => {
@@ -128,7 +154,7 @@ export const InteractiveSelector: React.FC<InteractiveSelectorProps> = ({
         </div>
 
         {/* Desktop / Tablet Interactive Accordion */}
-        <div className="hidden sm:flex options w-full max-w-5xl h-[480px] items-stretch overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-900/90 backdrop-blur-md shadow-2xl relative">
+        <div role="tablist" aria-label="Nichos de Mercado" className="hidden sm:flex options w-full max-w-5xl h-[480px] items-stretch overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-900/90 backdrop-blur-md shadow-2xl relative">
           {options.map((option, index) => {
             const isActive = activeIndex === index;
             const isAnimated = animatedOptions.includes(index);
@@ -152,6 +178,11 @@ export const InteractiveSelector: React.FC<InteractiveSelectorProps> = ({
                   boxShadow: isActive ? "0 25px 50px -12px rgba(0, 0, 0, 0.85)" : "none"
                 }}
                 onClick={() => handleOptionClick(index)}
+                role="tab"
+                aria-selected={isActive}
+                tabIndex={isActive ? 0 : -1}
+                aria-controls={`niche-panel-${index}`}
+                onKeyDown={(e) => handleKeyDown(e, index)}
               >
                 {/* Dynamic Vignette & Dark Gradient Overlay */}
                 <div
@@ -188,8 +219,7 @@ export const InteractiveSelector: React.FC<InteractiveSelectorProps> = ({
                   </div>
 
                   {/* Expanded details */}
-                  <div
-                    className="transition-all duration-700 overflow-hidden"
+                  <div id={`niche-panel-${index}`} role="tabpanel" className="transition-all duration-700 overflow-hidden"
                     style={{
                       maxHeight: isActive ? "180px" : "0px",
                       opacity: isActive ? 1 : 0,
@@ -234,6 +264,11 @@ export const InteractiveSelector: React.FC<InteractiveSelectorProps> = ({
               <div
                 key={index}
                 onClick={() => handleOptionClick(index)}
+                role="tab"
+                aria-selected={isActive}
+                tabIndex={isActive ? 0 : -1}
+                aria-controls={`niche-panel-${index}`}
+                onKeyDown={(e) => handleKeyDown(e, index)}
                 className={`relative rounded-xl overflow-hidden border transition-all duration-300 cursor-pointer ${
                   isActive 
                     ? "border-cyan-500/80 shadow-lg shadow-cyan-950/50" 

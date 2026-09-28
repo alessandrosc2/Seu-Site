@@ -31,7 +31,7 @@ export function PricingSection() {
   };
 
   return (
-    <section id="planos" className="relative bg-[#070d1e] text-white py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="pricing" className="relative bg-[#070d1e] text-white py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}
@@ -151,15 +151,13 @@ export function PricingSection() {
                       : "bg-slate-900/80 border-slate-800 hover:border-slate-700"
                   )}
                 >
-                  <button
-                    onClick={() => setOpenFaq(isOpen ? null : index)}
-                    className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-white hover:text-cyan-300 transition-colors cursor-pointer"
+                  <button onClick={() => setOpenFaq(isOpen ? null : index)} aria-expanded={isOpen} aria-controls={`faq-content-${index}`} id={`faq-header-${index}`} className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-white hover:text-cyan-300 transition-colors cursor-pointer"
                   >
                     <span className="leading-snug">{faq.q}</span>
                     <ChevronDown className={cn("w-5 h-5 text-cyan-400 transition-transform duration-300 shrink-0", isOpen && "rotate-180 text-cyan-300")} />
                   </button>
                   {isOpen && (
-                    <div className="px-6 pb-6 text-slate-100 text-sm sm:text-base leading-relaxed border-t border-slate-800/80 pt-4 bg-slate-950/70 font-normal">
+                    <div id={`faq-content-${index}`} role="region" aria-labelledby={`faq-header-${index}`} className="px-6 pb-6 text-slate-100 text-sm sm:text-base leading-relaxed border-t border-slate-800/80 pt-4 bg-slate-950/70 font-normal">
                       {faq.a}
                     </div>
                   )}
