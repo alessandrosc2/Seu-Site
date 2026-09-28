@@ -34,8 +34,7 @@ export default function App() {
 
       {/* Beat 6: Tabela de Preços, Order Bump, Saída WhatsApp e FAQ */}
       
-      <PricingSection />
-      </div>
+            <PricingSection />
 
       {/* Modern Footer */}
       <footer className="py-14 border-t border-white/10 bg-[#050814] text-slate-400 text-sm">
