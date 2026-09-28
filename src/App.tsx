@@ -85,7 +85,7 @@ export default function App() {
               </div>
             </div>
             <div className="flex flex-col items-center sm:items-end gap-4">
-              <img src="/pagamentos.png" alt="Formas de Pagamento Aceitas" className="h-10 sm:h-12 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="/pagamentos.png" alt="Formas de Pagamento Aceitas" className="w-64 sm:w-80 md:w-96 h-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
               <div className="flex items-center gap-2 text-slate-500">
                 <ShieldCheck className="w-4 h-4 text-cyan-500/60" />
                 <span>Compra 100% Segura • Acesso Imediato</span>
