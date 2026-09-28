@@ -75,13 +75,13 @@ export const ImageGuideStep: React.FC<{
       <div className="bg-[#111B36] border border-[#203252] rounded-2xl p-5 md:p-6 shadow-lg shadow-black/20">
         <div className="flex items-center gap-2.5 mb-4">
           <div className="w-8 h-8 rounded-lg bg-[#00D4E8]/10 text-[#00D4E8] flex items-center justify-center">
-            <HelpCircle className="w-4 h-4" />
+            <HelpCircle className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#00D4E8]">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-[#00D4E8]">
               Bússola da Etapa
             </h3>
-            <h4 className="text-sm md:text-base font-bold text-[#F5F7FF]">
+            <h4 className="text-base md:text-base font-bold text-[#F5F7FF]">
               5 Perguntas de Orientação Estratégica
             </h4>
           </div>
@@ -89,36 +89,36 @@ export const ImageGuideStep: React.FC<{
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-3 pt-2">
           <div className="p-3.5 rounded-xl bg-[#080D20] border border-[#203252]/60 space-y-1">
-            <span className="text-[11px] font-bold text-[#00D4E8] block">1. Quais imagens preciso?</span>
-            <p className="text-xs text-[#AAB6CC] leading-relaxed">
+            <span className="text-sm font-bold text-[#00D4E8] block">1. Quais imagens preciso?</span>
+            <p className="text-sm text-[#AAB6CC] leading-relaxed">
               Fotos que mostrem seu ambiente de trabalho, profissionais em atendimento e serviços em destaque.
             </p>
           </div>
 
           <div className="p-3.5 rounded-xl bg-[#080D20] border border-[#203252]/60 space-y-1">
-            <span className="text-[11px] font-bold text-[#00D4E8] block">2. Posso criar com IA?</span>
-            <p className="text-xs text-[#AAB6CC] leading-relaxed">
+            <span className="text-sm font-bold text-[#00D4E8] block">2. Posso criar com IA?</span>
+            <p className="text-sm text-[#AAB6CC] leading-relaxed">
               Sim! As IAs modernas geram fotografias comerciais fotorrealistas em segundos sem necessidade de estúdio.
             </p>
           </div>
 
           <div className="p-3.5 rounded-xl bg-[#080D20] border border-[#203252]/60 space-y-1">
-            <span className="text-[11px] font-bold text-[#00D4E8] block">3. Quais ferramentas usar?</span>
-            <p className="text-xs text-[#AAB6CC] leading-relaxed">
+            <span className="text-sm font-bold text-[#00D4E8] block">3. Quais ferramentas usar?</span>
+            <p className="text-sm text-[#AAB6CC] leading-relaxed">
               Google Flow, Leonardo.ai, Ideogram, Freepik Pikaso, Midjourney ou Higgsfield.
             </p>
           </div>
 
           <div className="p-3.5 rounded-xl bg-[#080D20] border border-[#203252]/60 space-y-1">
-            <span className="text-[11px] font-bold text-[#00D4E8] block">4. Como escolher a melhor?</span>
-            <p className="text-xs text-[#AAB6CC] leading-relaxed">
+            <span className="text-sm font-bold text-[#00D4E8] block">4. Como escolher a melhor?</span>
+            <p className="text-sm text-[#AAB6CC] leading-relaxed">
               Priorize iluminação natural, ambiente crível e alinhamento com a realidade do seu público.
             </p>
           </div>
 
           <div className="p-3.5 rounded-xl bg-[#080D20] border border-[#203252]/60 space-y-1">
-            <span className="text-[11px] font-bold text-[#00D4E8] block">5. Como usar no Prompt Mestre?</span>
-            <p className="text-xs text-[#AAB6CC] leading-relaxed">
+            <span className="text-sm font-bold text-[#00D4E8] block">5. Como usar no Prompt Mestre?</span>
+            <p className="text-sm text-[#AAB6CC] leading-relaxed">
               Guarde os arquivos no computador e anexe-os junto com o Mega-Prompt no Módulo 06.
             </p>
           </div>
@@ -127,15 +127,15 @@ export const ImageGuideStep: React.FC<{
 
       {/* 2. POR QUE ESTA ETAPA É IMPORTANTE */}
       <div className="bg-[#0B1535] border border-[#203252] rounded-2xl p-5 md:p-6 space-y-3">
-        <div className="flex items-center gap-2 text-[#00D4E8] text-xs font-bold uppercase tracking-wider">
-          <Sparkles className="w-4 h-4" />
+        <div className="flex items-center gap-2 text-[#00D4E8] text-sm font-bold uppercase tracking-wider">
+          <Sparkles className="w-5 h-5" />
           <span>Por Que Esta Etapa É Fundamental</span>
         </div>
-        <p className="text-xs md:text-sm text-[#F5F7FF] leading-relaxed">
+        <p className="text-sm md:text-sm text-[#F5F7FF] leading-relaxed">
           As imagens são uma parte essencial da identidade visual e da percepção de valor do seu negócio na internet. Uma fotografia de alta qualidade ajuda o visitante a visualizar o seu ambiente, conhecer seus serviços, criar empatia instantânea e confiar na sua empresa antes mesmo do primeiro contato no WhatsApp.
         </p>
         <div className="p-3.5 bg-[#111B36] border-l-4 border-[#00D4E8] rounded-r-xl">
-          <p className="text-xs md:text-sm text-[#00D4E8] font-medium leading-relaxed italic">
+          <p className="text-sm md:text-sm text-[#00D4E8] font-medium leading-relaxed italic">
             "Você não precisa ter uma câmera profissional nem contratar um fotógrafo para começar. Hoje é possível criar imagens comerciais realistas utilizando ferramentas de inteligência artificial."
           </p>
         </div>
@@ -144,11 +144,11 @@ export const ImageGuideStep: React.FC<{
       {/* 3. ONDE CRIAR SUAS IMAGENS (FERRAMENTAS) */}
       <div className="space-y-4">
         <div>
-          <h3 className="text-sm md:text-base font-bold text-[#F5F7FF] flex items-center gap-2">
-            <Layers className="w-4 h-4 text-[#00D4E8]" />
+          <h3 className="text-base md:text-base font-bold text-[#F5F7FF] flex items-center gap-2">
+            <Layers className="w-5 h-5 text-[#00D4E8]" />
             <span>Onde criar suas imagens</span>
           </h3>
-          <p className="text-xs text-[#AAB6CC] mt-1">
+          <p className="text-sm text-[#AAB6CC] mt-1">
             Você pode testar diferentes ferramentas e escolher aquela que apresentar o melhor resultado para o seu negócio.
           </p>
         </div>
@@ -198,19 +198,19 @@ export const ImageGuideStep: React.FC<{
             >
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#F5F7FF] group-hover:text-[#00D4E8] transition-colors">
+                  <span className="text-sm font-bold text-[#F5F7FF] group-hover:text-[#00D4E8] transition-colors">
                     {tool.name}
                   </span>
-                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#111B36] border border-[#203252] text-[#00D4E8] font-medium">
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-[#111B36] border border-[#203252] text-[#00D4E8] font-medium">
                     {tool.badge}
                   </span>
                 </div>
-                <p className="text-[11px] text-[#AAB6CC] leading-relaxed">
+                <p className="text-sm text-[#AAB6CC] leading-relaxed">
                   {tool.desc}
                 </p>
               </div>
 
-              <div className="mt-3 pt-2.5 border-t border-[#203252]/60 flex items-center justify-between text-[11px] text-[#71809B]">
+              <div className="mt-3 pt-2.5 border-t border-[#203252]/60 flex items-center justify-between text-sm text-[#71809B]">
                 <span>Acesse no navegador</span>
                 <a 
                   href={tool.link} 
@@ -219,7 +219,7 @@ export const ImageGuideStep: React.FC<{
                   className="text-[#00D4E8] hover:underline flex items-center gap-1 font-medium"
                 >
                   <span>Abrir</span>
-                  <ExternalLink className="w-3 h-3" />
+                  <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
             </div>
@@ -227,9 +227,9 @@ export const ImageGuideStep: React.FC<{
         </div>
 
         {/* Recomendações práticas */}
-        <div className="p-4 bg-[#080D20] border border-[#203252] rounded-xl space-y-2 text-xs">
+        <div className="p-4 bg-[#080D20] border border-[#203252] rounded-xl space-y-2 text-sm">
           <div className="flex items-start gap-2.5">
-            <Lightbulb className="w-4 h-4 text-[#F59E0B] shrink-0 mt-0.5" />
+            <Lightbulb className="w-5 h-5 text-[#F59E0B] shrink-0 mt-0.5" />
             <div className="space-y-1 text-[#AAB6CC]">
               <p>
                 <strong>Dica de Economia:</strong> Para criar poucas imagens, os créditos iniciais ou planos gratuitos/freemium dessas ferramentas geralmente já são mais do que suficientes para você testar ideias e produzir as fotos do seu site sem gastar nada.
@@ -245,21 +245,21 @@ export const ImageGuideStep: React.FC<{
       {/* 4. O QUE VOCÊ PODE CRIAR (EXEMPLOS POR NICHO) */}
       <div className="space-y-4">
         <div>
-          <h3 className="text-sm md:text-base font-bold text-[#F5F7FF] flex items-center gap-2">
-            <Camera className="w-4 h-4 text-[#00D4E8]" />
+          <h3 className="text-base md:text-base font-bold text-[#F5F7FF] flex items-center gap-2">
+            <Camera className="w-5 h-5 text-[#00D4E8]" />
             <span>O que você pode criar para o seu site</span>
           </h3>
-          <p className="text-xs text-[#AAB6CC] mt-1">
+          <p className="text-sm text-[#AAB6CC] mt-1">
             Pense nas imagens que realmente serão necessárias na estrutura do seu site. Veja exemplos por segmento:
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
           <div className="p-4 bg-[#080D20] border border-[#203252] rounded-xl space-y-2">
-            <div className="flex items-center gap-2 text-xs font-bold text-[#00D4E8]">
+            <div className="flex items-center gap-2 text-sm font-bold text-[#00D4E8]">
               <span>✂️ Exemplo: Barbearia</span>
             </div>
-            <ul className="text-xs text-[#AAB6CC] space-y-1.5 list-disc list-inside">
+            <ul className="text-sm text-[#AAB6CC] space-y-1.5 list-disc list-inside">
               <li>Foto principal do ambiente aconchegante</li>
               <li>Profissional atendendo um cliente</li>
               <li>Corte de cabelo em detalhe nítido</li>
@@ -269,10 +269,10 @@ export const ImageGuideStep: React.FC<{
           </div>
 
           <div className="p-4 bg-[#080D20] border border-[#203252] rounded-xl space-y-2">
-            <div className="flex items-center gap-2 text-xs font-bold text-[#00D4E8]">
+            <div className="flex items-center gap-2 text-sm font-bold text-[#00D4E8]">
               <span>🩺 Exemplo: Clínica / Saúde</span>
             </div>
-            <ul className="text-xs text-[#AAB6CC] space-y-1.5 list-disc list-inside">
+            <ul className="text-sm text-[#AAB6CC] space-y-1.5 list-disc list-inside">
               <li>Recepção acolhedora e moderna</li>
               <li>Profissional em consulta ou atendimento</li>
               <li>Ambiente clínico limpo e iluminado</li>
@@ -282,10 +282,10 @@ export const ImageGuideStep: React.FC<{
           </div>
 
           <div className="p-4 bg-[#080D20] border border-[#203252] rounded-xl space-y-2">
-            <div className="flex items-center gap-2 text-xs font-bold text-[#00D4E8]">
+            <div className="flex items-center gap-2 text-sm font-bold text-[#00D4E8]">
               <span>🍽️ Exemplo: Restaurante</span>
             </div>
-            <ul className="text-xs text-[#AAB6CC] space-y-1.5 list-disc list-inside">
+            <ul className="text-sm text-[#AAB6CC] space-y-1.5 list-disc list-inside">
               <li>Salão principal e mesas preparadas</li>
               <li>Prato estrela com iluminação apetitosa</li>
               <li>Chef ou cozinheiro finalizando pratos</li>
@@ -295,7 +295,7 @@ export const ImageGuideStep: React.FC<{
           </div>
         </div>
 
-        <div className="p-3 bg-[#111B36] border border-[#203252] rounded-xl text-xs text-[#AAB6CC]">
+        <div className="p-3 bg-[#111B36] border border-[#203252] rounded-xl text-sm text-[#AAB6CC]">
           <span className="text-[#00D4E8] font-bold">Lembrete:</span> Os exemplos acima são apenas ilustrativos. Pense nas imagens que valorizam o seu negócio ({project.name || 'sua empresa'}) e seus serviços cadastrados.
         </div>
       </div>
@@ -304,10 +304,10 @@ export const ImageGuideStep: React.FC<{
       <div className="bg-[#111B36] border border-[#203252] rounded-2xl p-5 md:p-6 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <span className="text-[11px] font-bold uppercase tracking-wider text-[#00D4E8] block">
+            <span className="text-sm font-bold uppercase tracking-wider text-[#00D4E8] block">
               Comando Pré-Configurado com Seus Dados
             </span>
-            <h4 className="text-sm md:text-base font-bold text-[#F5F7FF]">
+            <h4 className="text-base md:text-base font-bold text-[#F5F7FF]">
               PROMPT — GERAÇÃO DE FOTOGRAFIA PROFISSIONAL
             </h4>
           </div>
@@ -315,33 +315,33 @@ export const ImageGuideStep: React.FC<{
           <button
             type="button"
             onClick={handleCopyGen}
-            className="btn-cta px-4 py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 cursor-pointer shrink-0"
+            className="btn-cta px-4 py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 cursor-pointer shrink-0"
           >
             {copiedGen ? (
               <>
-                <Check className="w-4 h-4 text-[#00E599]" />
+                <Check className="w-5 h-5 text-[#00E599]" />
                 <span className="text-[#00E599]">Prompt Copiado!</span>
               </>
             ) : (
               <>
-                <Copy className="w-4 h-4" />
+                <Copy className="w-5 h-5" />
                 <span>COPIAR PROMPT</span>
               </>
             )}
           </button>
         </div>
 
-        <p className="text-xs text-[#AAB6CC] leading-relaxed">
+        <p className="text-sm text-[#AAB6CC] leading-relaxed">
           Copie o prompt abaixo e cole na ferramenta de geração de imagens que você escolher (Leonardo.ai, Ideogram, Midjourney, Google Flow etc.). Ele está em inglês porque os melhores modelos de IA visual foram treinados nesse idioma:
         </p>
 
         <div className="relative">
-          <div className="bg-[#080D20] border border-[#203252] rounded-xl p-4 text-xs font-mono text-[#F5F7FF] leading-relaxed whitespace-pre-wrap max-h-48 overflow-y-auto">
+          <div className="bg-[#080D20] border border-[#203252] rounded-xl p-4 text-sm font-mono text-[#F5F7FF] leading-relaxed whitespace-pre-wrap max-h-48 overflow-y-auto">
             {promptGeneration}
           </div>
         </div>
 
-        <div className="pt-2 flex items-center gap-2 text-[11px] text-[#71809B]">
+        <div className="pt-2 flex items-center gap-2 text-sm text-[#71809B]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#00D4E8]"></span>
           <span>Injetado automaticamente com os dados da sua empresa: {project.name || 'Seu Negócio'} ({project.segment || 'Segmento'}).</span>
         </div>
@@ -351,12 +351,12 @@ export const ImageGuideStep: React.FC<{
       <div className="bg-[#080D20] border-2 border-[#00D4E8]/40 rounded-2xl p-5 md:p-6 space-y-4">
         <div className="flex items-center gap-2.5 text-[#00D4E8]">
           <FolderDown className="w-5 h-5 shrink-0" />
-          <h4 className="text-sm md:text-base font-bold text-[#F5F7FF]">
+          <h4 className="text-base md:text-base font-bold text-[#F5F7FF]">
             Depois de gerar suas imagens: O que fazer
           </h4>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 text-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 text-sm">
           <div className="p-3 bg-[#111B36] border border-[#203252] rounded-lg">
             <span className="text-[#00D4E8] font-bold block mb-1">1. Gere opções</span>
             <p className="text-[#AAB6CC]">Gere 3 ou 4 variações usando o prompt acima na ferramenta de sua preferência.</p>
@@ -386,7 +386,7 @@ export const ImageGuideStep: React.FC<{
         {/* Alerta de destaque */}
         <div className="p-4 bg-[#0B1535] border border-[#00D4E8]/50 rounded-xl flex items-start gap-3">
           <ShieldCheck className="w-5 h-5 text-[#00D4E8] shrink-0 mt-0.5" />
-          <div className="space-y-1 text-xs">
+          <div className="space-y-1 text-sm">
             <span className="text-[#00D4E8] font-bold uppercase tracking-wider block">
               IMPORTANTE: Não precisa enviar suas imagens aqui
             </span>
@@ -399,16 +399,16 @@ export const ImageGuideStep: React.FC<{
 
       {/* 7. VOCÊ TAMBÉM PODE USAR SUAS PRÓPRIAS FOTOS */}
       <div className="bg-[#0B1535] border border-[#203252] rounded-2xl p-5 md:p-6 space-y-4">
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00D4E8]">
-          <ImageIcon className="w-4 h-4" />
+        <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#00D4E8]">
+          <ImageIcon className="w-5 h-5" />
           <span>Já tem fotos do seu negócio?</span>
         </div>
 
-        <p className="text-xs md:text-sm text-[#F5F7FF] leading-relaxed">
+        <p className="text-sm md:text-sm text-[#F5F7FF] leading-relaxed">
           Você <strong>não precisa obrigatoriamente gerar imagens do zero com IA</strong>. Se você já tem fotografias reais da sua empresa, do seu espaço físico, da sua equipe ou dos seus produtos (mesmo que tenham sido tiradas com um bom celular), você pode utilizá-las diretamente no seu site!
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1 text-xs text-[#AAB6CC]">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1 text-sm text-[#AAB6CC]">
           <div className="p-2.5 bg-[#111B36] border border-[#203252] rounded-lg">✓ Fotos da fachada real</div>
           <div className="p-2.5 bg-[#111B36] border border-[#203252] rounded-lg">✓ Ambiente e instalações</div>
           <div className="p-2.5 bg-[#111B36] border border-[#203252] rounded-lg">✓ Profissionais trabalhando</div>
@@ -417,7 +417,7 @@ export const ImageGuideStep: React.FC<{
           <div className="p-2.5 bg-[#111B36] border border-[#203252] rounded-lg">✓ Fotos tiradas no celular</div>
         </div>
 
-        <p className="text-xs text-[#AAB6CC] leading-relaxed">
+        <p className="text-sm text-[#AAB6CC] leading-relaxed">
           Além disso, você pode usar a IA para <strong>melhorar a iluminação, nitidez e qualidade fotográfica das fotos que você já possui</strong>, sem alterar as pessoas ou o ambiente real.
         </p>
       </div>
@@ -426,10 +426,10 @@ export const ImageGuideStep: React.FC<{
       <div className="bg-[#111B36] border border-[#203252] rounded-2xl p-5 md:p-6 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <span className="text-[11px] font-bold uppercase tracking-wider text-[#00D4E8] block">
+            <span className="text-sm font-bold uppercase tracking-wider text-[#00D4E8] block">
               Para Fotos Existentes do Celular
             </span>
-            <h4 className="text-sm md:text-base font-bold text-[#F5F7FF]">
+            <h4 className="text-base md:text-base font-bold text-[#F5F7FF]">
               PROMPT — MELHORAR FOTOGRAFIA DO MEU NEGÓCIO
             </h4>
           </div>
@@ -437,60 +437,60 @@ export const ImageGuideStep: React.FC<{
           <button
             type="button"
             onClick={handleCopyEnhance}
-            className="btn-cta px-4 py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 cursor-pointer shrink-0"
+            className="btn-cta px-4 py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 cursor-pointer shrink-0"
           >
             {copiedEnhance ? (
               <>
-                <Check className="w-4 h-4 text-[#00E599]" />
+                <Check className="w-5 h-5 text-[#00E599]" />
                 <span className="text-[#00E599]">Prompt Copiado!</span>
               </>
             ) : (
               <>
-                <Copy className="w-4 h-4" />
+                <Copy className="w-5 h-5" />
                 <span>COPIAR PROMPT</span>
               </>
             )}
           </button>
         </div>
 
-        <p className="text-xs text-[#AAB6CC] leading-relaxed">
+        <p className="text-sm text-[#AAB6CC] leading-relaxed">
           Se você já possui uma fotografia real do seu negócio, envie-a para uma ferramenta de IA (como ChatGPT Plus, Claude, Midjourney ou Leonardo) junto com este comando. A intenção é melhorar iluminação, nitidez, cores e contraste mantendo a identidade 100% autêntica:
         </p>
 
         <div className="relative">
-          <div className="bg-[#080D20] border border-[#203252] rounded-xl p-4 text-xs font-mono text-[#F5F7FF] leading-relaxed whitespace-pre-wrap max-h-48 overflow-y-auto">
+          <div className="bg-[#080D20] border border-[#203252] rounded-xl p-4 text-sm font-mono text-[#F5F7FF] leading-relaxed whitespace-pre-wrap max-h-48 overflow-y-auto">
             {promptEnhancement}
           </div>
         </div>
 
-        <div className="p-3 bg-[#080D20] border border-[#203252] rounded-xl text-xs text-[#AAB6CC] flex items-center gap-2">
-          <Wand2 className="w-4 h-4 text-[#00D4E8] shrink-0" />
+        <div className="p-3 bg-[#080D20] border border-[#203252] rounded-xl text-sm text-[#AAB6CC] flex items-center gap-2">
+          <Wand2 className="w-5 h-5 text-[#00D4E8] shrink-0" />
           <span>Basta fazer upload da foto no chat da IA e colar o prompt acima como mensagem de instrução.</span>
         </div>
       </div>
 
       {/* 9. CUIDADO COM IMAGENS FALSAS */}
       <div className="p-5 bg-[#080D20] border border-[#EF4444]/40 rounded-2xl space-y-2.5">
-        <div className="flex items-center gap-2 text-xs font-bold text-[#EF4444] uppercase tracking-wider">
-          <AlertTriangle className="w-4 h-4" />
+        <div className="flex items-center gap-2 text-sm font-bold text-[#EF4444] uppercase tracking-wider">
+          <AlertTriangle className="w-5 h-5" />
           <span>Cuidado com Imagens Irreais (Orientação Ética e Prática)</span>
         </div>
-        <p className="text-xs text-[#AAB6CC] leading-relaxed">
+        <p className="text-sm text-[#AAB6CC] leading-relaxed">
           As imagens geradas por IA devem representar com fidelidade o tipo e o porte do seu negócio. Se uma imagem gerada mostrar uma fachada de arranha-céu luxuoso ou uma equipe de 30 médicos em uma clínica individual, isso criará uma falsa expectativa que destrói a confiança do cliente quando ele visitar seu espaço físico.
         </p>
-        <p className="text-xs text-[#AAB6CC] leading-relaxed">
+        <p className="text-sm text-[#AAB6CC] leading-relaxed">
           Priorize sempre fotos que pareçam <strong>autênticas, acolhedoras e compatíveis com a sua estrutura real</strong>.
         </p>
       </div>
 
       {/* 10. CONEXÃO COM O PROMPT MESTRE FINAL */}
       <div className="bg-[#111B36] border border-[#203252] rounded-2xl p-5 md:p-6 space-y-4">
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00D4E8]">
-          <Sparkles className="w-4 h-4" />
+        <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#00D4E8]">
+          <Sparkles className="w-5 h-5" />
           <span>E quando eu for criar o site? (O Caminho Até o Site Pronto)</span>
         </div>
 
-        <p className="text-xs md:text-sm text-[#F5F7FF] leading-relaxed">
+        <p className="text-sm md:text-sm text-[#F5F7FF] leading-relaxed">
           As imagens que você gerou ou selecionou agora serão utilizadas mais adiante, junto com o <strong>Prompt Mestre Final (Módulo 06)</strong>. Veja exatamente como funciona o fluxo:
         </p>
 
@@ -498,37 +498,37 @@ export const ImageGuideStep: React.FC<{
         <div className="p-4 bg-[#080D20] border border-[#203252] rounded-xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
             <div className="p-3 bg-[#111B36] rounded-lg border border-[#203252] w-full md:w-auto">
-              <span className="text-[10px] text-[#00D4E8] font-bold uppercase block">Etapa 05.4 (Agora)</span>
-              <span className="text-xs font-bold text-[#F5F7FF]">Gerar ou Melhorar</span>
+              <span className="text-xs text-[#00D4E8] font-bold uppercase block">Etapa 05.4 (Agora)</span>
+              <span className="text-sm font-bold text-[#F5F7FF]">Gerar ou Melhorar</span>
             </div>
-            <ArrowRight className="w-4 h-4 text-[#00D4E8] rotate-90 md:rotate-0 shrink-0" />
+            <ArrowRight className="w-5 h-5 text-[#00D4E8] rotate-90 md:rotate-0 shrink-0" />
             
             <div className="p-3 bg-[#111B36] rounded-lg border border-[#203252] w-full md:w-auto">
-              <span className="text-[10px] text-[#00D4E8] font-bold uppercase block">Seleção</span>
-              <span className="text-xs font-bold text-[#F5F7FF]">Escolher as Melhores</span>
+              <span className="text-xs text-[#00D4E8] font-bold uppercase block">Seleção</span>
+              <span className="text-sm font-bold text-[#F5F7FF]">Escolher as Melhores</span>
             </div>
-            <ArrowRight className="w-4 h-4 text-[#00D4E8] rotate-90 md:rotate-0 shrink-0" />
+            <ArrowRight className="w-5 h-5 text-[#00D4E8] rotate-90 md:rotate-0 shrink-0" />
             
             <div className="p-3 bg-[#111B36] rounded-lg border border-[#203252] w-full md:w-auto">
-              <span className="text-[10px] text-[#00D4E8] font-bold uppercase block">Seu Computador</span>
-              <span className="text-xs font-bold text-[#F5F7FF]">Baixar e Guardar</span>
+              <span className="text-xs text-[#00D4E8] font-bold uppercase block">Seu Computador</span>
+              <span className="text-sm font-bold text-[#F5F7FF]">Baixar e Guardar</span>
             </div>
-            <ArrowRight className="w-4 h-4 text-[#00D4E8] rotate-90 md:rotate-0 shrink-0" />
+            <ArrowRight className="w-5 h-5 text-[#00D4E8] rotate-90 md:rotate-0 shrink-0" />
             
             <div className="p-3 bg-[#111B36] rounded-lg border border-[#203252] w-full md:w-auto">
-              <span className="text-[10px] text-[#00D4E8] font-bold uppercase block">Módulo 06</span>
-              <span className="text-xs font-bold text-[#F5F7FF]">Prompt Mestre + Imagens</span>
+              <span className="text-xs text-[#00D4E8] font-bold uppercase block">Módulo 06</span>
+              <span className="text-sm font-bold text-[#F5F7FF]">Prompt Mestre + Imagens</span>
             </div>
-            <ArrowRight className="w-4 h-4 text-[#00D4E8] rotate-90 md:rotate-0 shrink-0" />
+            <ArrowRight className="w-5 h-5 text-[#00D4E8] rotate-90 md:rotate-0 shrink-0" />
             
             <div className="p-3 bg-[#0B1535] rounded-lg border border-[#00D4E8] w-full md:w-auto">
-              <span className="text-[10px] text-[#00E599] font-bold uppercase block">Resultado Final</span>
-              <span className="text-xs font-bold text-[#00E599]">Site com Suas Imagens</span>
+              <span className="text-xs text-[#00E599] font-bold uppercase block">Resultado Final</span>
+              <span className="text-sm font-bold text-[#00E599]">Site com Suas Imagens</span>
             </div>
           </div>
         </div>
 
-        <p className="text-xs text-[#AAB6CC] leading-relaxed">
+        <p className="text-sm text-[#AAB6CC] leading-relaxed">
           Você poderá enviar <strong>uma ou várias imagens</strong> no chat da ferramenta de IA (ex: uma do banner do topo, outra dos serviços e outra da fachada). A IA analisará todas as fotos anexadas e posicionará cada uma nas seções correspondentes do site.
         </p>
       </div>
@@ -536,10 +536,10 @@ export const ImageGuideStep: React.FC<{
       {/* 11. CHECKLIST DE CONCLUSÃO DA TAREFA */}
       <div className="bg-[#080D20] border-2 border-[#203252] rounded-2xl p-5 md:p-6 space-y-5">
         <div>
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#00D4E8] block">
+          <span className="text-sm font-bold uppercase tracking-wider text-[#00D4E8] block">
             Sua Tarefa Interativa
           </span>
-          <h4 className="text-sm md:text-base font-bold text-[#F5F7FF]">
+          <h4 className="text-base md:text-base font-bold text-[#F5F7FF]">
             Depois de gerar: Confirme os passos para avançar
           </h4>
         </div>
@@ -564,12 +564,12 @@ export const ImageGuideStep: React.FC<{
               >
                 <div className="mt-0.5 shrink-0 text-[#00D4E8]">
                   {isChecked ? (
-                    <CheckSquare className="w-4 h-4 text-[#00D4E8]" />
+                    <CheckSquare className="w-5 h-5 text-[#00D4E8]" />
                   ) : (
-                    <Square className="w-4 h-4 text-[#71809B]" />
+                    <Square className="w-5 h-5 text-[#71809B]" />
                   )}
                 </div>
-                <span className="text-xs font-medium leading-relaxed">
+                <span className="text-sm font-medium leading-relaxed">
                   {item.label}
                 </span>
               </div>
@@ -578,17 +578,17 @@ export const ImageGuideStep: React.FC<{
         </div>
 
         <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#203252]">
-          <span className="text-xs text-[#71809B]">
+          <span className="text-sm text-[#71809B]">
             {isCompleted ? '✓ Etapa concluída no seu progresso.' : 'Marque os passos acima e conclua esta etapa.'}
           </span>
 
           <button
             type="button"
             onClick={handleFinalize}
-            className="btn-cta w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2 cursor-pointer"
+            className="btn-cta w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>{isCompleted ? 'Etapa Concluída (Salvar Novamente)' : 'Concluir Etapa e Continuar'}</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
       </div>

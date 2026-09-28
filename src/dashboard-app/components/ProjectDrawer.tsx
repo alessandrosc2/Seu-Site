@@ -32,8 +32,8 @@ export const ProjectDrawer: React.FC<{
                 <Briefcase className="w-5 h-5" />
               </div>
               <div>
-                <h2 className="text-base md:text-lg font-bold text-[#F5F7FF]">Meu Projeto</h2>
-                <p className="text-xs text-[#AAB6CC]">
+                <h2 className="text-lg md:text-lg font-bold text-[#F5F7FF]">Meu Projeto</h2>
+                <p className="text-sm text-[#AAB6CC]">
                   Fonte de verdade que alimenta os textos, cores e o Prompt Mestre
                 </p>
               </div>
@@ -52,7 +52,7 @@ export const ProjectDrawer: React.FC<{
           </div>
 
           {/* Quick Actions Bar */}
-          <div className="px-6 py-2.5 bg-[#111B36]/60 border-b border-[#203252] flex items-center justify-between text-xs">
+          <div className="px-6 py-2.5 bg-[#111B36]/60 border-b border-[#203252] flex items-center justify-between text-sm">
             <span className="text-[#AAB6CC]">
               Todas as alterações são salvas automaticamente.
             </span>
@@ -63,7 +63,7 @@ export const ProjectDrawer: React.FC<{
               }}
               className="text-[#00D4E8] hover:underline font-semibold flex items-center gap-1 cursor-pointer"
             >
-              <Layers className="w-3.5 h-3.5" />
+              <Layers className="w-4 h-4" />
               <span>Ver Briefing Consolidado</span>
             </button>
           </div>

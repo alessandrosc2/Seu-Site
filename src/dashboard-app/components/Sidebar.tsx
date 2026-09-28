@@ -79,19 +79,19 @@ export const Sidebar: React.FC<{
             className="cursor-pointer group"
           >
             <div className="flex items-center gap-2 mb-1">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00D4E8] to-[#1769FF] flex items-center justify-center text-white font-bold text-base shadow-lg shadow-[#00D4E8]/20 group-hover:scale-105 transition-transform">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00D4E8] to-[#1769FF] flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-[#00D4E8]/20 group-hover:scale-105 transition-transform">
                 M
               </div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#00D4E8] block">
+                <span className="text-sm font-bold uppercase tracking-widest text-[#00D4E8] block">
                   MANUAL GUIADO
                 </span>
-                <span className="text-sm font-extrabold text-[#F5F7FF] tracking-tight">
+                <span className="text-base font-extrabold text-[#F5F7FF] tracking-tight">
                   MEU NEGÓCIO ONLINE
                 </span>
               </div>
             </div>
-            <p className="text-[11px] text-[#71809B] pl-10">
+            <p className="text-sm text-[#71809B] pl-10">
               Manual e prompts para criar seu site com IA
             </p>
           </div>
@@ -100,13 +100,13 @@ export const Sidebar: React.FC<{
           {onOpenSearch && (
             <button
               onClick={() => handleNav(onOpenSearch)}
-              className="w-full py-2 px-3 rounded-lg bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-xs text-[#AAB6CC] flex items-center justify-between transition-colors cursor-pointer"
+              className="w-full py-2 px-3 rounded-lg bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-sm text-[#AAB6CC] flex items-center justify-between transition-colors cursor-pointer"
             >
               <span className="flex items-center gap-2">
                 <span className="text-[#00D4E8]">🔍</span>
                 <span>Buscar no manual...</span>
               </span>
-              <kbd className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#080D20] text-[#71809B] border border-[#203252]">
+              <kbd className="text-xs font-mono px-1.5 py-0.5 rounded bg-[#080D20] text-[#71809B] border border-[#203252]">
                 Ctrl+K
               </kbd>
             </button>
@@ -117,34 +117,34 @@ export const Sidebar: React.FC<{
         <div className="flex-1 overflow-y-auto px-3 py-4 space-y-6">
           {/* Main sections */}
           <div className="space-y-1">
-            <div className="px-3 mb-2 text-[10px] font-bold uppercase tracking-wider text-[#71809B]">
+            <div className="px-3 mb-2 text-xs font-bold uppercase tracking-wider text-[#71809B]">
               NAVEGAÇÃO
             </div>
 
             <button
               onClick={() => handleNav(goToDashboard)}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer ${
                 activeView === 'dashboard'
                   ? 'bg-[#152342] text-[#00D4E8] border border-[#00D4E8]/30 shadow-sm'
                   : 'text-[#AAB6CC] hover:bg-[#111B36] hover:text-[#F5F7FF]'
               }`}
             >
-              <Home className="w-4 h-4 text-[#00D4E8]" />
+              <Home className="w-5 h-5 text-[#00D4E8]" />
               <span>Painel Geral & Jornada</span>
             </button>
 
             <button
               onClick={() => handleNav(() => setActiveView('prompts_hub'))}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer ${
                 activeView === 'prompts_hub'
                   ? 'bg-[#152342] text-[#00D4E8] border border-[#00D4E8]/30 shadow-sm'
                   : 'text-[#AAB6CC] hover:bg-[#111B36] hover:text-[#F5F7FF]'
               }`}
             >
-              <Sparkles className="w-4 h-4 text-[#00D4E8]" />
+              <Sparkles className="w-5 h-5 text-[#00D4E8]" />
               <div className="flex items-center justify-between flex-1">
                 <span>Central de Prompts</span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#00D4E8]/10 text-[#00D4E8] font-bold">
+                <span className="text-xs px-1.5 py-0.5 rounded bg-[#00D4E8]/10 text-[#00D4E8] font-bold">
                   IA
                 </span>
               </div>
@@ -152,12 +152,12 @@ export const Sidebar: React.FC<{
 
             <button
               onClick={() => handleNav(() => setShowProjectDrawer(true))}
-              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-[#AAB6CC] hover:bg-[#111B36] hover:text-[#F5F7FF] transition-all cursor-pointer"
+              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-[#AAB6CC] hover:bg-[#111B36] hover:text-[#F5F7FF] transition-all cursor-pointer"
             >
-              <Briefcase className="w-4 h-4 text-[#1769FF]" />
+              <Briefcase className="w-5 h-5 text-[#1769FF]" />
               <div className="flex items-center justify-between flex-1">
                 <span>Meu Projeto</span>
-                <span className="text-[10px] text-[#71809B] font-mono truncate max-w-[90px]">
+                <span className="text-xs text-[#71809B] font-mono truncate max-w-[90px]">
                   {project.name || 'Em branco'}
                 </span>
               </div>
@@ -165,20 +165,20 @@ export const Sidebar: React.FC<{
 
             <button
               onClick={() => handleNav(() => setActiveView('briefing'))}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer ${
                 activeView === 'briefing'
                   ? 'bg-[#152342] text-[#00D4E8] border border-[#00D4E8]/30 shadow-sm'
                   : 'text-[#AAB6CC] hover:bg-[#111B36] hover:text-[#F5F7FF]'
               }`}
             >
-              <Award className="w-4 h-4 text-[#F59E0B]" />
+              <Award className="w-5 h-5 text-[#F59E0B]" />
               <span>Briefing Mestre</span>
             </button>
           </div>
 
           {/* Modules List (00 to 10) */}
           <div className="space-y-1">
-            <div className="px-3 mb-2 flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-[#71809B]">
+            <div className="px-3 mb-2 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#71809B]">
               <span>MÓDULOS DE EXECUÇÃO</span>
               <span className="text-mono">00–10</span>
             </div>
@@ -193,14 +193,14 @@ export const Sidebar: React.FC<{
                   <button
                     key={mod.id}
                     onClick={() => handleNav(() => goToModule(mod.id))}
-                    className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs transition-all cursor-pointer ${
+                    className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-sm transition-all cursor-pointer ${
                       isActive
                         ? 'bg-[#111B36] text-[#F5F7FF] font-semibold border-l-2 border-[#00D4E8]'
                         : 'text-[#AAB6CC] hover:bg-[#111B36]/60 hover:text-[#F5F7FF]'
                     }`}
                   >
                     <div className="flex items-center gap-2.5 truncate min-w-0">
-                      <span className="font-mono text-[11px] text-[#71809B] font-bold">
+                      <span className="font-mono text-sm text-[#71809B] font-bold">
                         {mod.number}
                       </span>
                       <span className="truncate">{mod.name}</span>
@@ -208,9 +208,9 @@ export const Sidebar: React.FC<{
 
                     <div className="flex items-center gap-1.5 shrink-0 ml-2">
                       {isComplete ? (
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#00E599]" />
+                        <CheckCircle2 className="w-4 h-4 text-[#00E599]" />
                       ) : (
-                        <span className="text-[10px] font-mono text-[#71809B]">
+                        <span className="text-xs font-mono text-[#71809B]">
                           {progress.completed}/{progress.total}
                         </span>
                       )}
@@ -223,7 +223,7 @@ export const Sidebar: React.FC<{
 
           {/* Plano Completo section */}
           <div className="pt-2 border-t border-[#203252]/60 space-y-2">
-            <div className="px-3 mb-1 text-[10px] font-bold uppercase tracking-wider text-[#71809B]">
+            <div className="px-3 mb-1 text-xs font-bold uppercase tracking-wider text-[#71809B]">
               EXPANSÃO & METODOLOGIA
             </div>
 
@@ -237,15 +237,15 @@ export const Sidebar: React.FC<{
               }`}
             >
               <div className="flex items-center justify-between mb-1">
-                <span className="text-xs font-bold text-[#00E599] flex items-center gap-1.5">
-                  <Globe className="w-3.5 h-3.5" />
+                <span className="text-sm font-bold text-[#00E599] flex items-center gap-1.5">
+                  <Globe className="w-4 h-4" />
                   <span>REGISTRO & HOSPEDAGEM</span>
                 </span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#00E599]/15 text-[#00E599] font-bold">
+                <span className="text-xs px-1.5 py-0.5 rounded bg-[#00E599]/15 text-[#00E599] font-bold">
                   Novo
                 </span>
               </div>
-              <p className="text-[11px] text-[#AAB6CC] leading-snug">
+              <p className="text-sm text-[#AAB6CC] leading-snug">
                 Domínio próprio, Vercel, Netlify e Hostinger para leigos.
               </p>
             </button>
@@ -260,15 +260,15 @@ export const Sidebar: React.FC<{
               }`}
             >
               <div className="flex items-center justify-between mb-1">
-                <span className="text-xs font-bold text-[#00D4E8] flex items-center gap-1.5">
-                  <Search className="w-3.5 h-3.5" />
+                <span className="text-sm font-bold text-[#00D4E8] flex items-center gap-1.5">
+                  <Search className="w-4 h-4" />
                   <span>FASE 3: SER ENCONTRADO</span>
                 </span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#00D4E8]/15 text-[#00D4E8] font-bold">
+                <span className="text-xs px-1.5 py-0.5 rounded bg-[#00D4E8]/15 text-[#00D4E8] font-bold">
                   SEO & LGPD
                 </span>
               </div>
-              <p className="text-[11px] text-[#AAB6CC] leading-snug">
+              <p className="text-sm text-[#AAB6CC] leading-snug">
                 Google Maps, Search Console e aviso de cookies.
               </p>
             </button>
@@ -282,15 +282,15 @@ export const Sidebar: React.FC<{
               }`}
             >
               <div className="flex items-center justify-between mb-1">
-                <span className="text-xs font-bold text-[#00D4E8] flex items-center gap-1.5">
-                  <TrendingUp className="w-3.5 h-3.5" />
+                <span className="text-sm font-bold text-[#00D4E8] flex items-center gap-1.5">
+                  <TrendingUp className="w-4 h-4" />
                   <span>PLANO COMPLETO</span>
                 </span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#152342] text-[#AAB6CC]">
+                <span className="text-xs px-1.5 py-0.5 rounded bg-[#152342] text-[#AAB6CC]">
                   21 Módulos
                 </span>
               </div>
-              <p className="text-[11px] text-[#AAB6CC] leading-snug">
+              <p className="text-sm text-[#AAB6CC] leading-snug">
                 Como transformar essa habilidade em serviço para clientes.
               </p>
             </button>
@@ -299,7 +299,7 @@ export const Sidebar: React.FC<{
 
         {/* Footer Progress & Reset */}
         <div className="p-4 border-t border-[#203252] bg-[#0B1535]">
-          <div className="flex items-center justify-between text-xs mb-2">
+          <div className="flex items-center justify-between text-sm mb-2">
             <span className="text-[#AAB6CC] font-semibold">Progresso Geral</span>
             <span className="font-mono font-bold text-[#00D4E8]">{percentage}%</span>
           </div>
@@ -311,7 +311,7 @@ export const Sidebar: React.FC<{
             />
           </div>
 
-          <div className="flex items-center justify-between text-[11px] text-[#71809B] mb-2">
+          <div className="flex items-center justify-between text-sm text-[#71809B] mb-2">
             <span>{completedCount} de {totalCount} etapas</span>
             <span>{Math.max(0, totalCount - completedCount)} restantes</span>
           </div>
@@ -322,17 +322,17 @@ export const Sidebar: React.FC<{
               type="button"
               onClick={() => setIsResetModalOpen(true)}
               title="Reiniciar etapas do projeto"
-              className="w-full py-1.5 px-2 rounded text-[11px] font-semibold bg-[#111B36] hover:bg-[#152342] text-[#71809B] hover:text-[#00D4E8] border border-[#203252] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+              className="w-full py-1.5 px-2 rounded text-sm font-semibold bg-[#111B36] hover:bg-[#152342] text-[#71809B] hover:text-[#00D4E8] border border-[#203252] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
             >
-              <RotateCcw className="w-3 h-3" />
+              <RotateCcw className="w-4 h-4" />
               <span>Reiniciar Projeto (Limpar Dados)</span>
             </button>
             <button
               type="button"
               onClick={handleLogout}
-              className="w-full py-1.5 px-2 rounded text-[11px] font-semibold bg-[#111B36] hover:bg-red-500/10 text-red-400 hover:text-red-300 border border-[#203252] hover:border-red-500/30 transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+              className="w-full py-1.5 px-2 rounded text-sm font-semibold bg-[#111B36] hover:bg-red-500/10 text-red-400 hover:text-red-300 border border-[#203252] hover:border-red-500/30 transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
             >
-              <LogOut className="w-3 h-3" />
+              <LogOut className="w-4 h-4" />
               <span>Sair da Conta</span>
             </button>
           </div>

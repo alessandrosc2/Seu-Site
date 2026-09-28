@@ -48,10 +48,10 @@ export const ResetConfirmModal: React.FC = () => {
               <RotateCcw className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-[#F5F7FF] tracking-tight">
+              <h3 className="text-lg font-bold text-[#F5F7FF] tracking-tight">
                 Reiniciar Projeto & Etapas
               </h3>
-              <p className="text-xs text-[#AAB6CC]">
+              <p className="text-sm text-[#AAB6CC]">
                 Progresso atual: {percentage}% ({completedCount} etapas concluídas)
               </p>
             </div>
@@ -68,7 +68,7 @@ export const ResetConfirmModal: React.FC = () => {
 
         {/* Content & Options */}
         <div className="p-6 space-y-4">
-          <p className="text-xs text-[#AAB6CC] leading-relaxed">
+          <p className="text-sm text-[#AAB6CC] leading-relaxed">
             Como você deseja recomeçar no <strong>Meu Negócio Online</strong>? Escolha uma das opções abaixo:
           </p>
 
@@ -79,22 +79,22 @@ export const ResetConfirmModal: React.FC = () => {
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#00D4E8]" />
-                <span className="text-xs font-bold text-[#F5F7FF] group-hover:text-[#00D4E8] transition-colors">
+                <ShieldCheck className="w-5 h-5 text-[#00D4E8]" />
+                <span className="text-sm font-bold text-[#F5F7FF] group-hover:text-[#00D4E8] transition-colors">
                   Reiniciar Etapas (Manter Meu Projeto)
                 </span>
               </div>
-              <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-[#00D4E8]/20 text-[#00D4E8] border border-[#00D4E8]/30">
+              <span className="text-xs font-extrabold uppercase px-2 py-0.5 rounded-full bg-[#00D4E8]/20 text-[#00D4E8] border border-[#00D4E8]/30">
                 Recomendado
               </span>
             </div>
 
-            <p className="text-[11px] text-[#AAB6CC] leading-relaxed">
+            <p className="text-sm text-[#AAB6CC] leading-relaxed">
               Zera todas as etapas da jornada (volta para 0% de progresso), <strong>preservando intactos</strong> os dados da sua empresa ({project.name || 'Meu Negócio'}), catálogo de serviços, contatos e a <strong>Identidade Visual</strong> estruturada que alimenta os prompts de IA.
             </p>
 
-            <div className="flex items-center gap-1.5 text-[10px] text-[#22C55E] font-medium pt-1">
-              <CheckCircle2 className="w-3.5 h-3.5" />
+            <div className="flex items-center gap-1.5 text-xs text-[#22C55E] font-medium pt-1">
+              <CheckCircle2 className="w-4 h-4" />
               <span>Dados do Meu Projeto e Briefing continuam salvos</span>
             </div>
           </div>
@@ -105,13 +105,13 @@ export const ResetConfirmModal: React.FC = () => {
             className="group p-4 rounded-xl border border-[#203252] hover:border-[#EF4444]/60 bg-[#080D20] hover:bg-[#141224] transition-all cursor-pointer space-y-2"
           >
             <div className="flex items-center gap-2">
-              <Trash2 className="w-4 h-4 text-[#71809B] group-hover:text-[#EF4444] transition-colors" />
-              <span className="text-xs font-bold text-[#AAB6CC] group-hover:text-[#EF4444] transition-colors">
+              <Trash2 className="w-5 h-5 text-[#71809B] group-hover:text-[#EF4444] transition-colors" />
+              <span className="text-sm font-bold text-[#AAB6CC] group-hover:text-[#EF4444] transition-colors">
                 Zerar Tudo do Zero (Limpar Tudo)
               </span>
             </div>
 
-            <p className="text-[11px] text-[#71809B] leading-relaxed">
+            <p className="text-sm text-[#71809B] leading-relaxed">
               Apaga completamente todas as informações de Meu Projeto e zera todas as etapas, restaurando a aplicação para o estado inicial em branco.
             </p>
           </div>
@@ -122,7 +122,7 @@ export const ResetConfirmModal: React.FC = () => {
           <button
             type="button"
             onClick={() => setIsResetModalOpen(false)}
-            className="px-4 py-2 rounded-xl text-xs font-semibold text-[#AAB6CC] hover:text-[#F5F7FF] bg-[#111B36] hover:bg-[#152342] border border-[#203252] transition-colors cursor-pointer"
+            className="px-4 py-2 rounded-xl text-sm font-semibold text-[#AAB6CC] hover:text-[#F5F7FF] bg-[#111B36] hover:bg-[#152342] border border-[#203252] transition-colors cursor-pointer"
           >
             Cancelar
           </button>

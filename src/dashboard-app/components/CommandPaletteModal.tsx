@@ -215,12 +215,12 @@ export const CommandPaletteModal: React.FC<{
             }}
             onKeyDown={handleKeyDown}
             placeholder="Buscar por módulo, etapa, prompt de IA ou ação..."
-            className="w-full bg-transparent text-sm text-[#F5F7FF] placeholder-[#71809B] focus:outline-none"
+            className="w-full bg-transparent text-base text-[#F5F7FF] placeholder-[#71809B] focus:outline-none"
           />
           {query && (
             <button 
               onClick={() => setQuery('')}
-              className="text-xs text-[#71809B] hover:text-[#F5F7FF] px-1.5 py-0.5"
+              className="text-sm text-[#71809B] hover:text-[#F5F7FF] px-1.5 py-0.5"
             >
               Limpar
             </button>
@@ -229,14 +229,14 @@ export const CommandPaletteModal: React.FC<{
             onClick={onClose}
             className="p-1 rounded-lg text-[#71809B] hover:text-[#F5F7FF] hover:bg-[#111B36] transition-colors"
           >
-            <X className="w-4 h-4" />
+            <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Results List */}
         <div className="flex-1 overflow-y-auto p-2 space-y-1 divide-y divide-[#203252]/30">
           {filteredItems.length === 0 ? (
-            <div className="p-8 text-center text-xs text-[#71809B]">
+            <div className="p-8 text-center text-sm text-[#71809B]">
               Nenhum resultado encontrado para &quot;<span className="text-[#F5F7FF]">{query}</span>&quot;.
             </div>
           ) : (
@@ -253,7 +253,7 @@ export const CommandPaletteModal: React.FC<{
                 >
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2 mb-0.5">
-                      <span className={`text-[10px] font-mono uppercase font-bold px-1.5 py-0.5 rounded ${
+                      <span className={`text-xs font-mono uppercase font-bold px-1.5 py-0.5 rounded ${
                         item.type === 'prompt' 
                           ? 'bg-[#00D4E8]/15 text-[#00D4E8]'
                           : item.type === 'module'
@@ -264,16 +264,16 @@ export const CommandPaletteModal: React.FC<{
                       }`}>
                         {item.badge}
                       </span>
-                      <h4 className="text-xs font-semibold truncate text-[#F5F7FF]">
+                      <h4 className="text-sm font-semibold truncate text-[#F5F7FF]">
                         {item.title}
                       </h4>
                     </div>
-                    <p className="text-[11px] text-[#71809B] truncate pl-1">
+                    <p className="text-sm text-[#71809B] truncate pl-1">
                       {item.subtitle}
                     </p>
                   </div>
 
-                  <ArrowRight className={`w-3.5 h-3.5 shrink-0 transition-transform ${
+                  <ArrowRight className={`w-4 h-4 shrink-0 transition-transform ${
                     isSelected ? 'text-[#00D4E8] translate-x-0.5' : 'text-[#71809B]'
                   }`} />
                 </div>
@@ -283,7 +283,7 @@ export const CommandPaletteModal: React.FC<{
         </div>
 
         {/* Footer shortcuts */}
-        <div className="p-2.5 bg-[#070E22] border-t border-[#203252] flex items-center justify-between text-[11px] text-[#71809B] px-4">
+        <div className="p-2.5 bg-[#070E22] border-t border-[#203252] flex items-center justify-between text-sm text-[#71809B] px-4">
           <div className="flex items-center gap-3">
             <span>Use <kbd className="px-1 py-0.5 rounded bg-[#111B36] text-[#AAB6CC]">↑</kbd> <kbd className="px-1 py-0.5 rounded bg-[#111B36] text-[#AAB6CC]">↓</kbd> para navegar</span>
             <span><kbd className="px-1 py-0.5 rounded bg-[#111B36] text-[#AAB6CC]">Enter</kbd> para abrir</span>

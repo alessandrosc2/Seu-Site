@@ -126,9 +126,9 @@ export const StepView: React.FC = () => {
       <div className="flex items-center justify-between">
         <button
           onClick={() => goToModule(activeModule.id)}
-          className="inline-flex items-center gap-2 text-xs font-semibold text-[#AAB6CC] hover:text-[#00D4E8] transition-colors cursor-pointer"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-[#AAB6CC] hover:text-[#00D4E8] transition-colors cursor-pointer"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-5 h-5" />
           <span>Voltar para Módulo {activeModule.number}: {activeModule.name}</span>
         </button>
 
@@ -136,12 +136,12 @@ export const StepView: React.FC = () => {
           {isCompleted ? (
             <button
               onClick={() => uncompleteStep(activeStep.id)}
-              className="text-xs text-[#71809B] hover:text-[#EF4444] transition-colors cursor-pointer"
+              className="text-sm text-[#71809B] hover:text-[#EF4444] transition-colors cursor-pointer"
             >
               Desmarcar conclusão
             </button>
           ) : (
-            <span className="text-xs text-[#71809B]">Etapa em andamento</span>
+            <span className="text-sm text-[#71809B]">Etapa em andamento</span>
           )}
         </div>
       </div>
@@ -230,7 +230,7 @@ export const StepView: React.FC = () => {
         {/* Task Type: SINGLE TEXT INPUT */}
         {activeStep.taskType === 'text_input' && (
           <div className="space-y-4">
-            <label className="block text-xs font-semibold text-[#F5F7FF]">
+            <label className="block text-sm font-semibold text-[#F5F7FF]">
               Digite aqui a informação para o seu projeto:
             </label>
             <textarea
@@ -238,9 +238,9 @@ export const StepView: React.FC = () => {
               value={singleText}
               onChange={(e) => setSingleText(e.target.value)}
               placeholder="Digite aqui as informações solicitadas nesta etapa..."
-              className="w-full bg-[#080D20] border border-[#203252] rounded-xl p-3.5 text-xs text-[#F5F7FF] placeholder-[#71809B] focus:border-[#00D4E8] focus:outline-none transition-colors"
+              className="w-full bg-[#080D20] border border-[#203252] rounded-xl p-3.5 text-sm text-[#F5F7FF] placeholder-[#71809B] focus:border-[#00D4E8] focus:outline-none transition-colors"
             />
-            <div className="flex items-center justify-between text-xs">
+            <div className="flex items-center justify-between text-sm">
               <span className="text-[#71809B]">
                 Esta informação será guardada no painel "Meu Projeto" e reutilizada na IA.
               </span>
@@ -250,9 +250,9 @@ export const StepView: React.FC = () => {
                   handleSaveAndComplete();
                   setFeedbackSaved(true);
                 }}
-                className="btn-cta px-4 py-2 rounded-lg font-bold text-xs flex items-center gap-1.5 cursor-pointer"
+                className="btn-cta px-4 py-2 rounded-lg font-bold text-sm flex items-center gap-1.5 cursor-pointer"
               >
-                <Save className="w-3.5 h-3.5" />
+                <Save className="w-4 h-4" />
                 <span>Salvar Informação</span>
               </button>
             </div>
@@ -265,42 +265,42 @@ export const StepView: React.FC = () => {
             {activeStep.id === '01-04' ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-[#AAB6CC] mb-1">WhatsApp Comercial</label>
+                  <label className="block text-sm font-semibold text-[#AAB6CC] mb-1">WhatsApp Comercial</label>
                   <input
                     type="text"
                     value={project.whatsapp}
                     onChange={(e) => updateProject({ whatsapp: e.target.value })}
                     placeholder="(83) 99876-5432"
-                    className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                    className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-[#AAB6CC] mb-1">Instagram (@)</label>
+                  <label className="block text-sm font-semibold text-[#AAB6CC] mb-1">Instagram (@)</label>
                   <input
                     type="text"
                     value={project.instagram}
                     onChange={(e) => updateProject({ instagram: e.target.value })}
                     placeholder="@seunegocio"
-                    className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                    className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
                   />
                 </div>
                 <div className="sm:col-span-2">
-                  <label className="block text-xs font-semibold text-[#AAB6CC] mb-1">Endereço Completo ou "Atendimento 100% Online"</label>
+                  <label className="block text-sm font-semibold text-[#AAB6CC] mb-1">Endereço Completo ou "Atendimento 100% Online"</label>
                   <input
                     type="text"
                     value={project.address}
                     onChange={(e) => updateProject({ address: e.target.value })}
                     placeholder="Av. Exemplo, 1000 - Bairro, Cidade - UF"
-                    className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                    className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
                   />
                 </div>
               </div>
             ) : (
               <div className="space-y-2">
-                <label className="block text-xs font-semibold text-[#AAB6CC] mb-1">Seus Principais Diferenciais:</label>
+                <label className="block text-sm font-semibold text-[#AAB6CC] mb-1">Seus Principais Diferenciais:</label>
                 {project.differentials.map((diff, idx) => (
                   <div key={idx} className="flex items-center gap-2">
-                    <span className="text-xs font-mono text-[#00D4E8] font-bold shrink-0">{idx + 1}.</span>
+                    <span className="text-sm font-mono text-[#00D4E8] font-bold shrink-0">{idx + 1}.</span>
                     <input
                       type="text"
                       value={diff}
@@ -309,7 +309,7 @@ export const StepView: React.FC = () => {
                         updated[idx] = e.target.value;
                         updateProject({ differentials: updated });
                       }}
-                      className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                      className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
                     />
                   </div>
                 ))}
@@ -322,7 +322,7 @@ export const StepView: React.FC = () => {
         {activeStep.taskType === 'services_editor' && (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-xs text-[#AAB6CC]">
+              <span className="text-sm text-[#AAB6CC]">
                 Cadastre seus serviços mais lucrativos e frequentes:
               </span>
               <button
@@ -335,9 +335,9 @@ export const StepView: React.FC = () => {
                   };
                   updateProject({ services: [...project.services, newService] });
                 }}
-                className="text-xs text-[#00D4E8] hover:underline flex items-center gap-1 font-semibold cursor-pointer"
+                className="text-sm text-[#00D4E8] hover:underline flex items-center gap-1 font-semibold cursor-pointer"
               >
-                <Plus className="w-3.5 h-3.5" /> Adicionar Outro Serviço
+                <Plus className="w-4 h-4" /> Adicionar Outro Serviço
               </button>
             </div>
 
@@ -346,7 +346,7 @@ export const StepView: React.FC = () => {
                 <div key={srv.id} className="bg-[#080D20] border border-[#203252] rounded-xl p-3.5 space-y-2">
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2 flex-1">
-                      <span className="w-5 h-5 rounded bg-[#111B36] text-[#00D4E8] text-[11px] font-mono font-bold flex items-center justify-center shrink-0">
+                      <span className="w-5 h-5 rounded bg-[#111B36] text-[#00D4E8] text-sm font-mono font-bold flex items-center justify-center shrink-0">
                         {idx + 1}
                       </span>
                       <input
@@ -357,7 +357,7 @@ export const StepView: React.FC = () => {
                           updated[idx].title = e.target.value;
                           updateProject({ services: updated });
                         }}
-                        className="w-full bg-[#111B36] border border-[#203252] rounded-lg p-1.5 text-xs font-bold text-[#F5F7FF]"
+                        className="w-full bg-[#111B36] border border-[#203252] rounded-lg p-1.5 text-sm font-bold text-[#F5F7FF]"
                         placeholder="Nome do Serviço"
                       />
                     </div>
@@ -369,7 +369,7 @@ export const StepView: React.FC = () => {
                         }}
                         className="p-1 text-[#71809B] hover:text-[#EF4444]"
                       >
-                        <Trash2 className="w-4 h-4" />
+                        <Trash2 className="w-5 h-5" />
                       </button>
                     )}
                   </div>
@@ -381,7 +381,7 @@ export const StepView: React.FC = () => {
                       updated[idx].description = e.target.value;
                       updateProject({ services: updated });
                     }}
-                    className="w-full bg-[#111B36] border border-[#203252] rounded-lg p-2 text-xs text-[#AAB6CC]"
+                    className="w-full bg-[#111B36] border border-[#203252] rounded-lg p-2 text-sm text-[#AAB6CC]"
                     placeholder="Descrição do serviço..."
                   />
                 </div>
@@ -393,7 +393,7 @@ export const StepView: React.FC = () => {
         {/* Task Type: PAGES PICKER */}
         {activeStep.taskType === 'pages_picker' && (
           <div className="space-y-3">
-            <span className="text-xs text-[#AAB6CC] block mb-2">
+            <span className="text-sm text-[#AAB6CC] block mb-2">
               Selecione as seções que comporão a estrutura do seu site:
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -422,14 +422,14 @@ export const StepView: React.FC = () => {
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-xs font-bold text-[#F5F7FF]">{p.name}</span>
-                      <div className={`w-4 h-4 rounded flex items-center justify-center text-xs ${
+                      <span className="text-sm font-bold text-[#F5F7FF]">{p.name}</span>
+                      <div className={`w-5 h-5 rounded flex items-center justify-center text-sm ${
                         isSelected ? 'bg-[#00D4E8] text-black font-bold' : 'border border-[#203252]'
                       }`}>
                         {isSelected && '✓'}
                       </div>
                     </div>
-                    <p className="text-[11px] text-[#AAB6CC]">{p.desc}</p>
+                    <p className="text-sm text-[#AAB6CC]">{p.desc}</p>
                   </div>
                 );
               })}
@@ -445,7 +445,7 @@ export const StepView: React.FC = () => {
         {/* Task Type: VISUAL PICKER */}
         {activeStep.taskType === 'visual_picker' && (
           <div className="space-y-4">
-            <span className="text-xs text-[#AAB6CC] block">
+            <span className="text-sm text-[#AAB6CC] block">
               Escolha a direção de estilo visual que melhor reflete seu negócio:
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -465,13 +465,13 @@ export const StepView: React.FC = () => {
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold text-[#F5F7FF]">{style.title}</span>
+                    <span className="text-sm font-bold text-[#F5F7FF]">{style.title}</span>
                     <div 
-                      className="w-4 h-4 rounded-full border border-[#203252]"
+                      className="w-5 h-5 rounded-full border border-[#203252]"
                       style={{ backgroundColor: style.accent }}
                     />
                   </div>
-                  <p className="text-[11px] text-[#AAB6CC] leading-relaxed">{style.desc}</p>
+                  <p className="text-sm text-[#AAB6CC] leading-relaxed">{style.desc}</p>
                 </div>
               ))}
             </div>
@@ -483,19 +483,19 @@ export const StepView: React.FC = () => {
           <div className="space-y-4">
             <div className="p-4 bg-[#080D20] border border-[#203252] rounded-xl space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-[#00D4E8]">BRIEFING MESTRE CONSOLIDADO</span>
-                <span className="text-[10px] text-[#22C55E] font-semibold">Pronto para uso</span>
+                <span className="text-sm font-bold text-[#00D4E8]">BRIEFING MESTRE CONSOLIDADO</span>
+                <span className="text-xs text-[#22C55E] font-semibold">Pronto para uso</span>
               </div>
-              <p className="text-xs text-[#AAB6CC]">
+              <p className="text-sm text-[#AAB6CC]">
                 Empresa: <strong>{project.name}</strong> • Segmento: <strong>{project.segment}</strong> • Local: <strong>{project.city}</strong>
               </p>
-              <p className="text-xs text-[#71809B]">
+              <p className="text-sm text-[#71809B]">
                 {project.services.length} serviços cadastrados • {project.differentials.length} diferenciais estruturados
               </p>
             </div>
 
             <div className="flex items-center justify-between pt-2">
-              <span className="text-xs text-[#71809B]">
+              <span className="text-sm text-[#71809B]">
                 Clique no botão abaixo para aprovar formalmente o Briefing Mestre.
               </span>
               <button
@@ -504,9 +504,9 @@ export const StepView: React.FC = () => {
                   updateProject({ briefingApproved: true });
                   handleSaveAndComplete();
                 }}
-                className="btn-cta px-6 py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 cursor-pointer"
+                className="btn-cta px-6 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 cursor-pointer"
               >
-                <Check className="w-4 h-4" />
+                <Check className="w-5 h-5" />
                 <span>APROVAR BRIEFING MESTRE</span>
               </button>
             </div>
@@ -516,7 +516,7 @@ export const StepView: React.FC = () => {
         {/* Task Type: REVIEW CHECKLIST */}
         {activeStep.taskType === 'review_checklist' && (
           <div className="space-y-3">
-            <span className="text-xs text-[#AAB6CC] block mb-2">
+            <span className="text-sm text-[#AAB6CC] block mb-2">
               Marque cada verificação realizada para garantir a qualidade do site:
             </span>
             <div className="space-y-2">
@@ -543,9 +543,9 @@ export const StepView: React.FC = () => {
                           }
                         });
                       }}
-                      className="w-4 h-4 rounded text-[#00D4E8] bg-[#111B36] border-[#203252] focus:ring-0"
+                      className="w-5 h-5 rounded text-[#00D4E8] bg-[#111B36] border-[#203252] focus:ring-0"
                     />
-                    <span className={`text-xs ${isChecked ? 'text-[#F5F7FF] font-medium' : 'text-[#AAB6CC]'}`}>
+                    <span className={`text-sm ${isChecked ? 'text-[#F5F7FF] font-medium' : 'text-[#AAB6CC]'}`}>
                       {item.label}
                     </span>
                   </label>
@@ -559,7 +559,7 @@ export const StepView: React.FC = () => {
         {activeStep.taskType === 'domain_calculator' && (
           <div className="space-y-4">
             <div className="p-4 bg-[#080D20] border border-[#203252] rounded-xl space-y-4">
-              <span className="text-xs font-bold text-[#F5F7FF] block">
+              <span className="text-sm font-bold text-[#F5F7FF] block">
                 Comparativo de Custo Real: 1º Ano vs Renovação Anual
               </span>
 
@@ -574,15 +574,15 @@ export const StepView: React.FC = () => {
                     className={`p-3 rounded-lg border ${d.trusted ? 'bg-[#111B36] border-[#22C55E]/30' : 'bg-[#111B36] border-[#EF4444]/30'}`}
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-mono text-xs font-bold text-[#F5F7FF]">{d.ext}</span>
-                      <span className={`text-[10px] font-bold ${d.trusted ? 'text-[#22C55E]' : 'text-[#EF4444]'}`}>
+                      <span className="font-mono text-sm font-bold text-[#F5F7FF]">{d.ext}</span>
+                      <span className={`text-xs font-bold ${d.trusted ? 'text-[#22C55E]' : 'text-[#EF4444]'}`}>
                         {d.trusted ? 'Seguro' : 'Atenção!'}
                       </span>
                     </div>
-                    <div className="text-[11px] text-[#AAB6CC] space-y-0.5">
+                    <div className="text-sm text-[#AAB6CC] space-y-0.5">
                       <div>1º Ano: <strong>{d.firstYear}</strong></div>
                       <div>Renovação: <strong className={!d.trusted ? 'text-[#EF4444]' : ''}>{d.renewal}</strong></div>
-                      <div className="text-[10px] text-[#71809B] pt-1">Onde: {d.place}</div>
+                      <div className="text-xs text-[#71809B] pt-1">Onde: {d.place}</div>
                     </div>
                   </div>
                 ))}
@@ -602,33 +602,33 @@ export const StepView: React.FC = () => {
               <h3 className="text-xl md:text-2xl font-extrabold text-[#F5F7FF]">
                 Você concluiu o método!
               </h3>
-              <p className="text-xs md:text-sm text-[#AAB6CC] leading-relaxed">
+              <p className="text-sm md:text-sm text-[#AAB6CC] leading-relaxed">
                 Você percorreu todas as etapas: desde a definição da proposta única até a geração de conteúdo, identidade visual, estrutura de código e publicação externa na internet.
               </p>
             </div>
 
             {/* Verificação externa */}
             <div className="bg-[#080D20] border border-[#203252] rounded-2xl p-5 max-w-lg mx-auto text-left space-y-3">
-              <span className="text-xs font-bold text-[#00D4E8] uppercase tracking-wider block">
+              <span className="text-sm font-bold text-[#00D4E8] uppercase tracking-wider block">
                 Verificação Final do Site Publicado
               </span>
-              <p className="text-xs text-[#AAB6CC] leading-relaxed">
+              <p className="text-sm text-[#AAB6CC] leading-relaxed">
                 Abra o endereço publicado do seu site na ferramenta externa que você utilizou (Vercel, Netlify, Manus, Bolt etc.) e faça a verificação final no seu celular e no computador.
               </p>
 
               {project.publishedUrl ? (
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
-                  <div className="text-xs font-mono text-[#00E599] truncate max-w-full">
+                  <div className="text-sm font-mono text-[#00E599] truncate max-w-full">
                     {project.publishedUrl}
                   </div>
                   <a
                     href={project.publishedUrl.startsWith('http') ? project.publishedUrl : `https://${project.publishedUrl}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-cta px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-1.5 shrink-0"
+                    className="btn-cta px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-1.5 shrink-0"
                   >
                     <span>Abrir Site Publicado</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
               ) : (
@@ -638,7 +638,7 @@ export const StepView: React.FC = () => {
                     value={singleText}
                     onChange={e => setSingleText(e.target.value)}
                     placeholder="https://seu-site.vercel.app"
-                    className="w-full sm:flex-1 bg-[#111B36] border border-[#203252] rounded-lg px-3 py-2 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                    className="w-full sm:flex-1 bg-[#111B36] border border-[#203252] rounded-lg px-3 py-2 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
                   />
                   <button
                     type="button"
@@ -649,7 +649,7 @@ export const StepView: React.FC = () => {
                         setTimeout(() => setFeedbackSaved(false), 2000);
                       }
                     }}
-                    className="btn-cta w-full sm:w-auto px-4 py-2 rounded-lg text-xs font-bold cursor-pointer shrink-0"
+                    className="btn-cta w-full sm:w-auto px-4 py-2 rounded-lg text-sm font-bold cursor-pointer shrink-0"
                   >
                     {feedbackSaved ? 'Salvo!' : 'Registrar URL'}
                   </button>
@@ -661,10 +661,10 @@ export const StepView: React.FC = () => {
               <button
                 type="button"
                 onClick={goToDashboard}
-                className="btn-cta px-6 py-3 rounded-xl font-bold text-xs flex items-center gap-2 cursor-pointer"
+                className="btn-cta px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 cursor-pointer"
               >
                 <span>VOLTAR AO PAINEL GERAL</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-5 h-5" />
               </button>
 
               <button
@@ -674,7 +674,7 @@ export const StepView: React.FC = () => {
                     confetti({ particleCount: 150, spread: 80 });
                   } catch (e) {}
                 }}
-                className="px-5 py-3 rounded-xl bg-[#152342] hover:bg-[#203252] border border-[#203252] text-xs font-bold text-[#00D4E8] cursor-pointer"
+                className="px-5 py-3 rounded-xl bg-[#152342] hover:bg-[#203252] border border-[#203252] text-sm font-bold text-[#00D4E8] cursor-pointer"
               >
                 🎉 Comemorar Conclusão
               </button>
@@ -687,26 +687,26 @@ export const StepView: React.FC = () => {
           <div className="space-y-4">
             {activeStep.id === '00-07' && (
               <div className="p-4 bg-[#0B1535] border border-[#203252] rounded-xl space-y-3">
-                <div className="flex items-center gap-2 text-[#00D4E8] font-bold text-xs">
-                  <Sparkles className="w-4 h-4 shrink-0" />
+                <div className="flex items-center gap-2 text-[#00D4E8] font-bold text-sm">
+                  <Sparkles className="w-5 h-5 shrink-0" />
                   <span>Fluxo do Método a Partir de Agora:</span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
                   <div className="p-3 bg-[#111B36] border border-[#203252] rounded-lg space-y-1">
-                    <span className="text-[#00D4E8] font-bold text-xs block">1. Cadastro Estruturado</span>
-                    <p className="text-[11px] text-[#AAB6CC] leading-relaxed">
+                    <span className="text-[#00D4E8] font-bold text-sm block">1. Cadastro Estruturado</span>
+                    <p className="text-sm text-[#AAB6CC] leading-relaxed">
                       A partir do Módulo 01, você informará nome, segmento, WhatsApp, serviços e diferenciais em etapas guiadas.
                     </p>
                   </div>
                   <div className="p-3 bg-[#111B36] border border-[#203252] rounded-lg space-y-1">
-                    <span className="text-[#00D4E8] font-bold text-xs block">2. Repositório Central</span>
-                    <p className="text-[11px] text-[#AAB6CC] leading-relaxed">
+                    <span className="text-[#00D4E8] font-bold text-sm block">2. Repositório Central</span>
+                    <p className="text-sm text-[#AAB6CC] leading-relaxed">
                       Tudo fica salvo em "Meu Projeto" e no Briefing Mestre, permitindo edição a qualquer momento sem perder nada.
                     </p>
                   </div>
                   <div className="p-3 bg-[#111B36] border border-[#203252] rounded-lg space-y-1">
-                    <span className="text-[#00D4E8] font-bold text-xs block">3. Injeção nos Prompts</span>
-                    <p className="text-[11px] text-[#AAB6CC] leading-relaxed">
+                    <span className="text-[#00D4E8] font-bold text-sm block">3. Injeção nos Prompts</span>
+                    <p className="text-sm text-[#AAB6CC] leading-relaxed">
                       Os prompts de IA usarão esses dados automaticamente para gerar seu site completo sem digitação redundante.
                     </p>
                   </div>
@@ -714,7 +714,7 @@ export const StepView: React.FC = () => {
               </div>
             )}
 
-            <span className="text-xs text-[#AAB6CC] block">
+            <span className="text-sm text-[#AAB6CC] block">
               Confirme a leitura e aplicação do conceito para avançar:
             </span>
             <label className="flex items-center gap-3 p-3.5 bg-[#080D20] border border-[#203252] hover:border-[#00D4E8]/50 rounded-xl cursor-pointer transition-colors">
@@ -722,9 +722,9 @@ export const StepView: React.FC = () => {
                 type="checkbox"
                 checked={isCompleted}
                 onChange={handleSaveAndComplete}
-                className="w-4 h-4 rounded text-[#00D4E8] bg-[#111B36] border-[#203252] focus:ring-0 cursor-pointer"
+                className="w-5 h-5 rounded text-[#00D4E8] bg-[#111B36] border-[#203252] focus:ring-0 cursor-pointer"
               />
-              <span className="text-xs text-[#F5F7FF] font-medium leading-relaxed">
+              <span className="text-sm text-[#F5F7FF] font-medium leading-relaxed">
                 {activeStep.id === '00-07'
                   ? 'Compreendi como o Meu Projeto funciona e estou pronto para avançar para o Módulo 01 para cadastrar os dados oficiais da minha empresa.'
                   : 'Entendi perfeitamente o passo e estou pronto para avançar para a próxima etapa.'}
@@ -747,11 +747,11 @@ export const StepView: React.FC = () => {
           />
         ) : (
           <div className="bg-[#111B36] border border-[#203252] rounded-xl p-6 text-center space-y-3">
-            <h3 className="text-lg font-bold text-[#22C55E]">✓ Todas as etapas foram concluídas!</h3>
-            <p className="text-xs text-[#AAB6CC]">Seu projeto atingiu 100% de conclusão.</p>
+            <h3 className="text-xl font-bold text-[#22C55E]">✓ Todas as etapas foram concluídas!</h3>
+            <p className="text-sm text-[#AAB6CC]">Seu projeto atingiu 100% de conclusão.</p>
             <button
               onClick={goToDashboard}
-              className="btn-cta px-6 py-2.5 rounded-xl font-bold text-xs inline-flex items-center gap-2 cursor-pointer"
+              className="btn-cta px-6 py-2.5 rounded-xl font-bold text-sm inline-flex items-center gap-2 cursor-pointer"
             >
               <span>Voltar para o Painel Geral</span>
             </button>

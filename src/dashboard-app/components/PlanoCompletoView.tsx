@@ -49,24 +49,24 @@ export const PlanoCompletoView: React.FC = () => {
 
         <div className="relative z-10 space-y-4">
           <div className="flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#152342] text-[#00D4E8] border border-[#203252] flex items-center gap-1.5">
-              <TrendingUp className="w-3.5 h-3.5" />
+            <span className="px-3 py-1 rounded-full text-sm font-bold bg-[#152342] text-[#00D4E8] border border-[#203252] flex items-center gap-1.5">
+              <TrendingUp className="w-4 h-4" />
               <span>EXPANSÃO DE HABILIDADE</span>
             </span>
-            <span className="text-xs text-[#71809B]">|</span>
-            <span className="text-xs font-medium text-[#AAB6CC]">21 Módulos Práticos</span>
+            <span className="text-sm text-[#71809B]">|</span>
+            <span className="text-sm font-medium text-[#AAB6CC]">21 Módulos Práticos</span>
           </div>
 
           <h1 className="text-2xl md:text-4xl font-extrabold text-[#F5F7FF] tracking-tight">
             Plano Completo: Como Criar Sites para Clientes
           </h1>
 
-          <p className="text-sm text-[#AAB6CC] max-w-2xl leading-relaxed">
+          <p className="text-base text-[#AAB6CC] max-w-2xl leading-relaxed">
             Você aprendeu a colocar o seu próprio site no ar. Agora, descubra a metodologia prática para oferecer essa mesma solução como serviço profissional para profissionais liberais e negócios da sua região.
           </p>
 
-          <div className="bg-[#0B1535] border border-[#203252] p-3 rounded-xl flex items-start gap-2.5 max-w-xl text-xs text-[#AAB6CC]">
-            <ShieldAlert className="w-4 h-4 text-[#F59E0B] shrink-0 mt-0.5" />
+          <div className="bg-[#0B1535] border border-[#203252] p-3 rounded-xl flex items-start gap-2.5 max-w-xl text-sm text-[#AAB6CC]">
+            <ShieldAlert className="w-5 h-5 text-[#F59E0B] shrink-0 mt-0.5" />
             <span>
               <strong>Importante:</strong> Esta é uma expansão profissional da habilidade técnica. Não prometemos ganhos garantidos; seu resultado dependerá exclusivamente da sua dedicação, prospecção e execução de projetos.
             </span>
@@ -76,17 +76,17 @@ export const PlanoCompletoView: React.FC = () => {
 
       {/* Search & Filter Bar */}
       <div className="flex items-center justify-between gap-4 bg-[#0B1535] border border-[#203252] p-3 rounded-xl">
-        <div className="flex items-center gap-2 text-xs text-[#AAB6CC] flex-1">
-          <Search className="w-4 h-4 text-[#00D4E8]" />
+        <div className="flex items-center gap-2 text-sm text-[#AAB6CC] flex-1">
+          <Search className="w-5 h-5 text-[#00D4E8]" />
           <input
             type="text"
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
             placeholder="Buscar por módulo, prospecção, contrato ou entrega..."
-            className="w-full bg-transparent text-xs text-[#F5F7FF] placeholder-[#71809B] focus:outline-none"
+            className="w-full bg-transparent text-sm text-[#F5F7FF] placeholder-[#71809B] focus:outline-none"
           />
         </div>
-        <span className="text-[11px] font-mono text-[#71809B] shrink-0">
+        <span className="text-sm font-mono text-[#71809B] shrink-0">
           {filtered.length} de {PLANO_COMPLETO_MODULES.length} módulos
         </span>
       </div>
@@ -109,17 +109,17 @@ export const PlanoCompletoView: React.FC = () => {
                 className="w-full p-5 text-left flex items-start justify-between gap-4 cursor-pointer"
               >
                 <div className="flex items-start gap-3.5">
-                  <span className="w-7 h-7 rounded-lg bg-[#111B36] border border-[#203252] flex items-center justify-center font-mono text-xs font-bold text-[#00D4E8] shrink-0 mt-0.5">
+                  <span className="w-7 h-7 rounded-lg bg-[#111B36] border border-[#203252] flex items-center justify-center font-mono text-sm font-bold text-[#00D4E8] shrink-0 mt-0.5">
                     {item.number}
                   </span>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#1769FF] bg-[#1769FF]/10 px-2 py-0.5 rounded border border-[#1769FF]/20">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#1769FF] bg-[#1769FF]/10 px-2 py-0.5 rounded border border-[#1769FF]/20">
                         Venda de Sites
                       </span>
-                      <span className="text-xs text-[#71809B] font-mono">Módulo {item.number}</span>
+                      <span className="text-sm text-[#71809B] font-mono">Módulo {item.number}</span>
                     </div>
-                    <h3 className="text-base font-bold text-[#F5F7FF]">
+                    <h3 className="text-lg font-bold text-[#F5F7FF]">
                       {item.title}
                     </h3>
                   </div>
@@ -131,7 +131,7 @@ export const PlanoCompletoView: React.FC = () => {
               </button>
 
               {isExpanded && (
-                <div className="px-5 pb-6 pt-2 border-t border-[#203252]/60 space-y-4 text-xs">
+                <div className="px-5 pb-6 pt-2 border-t border-[#203252]/60 space-y-4 text-sm">
                   <p className="text-[#F5F7FF] leading-relaxed bg-[#111B36]/60 p-4 rounded-xl border border-[#203252]">
                     {item.desc}
                   </p>
@@ -140,19 +140,19 @@ export const PlanoCompletoView: React.FC = () => {
                   {item.id === 'pc-05' && (
                     <div className="p-3.5 rounded-xl bg-[#080D20] border border-[#22C55E]/40 space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold text-[#22C55E] flex items-center gap-1.5">
-                          <MessageSquare className="w-4 h-4" /> Script Pronto de Abordagem no WhatsApp
+                        <span className="text-sm font-bold text-[#22C55E] flex items-center gap-1.5">
+                          <MessageSquare className="w-5 h-5" /> Script Pronto de Abordagem no WhatsApp
                         </span>
                         <button
                           type="button"
                           onClick={() => handleCopyScript('hp-11')}
-                          className="btn-cta px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+                          className="btn-cta px-3 py-1.5 rounded-lg text-sm font-bold flex items-center gap-1.5 cursor-pointer"
                         >
-                          {copiedPromptId === 'hp-11' ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                          {copiedPromptId === 'hp-11' ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                           <span>{copiedPromptId === 'hp-11' ? 'Script Copiado!' : 'Copiar Script'}</span>
                         </button>
                       </div>
-                      <p className="text-[11px] text-[#AAB6CC]">
+                      <p className="text-sm text-[#AAB6CC]">
                         Mensagem profissional e sem invasão para abordar negócios locais que possuem Instagram ou Google Meu Negócio sem site.
                       </p>
                     </div>
@@ -162,19 +162,19 @@ export const PlanoCompletoView: React.FC = () => {
                   {item.id === 'pc-07' && (
                     <div className="p-3.5 rounded-xl bg-[#080D20] border border-[#00D4E8]/40 space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold text-[#00D4E8] flex items-center gap-1.5">
-                          <FileText className="w-4 h-4" /> Modelo de Proposta Comercial em 1 Página
+                        <span className="text-sm font-bold text-[#00D4E8] flex items-center gap-1.5">
+                          <FileText className="w-5 h-5" /> Modelo de Proposta Comercial em 1 Página
                         </span>
                         <button
                           type="button"
                           onClick={() => handleCopyScript('hp-12')}
-                          className="btn-cta px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+                          className="btn-cta px-3 py-1.5 rounded-lg text-sm font-bold flex items-center gap-1.5 cursor-pointer"
                         >
-                          {copiedPromptId === 'hp-12' ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                          {copiedPromptId === 'hp-12' ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                           <span>{copiedPromptId === 'hp-12' ? 'Proposta Copiada!' : 'Copiar Modelo'}</span>
                         </button>
                       </div>
-                      <p className="text-[11px] text-[#AAB6CC]">
+                      <p className="text-sm text-[#AAB6CC]">
                         Proposta pronta com escopo fechado, prazos de entrega e condições de pagamento 50/50.
                       </p>
                     </div>
@@ -184,19 +184,19 @@ export const PlanoCompletoView: React.FC = () => {
                   {item.id === 'pc-10' && (
                     <div className="p-3.5 rounded-xl bg-[#080D20] border border-[#F59E0B]/40 space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold text-[#F59E0B] flex items-center gap-1.5">
-                          <ShieldAlert className="w-4 h-4" /> Minuta de Contrato com Cláusulas de Proteção
+                        <span className="text-sm font-bold text-[#F59E0B] flex items-center gap-1.5">
+                          <ShieldAlert className="w-5 h-5" /> Minuta de Contrato com Cláusulas de Proteção
                         </span>
                         <button
                           type="button"
                           onClick={() => handleCopyScript('hp-13')}
-                          className="btn-cta px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+                          className="btn-cta px-3 py-1.5 rounded-lg text-sm font-bold flex items-center gap-1.5 cursor-pointer"
                         >
-                          {copiedPromptId === 'hp-13' ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                          {copiedPromptId === 'hp-13' ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                           <span>{copiedPromptId === 'hp-13' ? 'Contrato Copiado!' : 'Copiar Cláusulas'}</span>
                         </button>
                       </div>
-                      <p className="text-[11px] text-[#AAB6CC]">
+                      <p className="text-sm text-[#AAB6CC]">
                         Contrato com cláusula anti-retrabalho infinito, limites de revisões e aprovação formal de etapas.
                       </p>
                     </div>

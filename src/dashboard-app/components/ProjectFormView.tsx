@@ -99,17 +99,17 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
             </div>
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#00D4E8]">
+                <span className="text-sm font-bold uppercase tracking-wider text-[#00D4E8]">
                   Ponto de Partida Oficial
                 </span>
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#00E599]/10 text-[#00E599] font-bold">
+                <span className="text-xs px-2 py-0.5 rounded-full bg-[#00E599]/10 text-[#00E599] font-bold">
                   Fonte Única de Verdade
                 </span>
               </div>
-              <h3 className="text-base md:text-lg font-bold text-[#F5F7FF]">
+              <h3 className="text-lg md:text-lg font-bold text-[#F5F7FF]">
                 Informações Fundamentais do Seu Negócio
               </h3>
-              <p className="text-xs text-[#AAB6CC] leading-relaxed">
+              <p className="text-sm text-[#AAB6CC] leading-relaxed">
                 Preencha os dados reais do seu negócio uma única vez. Estas informações alimentarão automaticamente todo o conteúdo, a paleta visual e o Prompt Mestre Final. Você nunca precisará preencher essas informações novamente nas etapas seguintes.
               </p>
             </div>
@@ -122,15 +122,15 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
         {/* 1. Identificação */}
         <div className="space-y-4">
           <div className="flex items-center justify-between pb-2 border-b border-[#203252]">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#00D4E8] flex items-center gap-2">
-              <Briefcase className="w-4 h-4" />
+            <h4 className="text-sm font-bold uppercase tracking-wider text-[#00D4E8] flex items-center gap-2">
+              <Briefcase className="w-5 h-5" />
               <span>1. Identificação do Seu Negócio</span>
             </h4>
-            <span className="text-[11px] text-[#71809B]">* Dados essenciais</span>
+            <span className="text-sm text-[#71809B]">* Dados essenciais</span>
           </div>
 
           <div>
-            <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+            <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
               Nome Comercial da Empresa / Profissional *
             </label>
             <input
@@ -138,13 +138,13 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
               value={formData.name}
               onChange={e => setFormData({ ...formData, name: e.target.value })}
               placeholder="Ex: Barbearia Real, Dra. Juliana Mendes, Studio Zen..."
-              className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-3 text-xs md:text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none transition-colors"
+              className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-3 text-sm md:text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none transition-colors"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div className="sm:col-span-1">
-              <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+              <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
                 Segmento / Especialidade *
               </label>
               <input
@@ -152,11 +152,11 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                 value={formData.segment}
                 onChange={e => setFormData({ ...formData, segment: e.target.value })}
                 placeholder="Ex: Barbearia, Fisioterapia, Advocacia..."
-                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
               />
             </div>
             <div>
-              <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+              <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
                 Cidade & Estado (UF) *
               </label>
               <input
@@ -164,11 +164,11 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                 value={formData.city}
                 onChange={e => setFormData({ ...formData, city: e.target.value })}
                 placeholder="Ex: Recife - PE, São Paulo - SP..."
-                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
               />
             </div>
             <div>
-              <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+              <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
                 Bairro ou Região de Atendimento
               </label>
               <input
@@ -176,7 +176,7 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                 value={formData.neighborhood || formData.region || ''}
                 onChange={e => setFormData({ ...formData, neighborhood: e.target.value, region: e.target.value })}
                 placeholder="Ex: Boa Viagem, Centro, Zona Sul..."
-                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
               />
             </div>
           </div>
@@ -185,16 +185,16 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
         {/* 2. Contatos & Localização */}
         <div className="space-y-4">
           <div className="flex items-center justify-between pb-2 border-b border-[#203252]">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#00D4E8] flex items-center gap-2">
-              <Phone className="w-4 h-4" />
+            <h4 className="text-sm font-bold uppercase tracking-wider text-[#00D4E8] flex items-center gap-2">
+              <Phone className="w-5 h-5" />
               <span>2. Canais de Contato & Localização</span>
             </h4>
-            <span className="text-[11px] text-[#71809B]">Canais para os botões do site</span>
+            <span className="text-sm text-[#71809B]">Canais para os botões do site</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div>
-              <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+              <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
                 WhatsApp Comercial (com DDD) *
               </label>
               <input
@@ -202,11 +202,11 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                 value={formData.whatsapp}
                 onChange={e => setFormData({ ...formData, whatsapp: e.target.value })}
                 placeholder="(81) 99992-5040"
-                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none font-mono"
+                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none font-mono"
               />
             </div>
             <div>
-              <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+              <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
                 Instagram Oficial
               </label>
               <input
@@ -214,11 +214,11 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                 value={formData.instagram}
                 onChange={e => setFormData({ ...formData, instagram: e.target.value })}
                 placeholder="@barbeariareal"
-                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
               />
             </div>
             <div>
-              <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+              <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
                 E-mail Comercial (Opcional)
               </label>
               <input
@@ -226,14 +226,14 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                 value={formData.email || ''}
                 onChange={e => setFormData({ ...formData, email: e.target.value })}
                 placeholder="contato@empresa.com.br"
-                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+              <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
                 Endereço Físico Completo (se houver atendimento presencial)
               </label>
               <input
@@ -241,16 +241,16 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                 value={formData.address}
                 onChange={e => setFormData({ ...formData, address: e.target.value })}
                 placeholder="Avenida Conselheiro Aguiar, 2756, Loja 1, Boa Viagem, Recife"
-                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
               />
-              <span className="text-[10px] text-[#71809B] mt-1 block">
+              <span className="text-xs text-[#71809B] mt-1 block">
                 Deixe em branco caso seu atendimento seja 100% online ou a domicílio.
               </span>
             </div>
 
             <div>
-              <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-[#00D4E8]" />
+              <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold flex items-center gap-1.5">
+                <Clock className="w-4 h-4 text-[#00D4E8]" />
                 <span>Horário de Funcionamento / Atendimento</span>
               </label>
               <input
@@ -258,9 +258,9 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                 value={formData.operatingHours || ''}
                 onChange={e => setFormData({ ...formData, operatingHours: e.target.value })}
                 placeholder="Ex: Terça a Sábado das 09h às 19h (ou com agendamento prévio)"
-                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
               />
-              <span className="text-[10px] text-[#71809B] mt-1 block">
+              <span className="text-xs text-[#71809B] mt-1 block">
                 Se não informado, o site indicará atendimento mediante agendamento via WhatsApp.
               </span>
             </div>
@@ -271,19 +271,19 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between pb-2 border-b border-[#203252]">
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#00D4E8]">
+              <h4 className="text-sm font-bold uppercase tracking-wider text-[#00D4E8]">
                 3. Serviços Principais ({formData.services.length})
               </h4>
-              <p className="text-[11px] text-[#AAB6CC] mt-0.5">
+              <p className="text-sm text-[#AAB6CC] mt-0.5">
                 Quais serviços ou especialidades devem aparecer com destaque no site?
               </p>
             </div>
             <button
               type="button"
               onClick={handleAddService}
-              className="text-xs text-[#00D4E8] hover:underline flex items-center gap-1.5 font-bold cursor-pointer bg-[#00D4E8]/10 px-3 py-1.5 rounded-lg border border-[#00D4E8]/30"
+              className="text-sm text-[#00D4E8] hover:underline flex items-center gap-1.5 font-bold cursor-pointer bg-[#00D4E8]/10 px-3 py-1.5 rounded-lg border border-[#00D4E8]/30"
             >
-              <Plus className="w-3.5 h-3.5" /> Adicionar Serviço
+              <Plus className="w-4 h-4" /> Adicionar Serviço
             </button>
           </div>
 
@@ -294,9 +294,9 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                 <button
                   type="button"
                   onClick={handleAddService}
-                  className="btn-cta px-4 py-2 rounded-lg text-xs font-bold inline-flex items-center gap-1.5"
+                  className="btn-cta px-4 py-2 rounded-lg text-sm font-bold inline-flex items-center gap-1.5"
                 >
-                  <Plus className="w-3.5 h-3.5" /> Cadastrar Primeiro Serviço
+                  <Plus className="w-4 h-4" /> Cadastrar Primeiro Serviço
                 </button>
               </div>
             ) : (
@@ -311,7 +311,7 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                         updated[idx].title = e.target.value;
                         setFormData({ ...formData, services: updated });
                       }}
-                      className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-xs font-bold text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                      className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-sm font-bold text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
                       placeholder="Ex: Corte de Cabelo Masculino, Barboterapia, etc."
                     />
                     <button
@@ -320,7 +320,7 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                       className="p-2 text-[#71809B] hover:text-[#EF4444] rounded-lg hover:bg-[#080D20] transition-colors cursor-pointer"
                       title="Excluir este serviço"
                     >
-                      <Trash2 className="w-4 h-4" />
+                      <Trash2 className="w-5 h-5" />
                     </button>
                   </div>
                   <textarea
@@ -331,7 +331,7 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                       updated[idx].description = e.target.value;
                       setFormData({ ...formData, services: updated });
                     }}
-                    className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-xs text-[#AAB6CC] focus:border-[#00D4E8] focus:outline-none"
+                    className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-sm text-[#AAB6CC] focus:border-[#00D4E8] focus:outline-none"
                     placeholder="Descrição clara do benefício ou como o serviço é realizado para o cliente..."
                   />
                 </div>
@@ -344,19 +344,19 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between pb-2 border-b border-[#203252]">
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#00D4E8]">
+              <h4 className="text-sm font-bold uppercase tracking-wider text-[#00D4E8]">
                 4. Diferenciais Competitivos ({formData.differentials.length})
               </h4>
-              <p className="text-[11px] text-[#AAB6CC] mt-0.5">
+              <p className="text-sm text-[#AAB6CC] mt-0.5">
                 Por que o cliente deve escolher você e não o concorrente?
               </p>
             </div>
             <button
               type="button"
               onClick={handleAddDifferential}
-              className="text-xs text-[#00D4E8] hover:underline flex items-center gap-1.5 font-bold cursor-pointer bg-[#00D4E8]/10 px-3 py-1.5 rounded-lg border border-[#00D4E8]/30"
+              className="text-sm text-[#00D4E8] hover:underline flex items-center gap-1.5 font-bold cursor-pointer bg-[#00D4E8]/10 px-3 py-1.5 rounded-lg border border-[#00D4E8]/30"
             >
-              <Plus className="w-3.5 h-3.5" /> Adicionar Diferencial
+              <Plus className="w-4 h-4" /> Adicionar Diferencial
             </button>
           </div>
 
@@ -368,7 +368,7 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
             ) : (
               formData.differentials.map((diff, idx) => (
                 <div key={idx} className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-md bg-[#00E599]/10 text-[#00E599] flex items-center justify-center shrink-0 text-xs font-bold">
+                  <div className="w-6 h-6 rounded-md bg-[#00E599]/10 text-[#00E599] flex items-center justify-center shrink-0 text-sm font-bold">
                     ✓
                   </div>
                   <input
@@ -379,7 +379,7 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                       updated[idx] = e.target.value;
                       setFormData({ ...formData, differentials: updated });
                     }}
-                    className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                    className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
                     placeholder="Ex: Cortes perfeitos e barba simétrica, Atendimento pontual com hora marcada..."
                   />
                   <button
@@ -387,7 +387,7 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                     onClick={() => handleRemoveDifferential(idx)}
                     className="p-2 text-[#71809B] hover:text-[#EF4444] rounded-lg hover:bg-[#111B36] transition-colors cursor-pointer"
                   >
-                    <Trash2 className="w-4 h-4" />
+                    <Trash2 className="w-5 h-5" />
                   </button>
                 </div>
               ))
@@ -398,15 +398,15 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
         {/* 5. Posicionamento, Público & Tom */}
         <div className="space-y-4">
           <div className="flex items-center justify-between pb-2 border-b border-[#203252]">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#00D4E8] flex items-center gap-2">
-              <Target className="w-4 h-4" />
+            <h4 className="text-sm font-bold uppercase tracking-wider text-[#00D4E8] flex items-center gap-2">
+              <Target className="w-5 h-5" />
               <span>5. Posicionamento, Público & Tom de Voz</span>
             </h4>
-            <span className="text-[11px] text-[#71809B]">Define o estilo da copy</span>
+            <span className="text-sm text-[#71809B]">Define o estilo da copy</span>
           </div>
 
           <div>
-            <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+            <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
               Público-Alvo e Perfil dos Clientes
             </label>
             <textarea
@@ -414,13 +414,13 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
               value={formData.targetAudience}
               onChange={e => setFormData({ ...formData, targetAudience: e.target.value })}
               placeholder="Ex: Pessoas exigentes que buscam cortar cabelo ou fazer a barba com profissionais experientes..."
-              className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+              className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+              <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
                 Tom de Comunicação da Marca
               </label>
               <input
@@ -428,11 +428,11 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                 value={formData.communicationTone}
                 onChange={e => setFormData({ ...formData, communicationTone: e.target.value })}
                 placeholder="Ex: Profissional, extremamente criterioso e perfeccionista..."
-                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
               />
             </div>
             <div>
-              <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+              <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
                 Objetivo Principal do Site
               </label>
               <input
@@ -440,13 +440,13 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                 value={formData.siteGoal}
                 onChange={e => setFormData({ ...formData, siteGoal: e.target.value })}
                 placeholder="Ex: Captar clientes, informar sobre o negócio e posicionar no Google..."
-                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+            <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
               Chamada do Botão Principal (CTA)
             </label>
             <input
@@ -454,7 +454,7 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
               value={formData.ctaLabel || 'Falar no WhatsApp Agora'}
               onChange={e => setFormData({ ...formData, ctaLabel: e.target.value })}
               placeholder="Ex: Agendar Horário no WhatsApp, Falar com Especialista..."
-              className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+              className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
             />
           </div>
         </div>
@@ -462,39 +462,39 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
         {/* 6. Preferência Visual Inicial */}
         <div className="space-y-4">
           <div className="flex items-center justify-between pb-2 border-b border-[#203252]">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#00D4E8] flex items-center gap-2">
-              <Palette className="w-4 h-4" />
+            <h4 className="text-sm font-bold uppercase tracking-wider text-[#00D4E8] flex items-center gap-2">
+              <Palette className="w-5 h-5" />
               <span>6. Preferência Visual & Cores Iniciais</span>
             </h4>
-            <span className="text-[11px] text-[#71809B]">Você poderá detalhar no Módulo 03</span>
+            <span className="text-sm text-[#71809B]">Você poderá detalhar no Módulo 03</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">Posicionamento Visual</label>
+              <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">Posicionamento Visual</label>
               <input
                 type="text"
                 value={formData.visualPositioning || ''}
                 onChange={e => setFormData({ ...formData, visualPositioning: e.target.value })}
                 placeholder="Ex: Barbearia clássica refinada, Sofisticado e moderno..."
-                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
               />
             </div>
 
             <div>
-              <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">Personalidade Visual</label>
+              <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">Personalidade Visual</label>
               <input
                 type="text"
                 value={formData.visualPersonality || ''}
                 onChange={e => setFormData({ ...formData, visualPersonality: e.target.value })}
                 placeholder="Ex: Elegante, acolhedora, precisa e tradicional..."
-                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">Como deseja definir as cores:</label>
+            <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">Como deseja definir as cores:</label>
             <div className="grid grid-cols-2 gap-2">
               <button
                 type="button"
@@ -505,8 +505,8 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                     : 'bg-[#111B36] border-[#203252] text-[#AAB6CC]'
                 }`}
               >
-                <span className="font-bold block text-xs">Paleta Harmoniosa por IA</span>
-                <span className="text-[10px] text-[#71809B]">Gerada sob medida para seu nicho</span>
+                <span className="font-bold block text-sm">Paleta Harmoniosa por IA</span>
+                <span className="text-xs text-[#71809B]">Gerada sob medida para seu nicho</span>
               </button>
               <button
                 type="button"
@@ -517,8 +517,8 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                     : 'bg-[#111B36] border-[#203252] text-[#AAB6CC]'
                 }`}
               >
-                <span className="font-bold block text-xs">Cores da Minha Marca / Logo</span>
-                <span className="text-[10px] text-[#71809B]">Usar os códigos HEX da sua logo</span>
+                <span className="font-bold block text-sm">Cores da Minha Marca / Logo</span>
+                <span className="text-xs text-[#71809B]">Usar os códigos HEX da sua logo</span>
               </button>
             </div>
           </div>
@@ -526,26 +526,26 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
           {formData.paletteSource === 'brand_logo' && (
             <div className="p-4 md:p-5 bg-[#0B1535] border border-[#203252] rounded-xl space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2.5 border-b border-[#203252]">
-                <span className="text-xs font-bold text-[#00D4E8] uppercase tracking-wider">
+                <span className="text-sm font-bold text-[#00D4E8] uppercase tracking-wider">
                   Tabela de Cores da Marca (6 Opções de Cores)
                 </span>
                 <a
                   href="https://color.adobe.com/br/create/image"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#00D4E8] hover:text-[#38BDF8] bg-[#00D4E8]/10 hover:bg-[#00D4E8]/20 border border-[#00D4E8]/30 px-3 py-1.5 rounded-lg transition-colors shrink-0"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#00D4E8] hover:text-[#38BDF8] bg-[#00D4E8]/10 hover:bg-[#00D4E8]/20 border border-[#00D4E8]/30 px-3 py-1.5 rounded-lg transition-colors shrink-0"
                 >
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-4 h-4" />
                   <span>Capturar Cores no Adobe Color</span>
                 </a>
               </div>
 
               {/* Instruções claras */}
-              <div className="p-3.5 bg-[#111B36] border border-[#203252] rounded-lg space-y-2 text-xs text-[#AAB6CC] leading-relaxed">
+              <div className="p-3.5 bg-[#111B36] border border-[#203252] rounded-lg space-y-2 text-sm text-[#AAB6CC] leading-relaxed">
                 <p>
                   🎨 <strong>Como capturar as cores da sua logo:</strong> Acesse a ferramenta gratuita da Adobe (<a href="https://color.adobe.com/br/create/image" target="_blank" rel="noreferrer" className="text-[#00D4E8] underline font-semibold hover:text-[#38BDF8]">Adobe Color — Extrair Imagem</a>), envie o arquivo da sua logo, copie os códigos HEX gerados <strong>um por um</strong> e cole aqui.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-2 pt-1 text-[11px] text-[#71809B] border-t border-[#203252]/60">
+                <div className="flex flex-col sm:flex-row gap-2 pt-1 text-sm text-[#71809B] border-t border-[#203252]/60">
                   <span>• <strong>Sua marca tem apenas 2 cores?</strong> Preencha apenas a Cor 1 e a Cor 2 (as outras são opcionais).</span>
                   <span>• <strong>Não tem logo ainda?</strong> Marque a Opção 1 acima (<em>"Paleta Harmoniosa por IA"</em>) e deixe a IA escolher quando for criar o site.</span>
                 </div>
@@ -555,14 +555,14 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
               <div className="bg-[#080D20] border border-[#203252] rounded-xl p-3.5 space-y-3.5">
                 {/* Linha Superior (3 cores) */}
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#71809B] mb-2 px-1 flex items-center justify-between">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#71809B] mb-2 px-1 flex items-center justify-between">
                     <span>Linha 1 — Cores Principais e de Ação</span>
                     <span className="text-[#00D4E8]">3 cores</span>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {/* Cor 1: Principal */}
                     <div className="space-y-1 bg-[#111B36]/60 p-2.5 rounded-lg border border-[#203252]/70">
-                      <label className="block text-[11px] font-semibold text-[#F5F7FF]">
+                      <label className="block text-sm font-semibold text-[#F5F7FF]">
                         1. Cor Principal (HEX) *
                       </label>
                       <div className="flex items-center gap-1.5">
@@ -590,15 +590,15 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                             }
                           })}
                           placeholder="#0D2F2E"
-                          className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-xs font-mono uppercase text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                          className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-sm font-mono uppercase text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
                         />
                       </div>
-                      <span className="text-[10px] text-[#71809B] block">Botões e destaques de ação</span>
+                      <span className="text-xs text-[#71809B] block">Botões e destaques de ação</span>
                     </div>
 
                     {/* Cor 2: Secundária */}
                     <div className="space-y-1 bg-[#111B36]/60 p-2.5 rounded-lg border border-[#203252]/70">
-                      <label className="block text-[11px] font-semibold text-[#F5F7FF]">
+                      <label className="block text-sm font-semibold text-[#F5F7FF]">
                         2. Cor Secundária (HEX)
                       </label>
                       <div className="flex items-center gap-1.5">
@@ -628,15 +628,15 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                             }
                           })}
                           placeholder="#A0CAB8"
-                          className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-xs font-mono uppercase text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                          className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-sm font-mono uppercase text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
                         />
                       </div>
-                      <span className="text-[10px] text-[#71809B] block">Subtítulos e contrastes</span>
+                      <span className="text-xs text-[#71809B] block">Subtítulos e contrastes</span>
                     </div>
 
                     {/* Cor 3: Destaque / Realce */}
                     <div className="space-y-1 bg-[#111B36]/60 p-2.5 rounded-lg border border-[#203252]/70">
-                      <label className="block text-[11px] font-semibold text-[#F5F7FF]">
+                      <label className="block text-sm font-semibold text-[#F5F7FF]">
                         3. Cor de Destaque/Realce (HEX)
                       </label>
                       <div className="flex items-center gap-1.5">
@@ -668,24 +668,24 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                             }
                           })}
                           placeholder="#38BDF8"
-                          className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-xs font-mono uppercase text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                          className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-sm font-mono uppercase text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
                         />
                       </div>
-                      <span className="text-[10px] text-[#71809B] block">Ícones, acentos e realces de destaque</span>
+                      <span className="text-xs text-[#71809B] block">Ícones, acentos e realces de destaque</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Linha Inferior (3 cores) */}
                 <div className="pt-2 border-t border-[#203252]/70">
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#71809B] mb-2 px-1 flex items-center justify-between">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#71809B] mb-2 px-1 flex items-center justify-between">
                     <span>Linha 2 — Fundo/Superfície, Texto e Borda</span>
                     <span className="text-[#00D4E8]">3 cores</span>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {/* Cor 4: Fundo / Superfície */}
                     <div className="space-y-1 bg-[#111B36]/60 p-2.5 rounded-lg border border-[#203252]/70">
-                      <label className="block text-[11px] font-semibold text-[#F5F7FF]">
+                      <label className="block text-sm font-semibold text-[#F5F7FF]">
                         4. Fundo/Superfície (HEX)
                       </label>
                       <div className="flex items-center gap-1.5">
@@ -717,15 +717,15 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                             }
                           })}
                           placeholder="#111B36"
-                          className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-xs font-mono uppercase text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                          className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-sm font-mono uppercase text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
                         />
                       </div>
-                      <span className="text-[10px] text-[#71809B] block">Superfícies de cards e fundo</span>
+                      <span className="text-xs text-[#71809B] block">Superfícies de cards e fundo</span>
                     </div>
 
                     {/* Cor 5: Texto */}
                     <div className="space-y-1 bg-[#111B36]/60 p-2.5 rounded-lg border border-[#203252]/70">
-                      <label className="block text-[11px] font-semibold text-[#F5F7FF]">
+                      <label className="block text-sm font-semibold text-[#F5F7FF]">
                         5. Texto (HEX)
                       </label>
                       <div className="flex items-center gap-1.5">
@@ -755,15 +755,15 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                             }
                           })}
                           placeholder="#F5F7FF"
-                          className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-xs font-mono uppercase text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                          className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-sm font-mono uppercase text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
                         />
                       </div>
-                      <span className="text-[10px] text-[#71809B] block">Tipografia e leitura legível</span>
+                      <span className="text-xs text-[#71809B] block">Tipografia e leitura legível</span>
                     </div>
 
                     {/* Cor 6: Borda */}
                     <div className="space-y-1 bg-[#111B36]/60 p-2.5 rounded-lg border border-[#203252]/70">
-                      <label className="block text-[11px] font-semibold text-[#F5F7FF]">
+                      <label className="block text-sm font-semibold text-[#F5F7FF]">
                         6. Borda (HEX)
                       </label>
                       <div className="flex items-center gap-1.5">
@@ -793,10 +793,10 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                             }
                           })}
                           placeholder="#203252"
-                          className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-xs font-mono uppercase text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+                          className="w-full bg-[#080D20] border border-[#203252] rounded-lg p-2 text-sm font-mono uppercase text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
                         />
                       </div>
-                      <span className="text-[10px] text-[#71809B] block">Bordas estruturais e divisores</span>
+                      <span className="text-xs text-[#71809B] block">Bordas estruturais e divisores</span>
                     </div>
                   </div>
                 </div>
@@ -805,7 +805,7 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
           )}
 
           <div>
-            <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+            <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
               Cores Específicas Desejadas (Opcional)
             </label>
             <input
@@ -813,15 +813,15 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
               value={formData.desiredColors || ''}
               onChange={e => setFormData({ ...formData, desiredColors: e.target.value })}
               placeholder="Ex.: azul petróleo, verde oliva e bege; ou #123456, #F2E8D5"
-              className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+              className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
             />
-            <p className="text-[10px] text-[#71809B] mt-1">
+            <p className="text-xs text-[#71809B] mt-1">
               Preferência analisada pelo Diretor de Arte junto com a marca e o segmento.
             </p>
           </div>
 
           <div>
-            <label className="block text-xs text-[#AAB6CC] mb-1 font-semibold">
+            <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
               Site de Referência Estética (Opcional)
             </label>
             <input
@@ -829,14 +829,14 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
               value={formData.referenceUrl || ''}
               onChange={e => setFormData({ ...formData, referenceUrl: e.target.value })}
               placeholder="https://exemplo.com.br (apenas como inspiração de espaçamento e atmosfera)"
-              className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+              className="w-full bg-[#111B36] border border-[#203252] rounded-xl p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
             />
           </div>
 
           {formData.gptPaletteResponse && (
-            <div className="p-3 bg-[#080D20] border border-[#22C55E]/40 rounded-xl flex items-center justify-between gap-3 text-xs">
+            <div className="p-3 bg-[#080D20] border border-[#22C55E]/40 rounded-xl flex items-center justify-between gap-3 text-sm">
               <div className="flex items-center gap-2 text-[#22C55E]">
-                <CheckCircle2 className="w-4 h-4 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 shrink-0" />
                 <span className="font-semibold">Sistema de Cores do Diretor de Arte (GPT) salvo no projeto</span>
               </div>
               <button
@@ -845,7 +845,7 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
                   if (onCloseDrawer) onCloseDrawer();
                   goToStep('03-01');
                 }}
-                className="text-[11px] text-[#00D4E8] hover:underline font-bold shrink-0 cursor-pointer"
+                className="text-sm text-[#00D4E8] hover:underline font-bold shrink-0 cursor-pointer"
               >
                 Ver no Módulo 03 →
               </button>
@@ -855,8 +855,8 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
 
         {/* Action Buttons */}
         <div className="pt-4 border-t border-[#203252] flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2 text-xs text-[#71809B]">
-            <ShieldCheck className="w-4 h-4 text-[#00E599]" />
+          <div className="flex items-center gap-2 text-sm text-[#71809B]">
+            <ShieldCheck className="w-5 h-5 text-[#00E599]" />
             <span>Dados salvos localmente e protegidos no seu navegador.</span>
           </div>
 
@@ -864,16 +864,16 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
             <button
               type="button"
               onClick={handleSave}
-              className="px-4 py-2.5 rounded-xl border border-[#203252] hover:bg-[#111B36] text-xs font-bold text-[#F5F7FF] transition-colors flex items-center justify-center gap-1.5 cursor-pointer w-full sm:w-auto"
+              className="px-4 py-2.5 rounded-xl border border-[#203252] hover:bg-[#111B36] text-sm font-bold text-[#F5F7FF] transition-colors flex items-center justify-center gap-1.5 cursor-pointer w-full sm:w-auto"
             >
               {isSaved ? (
                 <>
-                  <Check className="w-4 h-4 text-[#00E599]" />
+                  <Check className="w-5 h-5 text-[#00E599]" />
                   <span className="text-[#00E599]">Salvo!</span>
                 </>
               ) : (
                 <>
-                  <Save className="w-4 h-4" />
+                  <Save className="w-5 h-5" />
                   <span>Salvar Dados</span>
                 </>
               )}
@@ -883,10 +883,10 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
               <button
                 type="button"
                 onClick={handleSaveAndAdvance}
-                className="btn-cta px-6 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto shrink-0 shadow-lg shadow-[#00D4E8]/20"
+                className="btn-cta px-6 py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto shrink-0 shadow-lg shadow-[#00D4E8]/20"
               >
                 <span>Salvar e Avançar para Conteúdo</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-5 h-5" />
               </button>
             )}
 
@@ -894,7 +894,7 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
               <button
                 type="button"
                 onClick={onCloseDrawer}
-                className="px-4 py-2.5 rounded-xl bg-[#111B36] hover:bg-[#152342] text-xs font-bold text-[#AAB6CC] cursor-pointer"
+                className="px-4 py-2.5 rounded-xl bg-[#111B36] hover:bg-[#152342] text-sm font-bold text-[#AAB6CC] cursor-pointer"
               >
                 Fechar
               </button>

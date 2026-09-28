@@ -50,12 +50,12 @@ export const PromptHubView: React.FC = () => {
 
         <div className="relative z-10 space-y-3">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#152342] text-[#00D4E8] border border-[#203252] flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5" />
+            <span className="px-3 py-1 rounded-full text-sm font-bold bg-[#152342] text-[#00D4E8] border border-[#203252] flex items-center gap-1.5">
+              <Sparkles className="w-4 h-4" />
               <span>CENTRAL DE PROMPTS GUIADOS</span>
             </span>
-            <span className="text-xs text-[#71809B]">•</span>
-            <span className="text-xs font-medium text-[#AAB6CC]">
+            <span className="text-sm text-[#71809B]">•</span>
+            <span className="text-sm font-medium text-[#AAB6CC]">
               Valores do seu projeto ({project.name || 'Seu Negócio'}) injetados automaticamente
             </span>
           </div>
@@ -64,7 +64,7 @@ export const PromptHubView: React.FC = () => {
             Biblioteca de Prompts Prontos para IA
           </h1>
 
-          <p className="text-sm md:text-base text-[#AAB6CC] max-w-2xl leading-relaxed">
+          <p className="text-base md:text-base text-[#AAB6CC] max-w-2xl leading-relaxed">
             Aqui você encontra todos os comandos pré-estruturados para alimentar o ChatGPT, Claude, Gemini ou Bolt.new. Basta clicar em <strong className="text-[#00D4E8]">Copiar Prompt</strong> e colar na IA.
           </p>
         </div>
@@ -75,24 +75,24 @@ export const PromptHubView: React.FC = () => {
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
           {/* Search Input */}
           <div className="relative flex-1">
-            <Search className="w-4 h-4 text-[#71809B] absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-5 h-5 text-[#71809B] absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Pesquisar por título, objetivo ou palavra-chave..."
-              className="w-full bg-[#080D20] border border-[#203252] rounded-xl pl-10 pr-4 py-2.5 text-xs md:text-sm text-[#F5F7FF] placeholder-[#71809B] focus:border-[#00D4E8] focus:outline-none transition-colors"
+              className="w-full bg-[#080D20] border border-[#203252] rounded-xl pl-10 pr-4 py-2.5 text-sm md:text-sm text-[#F5F7FF] placeholder-[#71809B] focus:border-[#00D4E8] focus:outline-none transition-colors"
             />
           </div>
 
           {/* Quick Counter */}
-          <div className="text-xs text-[#AAB6CC] font-semibold bg-[#111B36] px-3.5 py-2.5 rounded-xl border border-[#203252] text-center shrink-0">
+          <div className="text-sm text-[#AAB6CC] font-semibold bg-[#111B36] px-3.5 py-2.5 rounded-xl border border-[#203252] text-center shrink-0">
             {filteredPrompts.length} {filteredPrompts.length === 1 ? 'prompt encontrado' : 'prompts encontrados'}
           </div>
         </div>
 
         {/* Category Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs">
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 text-sm">
           {PROMPT_CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat.id;
             return (
@@ -127,20 +127,20 @@ export const PromptHubView: React.FC = () => {
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded bg-[#111B36] text-[#00D4E8] border border-[#203252]">
+                    <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded bg-[#111B36] text-[#00D4E8] border border-[#203252]">
                       {prompt.categoryLabel}
                     </span>
-                    <span className="text-xs text-[#71809B]">•</span>
-                    <span className="text-xs text-[#AAB6CC] font-mono">
+                    <span className="text-sm text-[#71809B]">•</span>
+                    <span className="text-sm text-[#AAB6CC] font-mono">
                       Recomendado: {prompt.recommendedAi}
                     </span>
                   </div>
 
-                  <h3 className="text-base md:text-lg font-bold text-[#F5F7FF]">
+                  <h3 className="text-lg md:text-lg font-bold text-[#F5F7FF]">
                     {prompt.title}
                   </h3>
 
-                  <p className="text-xs md:text-sm text-[#AAB6CC]">
+                  <p className="text-sm md:text-sm text-[#AAB6CC]">
                     {prompt.objective}
                   </p>
                 </div>
@@ -149,24 +149,24 @@ export const PromptHubView: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => handleCopy(prompt)}
-                  className={`btn-cta px-5 py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer shadow-md transition-all ${
+                  className={`btn-cta px-5 py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shrink-0 cursor-pointer shadow-md transition-all ${
                     isCopied ? 'bg-[#22C55E] text-white' : ''
                   }`}
                 >
-                  {isCopied ? <Check className="w-4 h-4 text-white" /> : <Copy className="w-4 h-4" />}
+                  {isCopied ? <Check className="w-5 h-5 text-white" /> : <Copy className="w-5 h-5" />}
                   <span>{isCopied ? 'Copiado para Transferência!' : 'Copiar Prompt'}</span>
                 </button>
               </div>
 
               {/* Injected Prompt Box */}
               <div className="relative">
-                <div className="bg-[#080D20] border border-[#203252] rounded-xl p-4 font-mono text-xs text-[#AAB6CC] max-h-52 overflow-y-auto whitespace-pre-wrap leading-relaxed select-all">
+                <div className="bg-[#080D20] border border-[#203252] rounded-xl p-4 font-mono text-sm text-[#AAB6CC] max-h-52 overflow-y-auto whitespace-pre-wrap leading-relaxed select-all">
                   {generatedText}
                 </div>
               </div>
 
               {/* Card Footer: Instructions & Link to Step */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 text-xs border-t border-[#203252]/60">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 text-sm border-t border-[#203252]/60">
                 <div className="flex items-center gap-2 text-[#71809B]">
                   <span>Quando usar:</span>
                   <span className="text-[#AAB6CC] font-medium">{prompt.whenToUse}</span>
@@ -179,7 +179,7 @@ export const PromptHubView: React.FC = () => {
                     className="inline-flex items-center gap-1.5 text-[#00D4E8] hover:underline font-semibold cursor-pointer self-start sm:self-auto"
                   >
                     <span>Ir para a etapa correspondente</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-4 h-4" />
                   </button>
                 )}
               </div>
@@ -190,13 +190,13 @@ export const PromptHubView: React.FC = () => {
         {filteredPrompts.length === 0 && (
           <div className="bg-[#111B36] border border-[#203252] rounded-2xl p-12 text-center space-y-3">
             <Search className="w-8 h-8 text-[#71809B] mx-auto" />
-            <h3 className="text-base font-bold text-[#F5F7FF]">Nenhum prompt encontrado</h3>
-            <p className="text-xs text-[#AAB6CC]">
+            <h3 className="text-lg font-bold text-[#F5F7FF]">Nenhum prompt encontrado</h3>
+            <p className="text-sm text-[#AAB6CC]">
               Tente buscar por outro termo ou selecione "Todos os Prompts".
             </p>
             <button
               onClick={() => { setSelectedCategory('todos'); setSearchTerm(''); }}
-              className="px-4 py-2 rounded-lg bg-[#152342] text-xs font-semibold text-[#00D4E8] cursor-pointer"
+              className="px-4 py-2 rounded-lg bg-[#152342] text-sm font-semibold text-[#00D4E8] cursor-pointer"
             >
               Limpar Filtros
             </button>
@@ -208,7 +208,7 @@ export const PromptHubView: React.FC = () => {
       <div className="pt-4 flex justify-center">
         <button
           onClick={goToDashboard}
-          className="px-6 py-2.5 rounded-xl bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-xs font-semibold text-[#AAB6CC] hover:text-[#00D4E8] transition-colors cursor-pointer"
+          className="px-6 py-2.5 rounded-xl bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-sm font-semibold text-[#AAB6CC] hover:text-[#00D4E8] transition-colors cursor-pointer"
         >
           ← Voltar para o Painel Geral
         </button>

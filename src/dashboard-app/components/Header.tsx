@@ -37,7 +37,7 @@ export const Header: React.FC<{
         </button>
 
         {/* Current Location Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs truncate">
+        <div className="flex items-center gap-2 text-sm truncate">
           <button
             onClick={goToDashboard}
             className="text-[#71809B] hover:text-[#00D4E8] transition-colors font-medium cursor-pointer shrink-0"
@@ -78,12 +78,12 @@ export const Header: React.FC<{
         {onOpenSearch && (
           <button
             onClick={onOpenSearch}
-            className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-xs text-[#AAB6CC] hover:text-[#F5F7FF] transition-colors cursor-pointer"
+            className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-sm text-[#AAB6CC] hover:text-[#F5F7FF] transition-colors cursor-pointer"
             title="Buscar no Manual (Ctrl+K)"
           >
-            <Search className="w-3.5 h-3.5 text-[#00D4E8]" />
+            <Search className="w-4 h-4 text-[#00D4E8]" />
             <span className="hidden md:inline">Buscar</span>
-            <kbd className="hidden md:inline font-mono text-[10px] text-[#71809B] bg-[#080D20] px-1 py-0.2 rounded border border-[#203252]">
+            <kbd className="hidden md:inline font-mono text-xs text-[#71809B] bg-[#080D20] px-1 py-0.2 rounded border border-[#203252]">
               Ctrl+K
             </kbd>
           </button>
@@ -92,20 +92,20 @@ export const Header: React.FC<{
         {/* Central de Prompts Quick Link */}
         <button
           onClick={() => setActiveView('prompts_hub')}
-          className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-xs text-[#AAB6CC] hover:text-[#00D4E8] transition-colors cursor-pointer"
+          className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-sm text-[#AAB6CC] hover:text-[#00D4E8] transition-colors cursor-pointer"
           title="Abrir Central de Prompts"
         >
-          <Sparkles className="w-3.5 h-3.5 text-[#00D4E8]" />
+          <Sparkles className="w-4 h-4 text-[#00D4E8]" />
           <span className="hidden lg:inline">Prompts IA</span>
         </button>
 
         {/* Project Badge */}
         <button
           onClick={() => setShowProjectDrawer(true)}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-xs transition-colors cursor-pointer"
+          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-sm transition-colors cursor-pointer"
           title="Abrir Meu Projeto (Briefing)"
         >
-          <Briefcase className="w-3.5 h-3.5 text-[#00D4E8]" />
+          <Briefcase className="w-4 h-4 text-[#00D4E8]" />
           <span className="text-[#AAB6CC] hidden sm:inline">Meu Projeto:</span>
           <span className="text-[#F5F7FF] font-semibold truncate max-w-[100px] lg:max-w-[130px]">
             {project.name || 'Em branco'}
@@ -113,7 +113,7 @@ export const Header: React.FC<{
         </button>
 
         {/* Global Progress Pill */}
-        <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#111B36] border border-[#203252] text-xs">
+        <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#111B36] border border-[#203252] text-sm">
           <div className="w-2 h-2 rounded-full bg-[#00D4E8] animate-pulse" />
           <span className="font-mono font-bold text-[#F5F7FF]">{percentage}%</span>
         </div>

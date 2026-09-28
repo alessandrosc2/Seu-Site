@@ -93,13 +93,13 @@ const AppContent: React.FC = () => {
       {feedbackToast && (
         <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#111B36] border border-[#00D4E8] text-[#F5F7FF] px-4 py-3 rounded-xl shadow-2xl animate-fade-in max-w-md">
           <CheckCircle2 className="w-5 h-5 text-[#00D4E8] shrink-0" />
-          <span className="text-xs font-semibold leading-relaxed">{feedbackToast}</span>
+          <span className="text-sm font-semibold leading-relaxed">{feedbackToast}</span>
           <button 
             type="button"
             onClick={() => setFeedbackToast(null)}
-            className="text-[#AAB6CC] hover:text-[#F5F7FF] ml-2 text-xs p-1 rounded hover:bg-[#152342] cursor-pointer"
+            className="text-[#AAB6CC] hover:text-[#F5F7FF] ml-2 text-sm p-1 rounded hover:bg-[#152342] cursor-pointer"
           >
-            <X className="w-3.5 h-3.5" />
+            <X className="w-4 h-4" />
           </button>
         </div>
       )}

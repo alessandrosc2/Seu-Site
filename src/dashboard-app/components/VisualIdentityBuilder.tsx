@@ -295,17 +295,17 @@ INFO: ${info}`;
   };
 
   return (
-    <div className="space-y-8 text-xs text-[#F5F7FF]">
+    <div className="space-y-8 text-sm text-[#F5F7FF]">
       {/* 1. Context Banner */}
       <div className="p-4 bg-[#080D20] border border-[#203252] rounded-xl flex items-start gap-3">
         <div className="p-2 rounded-lg bg-[#00D4E8]/10 text-[#00D4E8] shrink-0">
-          <Info className="w-4 h-4" />
+          <Info className="w-5 h-5" />
         </div>
         <div className="space-y-1">
-          <span className="text-xs font-bold text-[#00D4E8] block uppercase tracking-wider">
+          <span className="text-sm font-bold text-[#00D4E8] block uppercase tracking-wider">
             Módulo 03 — Sistema de Cores & Branding Profissional para Website
           </span>
-          <p className="text-[11px] text-[#AAB6CC] leading-relaxed">
+          <p className="text-sm text-[#AAB6CC] leading-relaxed">
             Seu negócio: <strong className="text-[#F5F7FF]">{project.name || 'Minha Empresa'}</strong> • Nicho: <strong className="text-[#00D4E8]">{segmentInput || project.segment || 'Não informado'}</strong> em <strong className="text-[#F5F7FF]">{project.city || 'Sua Cidade'}</strong>. Copie o prompt do Diretor de Arte para o GPT criar o sistema de cores da sua marca e cole a resposta abaixo para registrar no seu projeto.
           </p>
         </div>
@@ -314,8 +314,8 @@ INFO: ${info}`;
       {/* 2. OS 4 PASSOS VISUAIS DA ETAPA */}
       <div className="bg-[#0B1535] border border-[#203252] rounded-xl p-5 space-y-4">
         <div className="flex items-center gap-2 pb-2 border-b border-[#203252]">
-          <Wand2 className="w-4 h-4 text-[#00D4E8]" />
-          <h3 className="text-xs font-bold uppercase tracking-wider text-[#F5F7FF]">
+          <Wand2 className="w-5 h-5 text-[#00D4E8]" />
+          <h3 className="text-sm font-bold uppercase tracking-wider text-[#F5F7FF]">
             Fluxo Guiado com o GPT
           </h3>
         </div>
@@ -324,12 +324,12 @@ INFO: ${info}`;
           {/* Passo 1 */}
           <div className="bg-[#080D20] p-3.5 rounded-lg border border-[#203252] space-y-1.5">
             <div className="flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-[#111B36] text-[#00D4E8] font-bold text-[10px] flex items-center justify-center border border-[#00D4E8]/30">
+              <span className="w-5 h-5 rounded-full bg-[#111B36] text-[#00D4E8] font-bold text-xs flex items-center justify-center border border-[#00D4E8]/30">
                 1
               </span>
-              <span className="font-bold text-[11px] text-[#F5F7FF]">Confirme seu Nicho</span>
+              <span className="font-bold text-sm text-[#F5F7FF]">Confirme seu Nicho</span>
             </div>
-            <p className="text-[10px] text-[#AAB6CC] leading-relaxed">
+            <p className="text-xs text-[#AAB6CC] leading-relaxed">
               O prompt utilizará o nicho exato para definir a psicologia das cores adequada ao setor.
             </p>
           </div>
@@ -337,12 +337,12 @@ INFO: ${info}`;
           {/* Passo 2 */}
           <div className="bg-[#080D20] p-3.5 rounded-lg border border-[#203252] space-y-1.5">
             <div className="flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-[#111B36] text-[#00D4E8] font-bold text-[10px] flex items-center justify-center border border-[#00D4E8]/30">
+              <span className="w-5 h-5 rounded-full bg-[#111B36] text-[#00D4E8] font-bold text-xs flex items-center justify-center border border-[#00D4E8]/30">
                 2
               </span>
-              <span className="font-bold text-[11px] text-[#F5F7FF]">Copie o Prompt</span>
+              <span className="font-bold text-sm text-[#F5F7FF]">Copie o Prompt</span>
             </div>
-            <p className="text-[10px] text-[#AAB6CC] leading-relaxed">
+            <p className="text-xs text-[#AAB6CC] leading-relaxed">
               O prompt do Diretor de Arte já vem preenchido com todos os dados da sua empresa.
             </p>
           </div>
@@ -350,12 +350,12 @@ INFO: ${info}`;
           {/* Passo 3 */}
           <div className="bg-[#080D20] p-3.5 rounded-lg border border-[#203252] space-y-1.5">
             <div className="flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-[#111B36] text-[#00D4E8] font-bold text-[10px] flex items-center justify-center border border-[#00D4E8]/30">
+              <span className="w-5 h-5 rounded-full bg-[#111B36] text-[#00D4E8] font-bold text-xs flex items-center justify-center border border-[#00D4E8]/30">
                 3
               </span>
-              <span className="font-bold text-[11px] text-[#F5F7FF]">Cole no ChatGPT</span>
+              <span className="font-bold text-sm text-[#F5F7FF]">Cole no ChatGPT</span>
             </div>
-            <p className="text-[10px] text-[#AAB6CC] leading-relaxed">
+            <p className="text-xs text-[#AAB6CC] leading-relaxed">
               Anexe a imagem da sua logo (se tiver) e envie o prompt para o GPT gerar o sistema de cores.
             </p>
           </div>
@@ -363,12 +363,12 @@ INFO: ${info}`;
           {/* Passo 4 */}
           <div className="bg-[#080D20] p-3.5 rounded-lg border border-[#203252] space-y-1.5">
             <div className="flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-[#111B36] text-[#22C55E] font-bold text-[10px] flex items-center justify-center border border-[#22C55E]/30">
+              <span className="w-5 h-5 rounded-full bg-[#111B36] text-[#22C55E] font-bold text-xs flex items-center justify-center border border-[#22C55E]/30">
                 4
               </span>
-              <span className="font-bold text-[11px] text-[#F5F7FF]">Cole a Resposta Aqui</span>
+              <span className="font-bold text-sm text-[#F5F7FF]">Cole a Resposta Aqui</span>
             </div>
-            <p className="text-[10px] text-[#AAB6CC] leading-relaxed">
+            <p className="text-xs text-[#AAB6CC] leading-relaxed">
               Copie a resposta do GPT e cole abaixo para manter seu sistema de cores registrado.
             </p>
           </div>
@@ -379,17 +379,17 @@ INFO: ${info}`;
       <div className="bg-[#080D20] border border-[#203252] rounded-xl p-5 space-y-5">
         <div className="flex items-center justify-between pb-3 border-b border-[#203252]">
           <div className="flex items-center gap-2">
-            <Sliders className="w-4 h-4 text-[#00D4E8]" />
-            <h4 className="text-xs font-bold text-[#F5F7FF] uppercase tracking-wider">
+            <Sliders className="w-5 h-5 text-[#00D4E8]" />
+            <h4 className="text-sm font-bold text-[#F5F7FF] uppercase tracking-wider">
               1. Selecione ou Digite seu Nicho de Mercado
             </h4>
           </div>
-          <span className="text-[10px] text-[#71809B]">Clique para preencher rápido</span>
+          <span className="text-xs text-[#71809B]">Clique para preencher rápido</span>
         </div>
 
         {/* Chips de Nichos Populares */}
         <div className="space-y-2">
-          <label className="block text-xs font-semibold text-[#AAB6CC]">
+          <label className="block text-sm font-semibold text-[#AAB6CC]">
             Nichos Frequentes:
           </label>
           <div className="flex flex-wrap gap-2">
@@ -400,7 +400,7 @@ INFO: ${info}`;
                   key={niche.name}
                   type="button"
                   onClick={() => handleSelectNiche(niche.name, niche.defaultVibe)}
-                  className={`px-3 py-1.5 rounded-lg text-[11px] font-medium transition-all flex items-center gap-1.5 cursor-pointer ${
+                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all flex items-center gap-1.5 cursor-pointer ${
                     isSelected
                       ? 'bg-[#00D4E8] text-[#080D20] font-bold shadow-md shadow-[#00D4E8]/20'
                       : 'bg-[#111B36] text-[#AAB6CC] hover:text-[#F5F7FF] border border-[#203252] hover:border-[#00D4E8]/40'
@@ -417,7 +417,7 @@ INFO: ${info}`;
         {/* Input Manual de Nicho */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
           <div className="space-y-1.5">
-            <label className="block text-xs font-semibold text-[#F5F7FF]">
+            <label className="block text-sm font-semibold text-[#F5F7FF]">
               Nicho / Ramo de Atuação do Negócio:
             </label>
             <input
@@ -428,15 +428,15 @@ INFO: ${info}`;
                 updateProject({ segment: e.target.value });
               }}
               placeholder="Ex: Clínica Odontológica, Advocacia Trabalhista, Pizzaria..."
-              className="w-full bg-[#111B36] border border-[#203252] rounded-lg p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+              className="w-full bg-[#111B36] border border-[#203252] rounded-lg p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
             />
-            <p className="text-[10px] text-[#71809B]">
+            <p className="text-xs text-[#71809B]">
               O GPT usará esse segmento para pesquisar as melhores combinações de cores do setor.
             </p>
           </div>
 
           <div className="space-y-1.5">
-            <label className="block text-xs font-semibold text-[#F5F7FF]">
+            <label className="block text-sm font-semibold text-[#F5F7FF]">
               Personalidade Visual Desejada:
             </label>
             <input
@@ -444,9 +444,9 @@ INFO: ${info}`;
               value={personality}
               onChange={(e) => setPersonality(e.target.value)}
               placeholder="Ex: Confiável, acolhedora, sofisticada, enérgica..."
-              className="w-full bg-[#111B36] border border-[#203252] rounded-lg p-2.5 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+              className="w-full bg-[#111B36] border border-[#203252] rounded-lg p-2.5 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
             />
-            <p className="text-[10px] text-[#71809B]">
+            <p className="text-xs text-[#71809B]">
               Sensação que o cliente deve ter ao entrar no seu site.
             </p>
           </div>
@@ -454,7 +454,7 @@ INFO: ${info}`;
 
         {/* Posicionamento Sugerido */}
         <div className="space-y-2 pt-2 border-t border-[#203252]/50">
-          <label className="block text-xs font-semibold text-[#AAB6CC]">
+          <label className="block text-sm font-semibold text-[#AAB6CC]">
             Posicionamento de Mercado:
           </label>
           <div className="flex flex-wrap gap-1.5">
@@ -463,7 +463,7 @@ INFO: ${info}`;
                 key={item}
                 type="button"
                 onClick={() => setPositioning(item)}
-                className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all cursor-pointer ${
+                className={`px-2.5 py-1 rounded-md text-sm font-medium transition-all cursor-pointer ${
                   positioning.toLowerCase() === item.toLowerCase()
                     ? 'bg-[#1769FF] text-white font-bold'
                     : 'bg-[#111B36] text-[#AAB6CC] hover:text-[#F5F7FF] border border-[#203252]'
@@ -480,12 +480,12 @@ INFO: ${info}`;
       <div className="bg-[#080D20] border border-[#203252] rounded-xl p-5 space-y-2.5">
         <div className="flex items-center justify-between pb-2 border-b border-[#203252]/60">
           <div className="flex items-center gap-2">
-            <Palette className="w-4 h-4 text-[#00D4E8]" />
-            <h4 className="text-xs font-bold text-[#F5F7FF] uppercase tracking-wider">
+            <Palette className="w-5 h-5 text-[#00D4E8]" />
+            <h4 className="text-sm font-bold text-[#F5F7FF] uppercase tracking-wider">
               Cores específicas que você gostaria de utilizar
             </h4>
           </div>
-          <span className="text-[10px] text-[#71809B] font-semibold uppercase tracking-wider bg-[#111B36] px-2 py-0.5 rounded border border-[#203252]">
+          <span className="text-xs text-[#71809B] font-semibold uppercase tracking-wider bg-[#111B36] px-2 py-0.5 rounded border border-[#203252]">
             Opcional
           </span>
         </div>
@@ -500,9 +500,9 @@ INFO: ${info}`;
               updateProject({ desiredColors: val });
             }}
             placeholder="Ex.: azul petróleo, verde oliva e bege; ou #123456, #F2E8D5"
-            className="w-full bg-[#111B36] border border-[#203252] rounded-lg p-2.5 text-xs text-[#F5F7FF] placeholder-[#71809B] focus:border-[#00D4E8] focus:outline-none transition-colors"
+            className="w-full bg-[#111B36] border border-[#203252] rounded-lg p-2.5 text-sm text-[#F5F7FF] placeholder-[#71809B] focus:border-[#00D4E8] focus:outline-none transition-colors"
           />
-          <p className="text-[11px] text-[#AAB6CC] leading-relaxed">
+          <p className="text-sm text-[#AAB6CC] leading-relaxed">
             Opcional. Se você já tem preferência por determinadas cores, informe aqui. A IA analisará essas cores junto com sua marca, segmento e posicionamento e decidirá como utilizá-las da melhor forma.
           </p>
         </div>
@@ -516,10 +516,10 @@ INFO: ${info}`;
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-extrabold text-[#F5F7FF] tracking-tight">
+              <h4 className="text-base font-extrabold text-[#F5F7FF] tracking-tight">
                 2. Prompt do Diretor de Arte para Colar no ChatGPT / Claude
               </h4>
-              <span className="text-[11px] text-[#00D4E8] font-medium">
+              <span className="text-sm text-[#00D4E8] font-medium">
                 Alimentado dinamicamente com seu negócio ({project.name || 'Sua Empresa'}), nicho ({segmentInput || 'Serviços'}) e dados de Meu Projeto
               </span>
             </div>
@@ -530,19 +530,19 @@ INFO: ${info}`;
               href="https://chatgpt.com"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#080D20] hover:bg-[#152342] border border-[#203252] text-xs font-semibold text-[#AAB6CC] hover:text-[#00D4E8] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#080D20] hover:bg-[#152342] border border-[#203252] text-sm font-semibold text-[#AAB6CC] hover:text-[#00D4E8] transition-colors"
               title="Abrir o ChatGPT em uma nova aba"
             >
-              <ExternalLink className="w-3.5 h-3.5" />
+              <ExternalLink className="w-4 h-4" />
               <span>Abrir ChatGPT</span>
             </a>
 
             <button
               type="button"
               onClick={handleCopyGptPrompt}
-              className="btn-cta px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-1.5 cursor-pointer shadow-lg"
+              className="btn-cta px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-1.5 cursor-pointer shadow-lg"
             >
-              {copiedGptPrompt ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+              {copiedGptPrompt ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
               <span>{copiedGptPrompt ? 'Prompt Copiado!' : 'Copiar Prompt para o GPT'}</span>
             </button>
           </div>
@@ -556,24 +556,24 @@ INFO: ${info}`;
               attachLogoMode ? 'bg-[#152342] border-[#00D4E8]' : 'bg-[#111B36] border-[#203252]'
             }`}
           >
-            <div className={`w-4 h-4 rounded border mt-0.5 flex items-center justify-center shrink-0 ${
+            <div className={`w-5 h-5 rounded border mt-0.5 flex items-center justify-center shrink-0 ${
               attachLogoMode ? 'bg-[#00D4E8] border-[#00D4E8]' : 'border-[#71809B]'
             }`}>
-              {attachLogoMode && <Check className="w-3 h-3 text-[#080D20]" />}
+              {attachLogoMode && <Check className="w-4 h-4 text-[#080D20]" />}
             </div>
             <div className="space-y-1">
-              <span className="text-xs font-bold text-[#F5F7FF] block flex items-center gap-1.5">
-                <Upload className="w-3.5 h-3.5 text-[#00D4E8]" />
+              <span className="text-sm font-bold text-[#F5F7FF] block flex items-center gap-1.5">
+                <Upload className="w-4 h-4 text-[#00D4E8]" />
                 Vou anexar a imagem da minha logomarca no chat do GPT
               </span>
-              <p className="text-[10px] text-[#AAB6CC] leading-relaxed">
+              <p className="text-xs text-[#AAB6CC] leading-relaxed">
                 Ao marcar esta opção, o prompt instrui o GPT a analisar o arquivo de imagem anexado por você e extrair as tonalidades oficiais da logo.
               </p>
             </div>
           </div>
 
           <div className="space-y-1.5">
-            <label className="block text-xs font-semibold text-[#AAB6CC]">
+            <label className="block text-sm font-semibold text-[#AAB6CC]">
               Preferência Extra para a IA (Opcional):
             </label>
             <input
@@ -581,9 +581,9 @@ INFO: ${info}`;
               value={customUserNotes}
               onChange={(e) => setCustomUserNotes(e.target.value)}
               placeholder="Ex: 'Quero transmitir luxo', 'Prefiro tons escuros', 'Sem azul'..."
-              className="w-full bg-[#111B36] border border-[#203252] rounded-lg p-2 text-xs text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
+              className="w-full bg-[#111B36] border border-[#203252] rounded-lg p-2 text-sm text-[#F5F7FF] focus:border-[#00D4E8] focus:outline-none"
             />
-            <p className="text-[10px] text-[#71809B]">
+            <p className="text-xs text-[#71809B]">
               Adiciona suas preferências pessoais diretamente no prompt do GPT.
             </p>
           </div>
@@ -591,11 +591,11 @@ INFO: ${info}`;
 
         {/* Caixa de Texto do Prompt */}
         <div className="space-y-1.5">
-          <div className="flex items-center justify-between text-[11px] text-[#AAB6CC]">
+          <div className="flex items-center justify-between text-sm text-[#AAB6CC]">
             <span>Texto do Prompt Formatado:</span>
             <span className="font-mono text-[#00D4E8]">Pronto para envio</span>
           </div>
-          <div className="bg-[#080D20] border border-[#203252] rounded-xl p-4 font-mono text-[11px] text-[#AAB6CC] leading-relaxed max-h-56 overflow-y-auto whitespace-pre-wrap select-all">
+          <div className="bg-[#080D20] border border-[#203252] rounded-xl p-4 font-mono text-sm text-[#AAB6CC] leading-relaxed max-h-56 overflow-y-auto whitespace-pre-wrap select-all">
             {gptPrompt}
           </div>
         </div>
@@ -605,19 +605,19 @@ INFO: ${info}`;
       <div className="bg-[#0B1535] border border-[#203252] rounded-xl p-5 md:p-6 space-y-4">
         <div className="flex items-center justify-between pb-2 border-b border-[#203252]">
           <div className="flex items-center gap-2">
-            <MessageSquare className="w-4 h-4 text-[#00D4E8]" />
-            <h4 className="text-xs font-bold text-[#F5F7FF] uppercase tracking-wider">
+            <MessageSquare className="w-5 h-5 text-[#00D4E8]" />
+            <h4 className="text-sm font-bold text-[#F5F7FF] uppercase tracking-wider">
               3. Colar a Resposta do GPT Aqui
             </h4>
           </div>
           {savedGptResponse && (
-            <span className="inline-flex items-center gap-1 text-[10px] text-[#22C55E] bg-[#22C55E]/10 px-2 py-0.5 rounded border border-[#22C55E]/30 font-medium">
-              <Check className="w-3 h-3" /> Resposta salva
+            <span className="inline-flex items-center gap-1 text-xs text-[#22C55E] bg-[#22C55E]/10 px-2 py-0.5 rounded border border-[#22C55E]/30 font-medium">
+              <Check className="w-4 h-4" /> Resposta salva
             </span>
           )}
         </div>
 
-        <p className="text-[11px] text-[#AAB6CC] leading-relaxed">
+        <p className="text-sm text-[#AAB6CC] leading-relaxed">
           Cole abaixo a resposta completa gerada pelo ChatGPT ou Claude. O sistema irá extrair os códigos da paleta e manter o documento salvo na memória do seu projeto:
         </p>
 
@@ -629,26 +629,26 @@ INFO: ${info}`;
             if (importStatusMessage) setImportStatusMessage(null);
           }}
           placeholder="Cole aqui a resposta completa do ChatGPT (incluindo o bloco :root { --color-primary: #...; }, a tabela e as justificativas)..."
-          className="w-full bg-[#080D20] border border-[#203252] rounded-xl p-3.5 text-xs font-mono text-[#F5F7FF] placeholder-[#71809B] focus:border-[#00D4E8] focus:outline-none transition-colors"
+          className="w-full bg-[#080D20] border border-[#203252] rounded-xl p-3.5 text-sm font-mono text-[#F5F7FF] placeholder-[#71809B] focus:border-[#00D4E8] focus:outline-none transition-colors"
         />
 
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <span className="text-[11px] text-[#71809B]">
+          <span className="text-sm text-[#71809B]">
             Dica: Aceita tokens CSS, tabelas Markdown ou o texto completo devolvido pela IA.
           </span>
 
           <button
             type="button"
             onClick={handleParseAndApplyGpt}
-            className="btn-cta px-4 py-2 rounded-lg font-bold text-xs flex items-center justify-center gap-2 cursor-pointer shadow-md self-end sm:self-auto"
+            className="btn-cta px-4 py-2 rounded-lg font-bold text-sm flex items-center justify-center gap-2 cursor-pointer shadow-md self-end sm:self-auto"
           >
-            <Sparkles className="w-3.5 h-3.5" />
+            <Sparkles className="w-4 h-4" />
             <span>Salvar e Registrar Resposta do GPT</span>
           </button>
         </div>
 
         {importStatusMessage && (
-          <div className={`p-3 rounded-lg text-xs leading-relaxed border ${
+          <div className={`p-3 rounded-lg text-sm leading-relaxed border ${
             importStatusMessage.startsWith('✅') 
               ? 'bg-[#22C55E]/10 border-[#22C55E]/40 text-[#22C55E]' 
               : 'bg-[#EF4444]/10 border-[#EF4444]/40 text-[#EF4444]'
@@ -664,12 +664,12 @@ INFO: ${info}`;
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#203252]">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <FileText className="w-4 h-4 text-[#00D4E8]" />
-                <h4 className="text-xs font-bold text-[#F5F7FF] uppercase tracking-wider">
+                <FileText className="w-5 h-5 text-[#00D4E8]" />
+                <h4 className="text-sm font-bold text-[#F5F7FF] uppercase tracking-wider">
                   Resposta do Diretor de Arte (GPT) — Sistema de Cores Registrado
                 </h4>
               </div>
-              <p className="text-[11px] text-[#AAB6CC]">
+              <p className="text-sm text-[#AAB6CC]">
                 Este documento define a paleta e as regras cromáticas que guiarão a geração do seu site com IA.
               </p>
             </div>
@@ -678,29 +678,29 @@ INFO: ${info}`;
               <button
                 type="button"
                 onClick={handleCopyTokens}
-                className="px-3 py-1.5 rounded-lg bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-xs font-semibold text-[#AAB6CC] hover:text-[#00D4E8] flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="px-3 py-1.5 rounded-lg bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-sm font-semibold text-[#AAB6CC] hover:text-[#00D4E8] flex items-center gap-1.5 transition-colors cursor-pointer"
                 title="Copiar tokens CSS :root"
               >
-                {copiedTokens ? <Check className="w-3.5 h-3.5 text-[#22C55E]" /> : <Code className="w-3.5 h-3.5" />}
+                {copiedTokens ? <Check className="w-4 h-4 text-[#22C55E]" /> : <Code className="w-4 h-4" />}
                 <span>{copiedTokens ? 'Tokens Copiados!' : 'Copiar Tokens CSS'}</span>
               </button>
 
               <button
                 type="button"
                 onClick={handleCopyHexes}
-                className="px-3 py-1.5 rounded-lg bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-xs font-semibold text-[#AAB6CC] hover:text-[#00D4E8] flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="px-3 py-1.5 rounded-lg bg-[#111B36] hover:bg-[#152342] border border-[#203252] text-sm font-semibold text-[#AAB6CC] hover:text-[#00D4E8] flex items-center gap-1.5 transition-colors cursor-pointer"
                 title="Copiar lista de códigos HEX"
               >
-                {copiedHexes ? <Check className="w-3.5 h-3.5 text-[#22C55E]" /> : <Palette className="w-3.5 h-3.5" />}
+                {copiedHexes ? <Check className="w-4 h-4 text-[#22C55E]" /> : <Palette className="w-4 h-4" />}
                 <span>{copiedHexes ? 'HEX Copiados!' : 'Copiar HEX'}</span>
               </button>
 
               <button
                 type="button"
                 onClick={handleCopyFullResponse}
-                className="btn-cta px-3.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 cursor-pointer shadow"
+                className="btn-cta px-3.5 py-1.5 rounded-lg text-sm font-bold flex items-center gap-1.5 cursor-pointer shadow"
               >
-                {copiedFullResponse ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                {copiedFullResponse ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                 <span>{copiedFullResponse ? 'Resposta Copiada!' : 'Copiar Resposta Completa'}</span>
               </button>
             </div>
@@ -708,7 +708,7 @@ INFO: ${info}`;
 
           {/* Amostra rápida das cores extraídas da resposta */}
           <div className="space-y-2">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-[#AAB6CC] block">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#AAB6CC] block">
               Cores Funcionais Identificadas na Resposta:
             </span>
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-2">
@@ -740,10 +740,10 @@ INFO: ${info}`;
 
           {/* Visualizador da Resposta Completa */}
           <div className="space-y-1.5 pt-2">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-[#71809B] block">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#71809B] block">
               Conteúdo da Resposta do GPT:
             </span>
-            <div className="bg-[#111B36] border border-[#203252] rounded-xl p-4 font-mono text-[11px] text-[#AAB6CC] leading-relaxed max-h-96 overflow-y-auto whitespace-pre-wrap select-all">
+            <div className="bg-[#111B36] border border-[#203252] rounded-xl p-4 font-mono text-sm text-[#AAB6CC] leading-relaxed max-h-96 overflow-y-auto whitespace-pre-wrap select-all">
               {savedGptResponse || gptResponseInput}
             </div>
           </div>
