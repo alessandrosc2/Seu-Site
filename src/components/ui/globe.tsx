@@ -22,7 +22,7 @@ const Globe: React.FC<{ className?: string }> = ({ className }) => {
       <div
         className="relative w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden shadow-[0_0_60px_rgba(56,189,248,0.4),-8px_0_16px_#38bdf8_inset,25px_4px_40px_#070d1e_inset,-35px_-4px_50px_#38bdf888_inset,280px_0_70px_#00000099_inset,180px_0_50px_#000000ee_inset]"
         style={{
-          backgroundImage: "url('https://cdn.21st.dev/assets/mirror/f2/f2fe23d0c6a8406962e4c5ef969e13dc9de3faf37d3e7258a1067173325b254f.jpg')",
+          backgroundImage: "url('/globe-bg.webp')",
           backgroundSize: "auto 100%",
           backgroundRepeat: "repeat-x",
           backgroundPosition: "0 0",

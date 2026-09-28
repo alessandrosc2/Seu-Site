@@ -38,8 +38,8 @@ function PrivateRoute({ children }: { children: React.ReactNode }) {
     return (
       <div className="min-h-screen bg-[#050814] flex items-center justify-center p-4">
         <div className="bg-red-500/10 border border-red-500/20 p-6 rounded-lg text-center max-w-lg">
-          <h2 className="text-red-400 font-bold mb-2">Erro de Configurao</h2>
-          <p className="text-slate-300">As chaves do Firebase no esto configuradas na Vercel. Acesso bloqueado por segurana.</p>
+          <h2 className="text-red-400 font-bold mb-2">Erro de Configuração</h2>
+          <p className="text-slate-300">As chaves do Firebase não estão configuradas na Vercel. Acesso bloqueado por segurança.</p>
         </div>
       </div>
     );

@@ -1,17 +1,16 @@
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { initializeApp, FirebaseApp } from "firebase/app";
+import { getAuth, Auth } from "firebase/auth";
+import { getFirestore, Firestore } from "firebase/firestore";
 
 const isConfigured = !!import.meta.env.VITE_FIREBASE_API_KEY;
 
 if (!isConfigured) {
   console.error(
-    " ERRO DE SEGURANA: VITE_FIREBASE_API_KEY no est definida nas variveis de ambiente. " +
-    "O Firebase no foi inicializado. O Checkout e a rea Logada iro falhar explicitamente."
+    " ERRO DE SEGURANÇA: VITE_FIREBASE_API_KEY não está definida nas variáveis de ambiente. " +
+    "O Firebase não foi inicializado. O Checkout e a área Logada irão falhar explicitamente."
   );
 }
 
-// Inicializa apenas se tiver as chaves (evita crash fatal no import)
 const firebaseConfig = isConfigured ? {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -22,14 +21,13 @@ const firebaseConfig = isConfigured ? {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 } : undefined;
 
-export const app = isConfigured ? initializeApp(firebaseConfig) : null;
-export const auth = isConfigured ? getAuth(app) : null;
-export const db = isConfigured ? getFirestore(app) : null;
+export const app = (isConfigured ? initializeApp(firebaseConfig!) : null) as unknown as FirebaseApp;
+export const auth = (isConfigured ? getAuth(app) : null) as unknown as Auth;
+export const db = (isConfigured ? getFirestore(app) : null) as unknown as Firestore;
 
-// Helper para validar antes do uso e falhar explicitamente onde for chamado
 export const requireFirebase = () => {
   if (!app || !auth || !db) {
-    throw new Error("Erro Crtico: Variveis de ambiente do Firebase ausentes. Configure a Vercel.");
+    throw new Error("Erro Crítico: Variáveis de ambiente do Firebase ausentes. Configure a Vercel.");
   }
   return { app, auth, db };
 };
