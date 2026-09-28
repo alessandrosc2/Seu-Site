@@ -7,6 +7,7 @@ import {
   Bot, 
   Share2, 
   ArrowRight, 
+  ArrowDown,
   Info, 
   CheckCircle2, 
   Sparkles, 
@@ -406,14 +407,19 @@ export function ConversionScienceSection() {
               Com o método <strong className="text-white font-bold">Seu Site Único</strong>, você implementa seu domínio corporativo profissional guiado por IA em minutos, sem depender de programadores caros ou meses de espera.
             </p>
 
-            <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="pt-4 flex flex-col items-center justify-center max-w-xl mx-auto">
+              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-cyan-300 mb-3 text-center">
+                <span>Estanque o vazamento de vendas e feche mais negócios</span>
+                <ArrowDown className="w-3.5 h-3.5 text-cyan-400 animate-bounce" />
+              </div>
+
               <button
                 type="button"
                 onClick={scrollToPricing}
-                className="w-full sm:w-auto px-8 py-5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-base sm:text-lg hover:from-cyan-400 hover:to-blue-500 transition-all shadow-lg shadow-cyan-500/25 hover:scale-105 flex items-center justify-center gap-3 group cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-gradient-to-r from-cyan-400 via-cyan-300 to-blue-400 hover:brightness-110 text-slate-950 font-bold text-sm sm:text-base shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5 active:scale-[0.98] group cursor-pointer"
               >
-                <span>Estancar Vazamento de Vendas: Criar Meu Site Profissional</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <span className="whitespace-nowrap">Criar Meu Site Profissional</span>
+                <ArrowRight className="w-4 h-4 text-slate-950 group-hover:translate-x-1.5 transition-transform" />
               </button>
             </div>
 

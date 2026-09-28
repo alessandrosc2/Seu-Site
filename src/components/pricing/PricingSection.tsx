@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Check, Star, MessageCircle, ChevronDown, ShieldCheck, Sparkles, X } from "lucide-react";
+import { Check, Star, MessageCircle, ChevronDown, ShieldCheck, Sparkles, X, ArrowRight, ArrowDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { CheckoutModal } from "./CheckoutModal";
@@ -103,9 +103,10 @@ export function PricingSection() {
 
             <button
               onClick={() => handleCheckout("Básico", 27.90)}
-              className="w-full py-4 rounded-xl font-semibold text-sm bg-white/10 text-white hover:bg-white/20 border border-white/15 transition-all cursor-pointer"
+              className="w-full py-3.5 sm:py-4 px-6 rounded-xl font-semibold text-sm bg-white/10 text-white hover:bg-white/20 border border-white/15 transition-all cursor-pointer inline-flex items-center justify-center gap-2 group active:scale-[0.98]"
             >
-              Começar com o Básico
+              <span>Começar com o Básico</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
             </button>
           </div>
 
@@ -154,33 +155,43 @@ export function PricingSection() {
 
             <button
               onClick={() => handleCheckout("Completo", 47.90)}
-              className="w-full py-4 rounded-xl font-bold text-sm bg-gradient-to-r from-blue-600 via-cyan-400 to-cyan-300 text-slate-950 hover:brightness-110 shadow-lg shadow-cyan-500/30 transition-all transform hover:-translate-y-0.5 cursor-pointer"
+              className="w-full py-3.5 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base bg-gradient-to-r from-blue-600 via-cyan-400 to-cyan-300 text-slate-950 hover:brightness-110 shadow-lg shadow-cyan-500/30 transition-all transform hover:-translate-y-0.5 cursor-pointer inline-flex items-center justify-center gap-2 group active:scale-[0.98]"
             >
-              Garantir o Plano Completo
+              <span>Garantir o Plano Completo</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
             </button>
           </div>
         </div>
 
         {/* Alternative Route — Done For You (WhatsApp) */}
-        <div className="max-w-3xl mx-auto p-8 rounded-3xl bg-slate-900/40 border border-emerald-500/30 backdrop-blur-xl text-center mb-20">
+        <div className="max-w-3xl mx-auto p-6 sm:p-10 rounded-3xl bg-slate-900/40 border border-emerald-500/30 backdrop-blur-xl text-center mb-20 shadow-xl">
           <span className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">
             <MessageCircle className="w-4 h-4" /> Saída Alternativa
           </span>
-          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
             Não quer aprender sozinho? Eu faço o seu site pra você.
           </h3>
-          <p className="text-slate-300 text-sm max-w-xl mx-auto mb-6">
-            Sites simples, rápidos e profissionais a partir de <strong>R$ 200,00</strong> — o valor varia de acordo com o tamanho do seu projeto.
+          <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-6 leading-relaxed">
+            Sites simples, rápidos e profissionais a partir de <strong className="text-emerald-300">R$ 200,00</strong> — o valor varia de acordo com o tamanho do seu projeto.
           </p>
-          <a
-            href="https://wa.me/5583999999999?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20voc%C3%AA%20criar%20o%20site%20do%20meu%20neg%C3%B3cio."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-500 text-slate-950 font-bold text-sm hover:bg-emerald-400 transition-colors shadow-lg shadow-emerald-500/20"
-          >
-            <MessageCircle className="w-4 h-4" />
-            Solicitar Orçamento no WhatsApp
-          </a>
+          
+          <div className="flex flex-col items-center justify-center max-w-md mx-auto">
+            <div className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-emerald-300 mb-3 text-center">
+              <span>Converse diretamente com o desenvolvedor</span>
+              <ArrowDown className="w-3.5 h-3.5 text-emerald-400 animate-bounce" />
+            </div>
+
+            <a
+              href="https://wa.me/5583999999999?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20voc%C3%AA%20criar%20o%20site%20do%20meu%20neg%C3%B3cio."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold text-sm sm:text-base transition-all shadow-lg shadow-emerald-500/25 active:scale-[0.98] group cursor-pointer"
+            >
+              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+              <span className="whitespace-nowrap">Pedir Orçamento no WhatsApp</span>
+              <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1.5 transition-transform" />
+            </a>
+          </div>
         </div>
 
         {/* FAQ Accordion */}

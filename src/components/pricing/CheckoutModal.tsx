@@ -296,16 +296,17 @@ export function CheckoutModal({
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-cyan-400 to-cyan-300 text-slate-950 font-extrabold text-base hover:brightness-110 shadow-lg shadow-cyan-500/30 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
+              className="w-full py-3.5 sm:py-4 px-6 rounded-xl bg-gradient-to-r from-blue-600 via-cyan-400 to-cyan-300 text-slate-950 font-bold text-sm sm:text-base hover:brightness-110 shadow-lg shadow-cyan-500/30 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 active:scale-[0.98]"
             >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
               ) : (
                 <>
-                  <Lock className="w-4 h-4" />
-                  <span>
+                  <Lock className="w-4 h-4 shrink-0" />
+                  <span className="whitespace-nowrap">
                     Concluir Inscrição Segura (R$ {totalPrice.toFixed(2).replace(".", ",")})
                   </span>
+                  <ArrowRight className="w-4 h-4 shrink-0" />
                 </>
               )}
             </button>

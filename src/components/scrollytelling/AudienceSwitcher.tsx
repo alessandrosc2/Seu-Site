@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Briefcase, TrendingUp, DollarSign, Check, ArrowRight, Sparkles } from "lucide-react";
+import { Briefcase, TrendingUp, DollarSign, Check, ArrowRight, ArrowDown, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function AudienceSwitcher() {
@@ -166,17 +166,27 @@ export function AudienceSwitcher() {
 
                 <div className="p-4 rounded-xl bg-black/40 border border-emerald-500/20 text-center mb-4">
                   <span className="text-xs text-slate-400">Potencial de Renda Extra Mensal:</span>
-                  <div className="text-3xl font-extrabold text-emerald-400 mt-1">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-emerald-400 mt-1">
                     R$ {totalEarnings.toLocaleString('pt-BR')},00
                   </div>
                 </div>
 
-                <button 
-                  onClick={() => document.getElementById('planos')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="w-full py-3 rounded-xl bg-emerald-500 text-slate-950 font-bold text-sm hover:bg-emerald-400 transition-colors shadow-lg"
-                >
-                  Acessar Trilha Renda Extra (Plano Completo)
-                </button>
+                <div className="mt-4 flex flex-col items-center">
+                  <div className="inline-flex items-center gap-1.5 text-xs text-emerald-300 font-semibold mb-2 text-center">
+                    <span>Disponível no Plano Completo</span>
+                    <ArrowDown className="w-3 h-3 text-emerald-400 animate-bounce" />
+                  </div>
+                  <button 
+                    onClick={() => {
+                      const el = document.getElementById('pricing');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="w-full py-3.5 px-5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold text-sm sm:text-base transition-all shadow-md shadow-emerald-500/20 active:scale-[0.98] inline-flex items-center justify-center gap-2 group cursor-pointer"
+                  >
+                    <span className="whitespace-nowrap">Acessar Trilha Renda Extra</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
