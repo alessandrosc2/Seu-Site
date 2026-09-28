@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <defs>
+    <!-- Cyan glow filter -->
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Gradients -->
+    <linearGradient id="rocketGlowGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="50%" stop-color="#00aaff" />
+      <stop offset="100%" stop-color="#0055ff" />
+    </linearGradient>
+
+    <linearGradient id="suitGrad" x1="0%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#0080ff" />
+      <stop offset="60%" stop-color="#1ea7fd" />
+      <stop offset="100%" stop-color="#42d4ff" />
+    </linearGradient>
+
+    <linearGradient id="skinGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#93c5fd" />
+    </linearGradient>
+
+    <linearGradient id="flameGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00ffff" />
+      <stop offset="40%" stop-color="#38bdf8" />
+      <stop offset="80%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="orbitGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ffff" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <linearGradient id="orbitGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ambient background glow behind rocket trails -->
+  <circle cx="250" cy="250" r="180" fill="#00f0ff" opacity="0.06" filter="url(#softGlow)" />
+
+  <!-- Orbit Arc 1: Upper left crescent sweep -->
+  <path d="M 98 335 C 52 230 92 112 188 78 C 196 75 192 68 183 71 C 70 108 30 240 85 352 C 89 360 96 352 98 335 Z" 
+        fill="url(#orbitGrad1)" filter="url(#cyanGlow)" />
+
+  <!-- Orbit Arc 2: Lower right outer crescent swoosh -->
+  <path d="M 210 416 C 310 440 405 385 438 275 C 445 250 448 220 445 205 C 444 198 438 200 439 210 C 442 285 365 425 210 416 Z" 
+        fill="url(#orbitGrad2)" filter="url(#cyanGlow)" />
+
+  <!-- Secondary subtle orbit speed line -->
+  <path d="M 125 150 C 145 105 185 82 225 75" 
+        stroke="#00ffff" stroke-width="4" stroke-linecap="round" opacity="0.7" filter="url(#cyanGlow)" />
+
+  <!-- ROCKET BODY -->
+  <!-- Exhaust Flame Burst -->
+  <path d="M 225 330 
+           L 185 390 
+           L 205 372 
+           L 155 420 
+           L 182 398 
+           L 120 445 
+           L 175 395 
+           L 165 375 
+           L 210 345 
+           Z" 
+        fill="url(#flameGrad)" filter="url(#cyanGlow)" />
+
+  <!-- Rocket Left Fin -->
+  <path d="M 225 285 C 190 280 152 302 142 322 C 165 332 208 318 225 305 Z" 
+        fill="url(#suitGrad)" stroke="#00ffff" stroke-width="2.5" />
+
+  <!-- Rocket Right Fin -->
+  <path d="M 315 350 C 335 390 310 405 272 400 C 278 385 302 360 315 350 Z" 
+        fill="#0284c7" stroke="#00f0ff" stroke-width="2.5" />
+
+  <!-- Rocket Engine Base Collar -->
+  <path d="M 212 320 L 255 355 L 245 365 L 202 330 Z" 
+        fill="#00ffff" />
+
+  <!-- Main Fuselage -->
+  <path d="M 225 320 
+           C 260 270 330 215 410 120 
+           C 445 80 430 145 385 240 
+           C 340 320 280 345 255 345 
+           Z" 
+        fill="#051738" stroke="url(#rocketGlowGrad)" stroke-width="6" />
+
+  <!-- Rocket Highlight Glare Line -->
+  <path d="M 370 140 C 398 115 410 102 418 96" 
+        stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.9" />
+
+  <!-- Rocket Nose Cone Detail -->
+  <path d="M 378 152 C 405 125 428 100 428 100 C 428 100 405 130 365 190" 
+        stroke="#00ffff" stroke-width="3" fill="none" opacity="0.8" />
+
+  <!-- Portholes / Windows -->
+  <!-- Top Large Window -->
+  <circle cx="360" cy="200" r="21" fill="#031633" stroke="#00f0ff" stroke-width="4.5" />
+  <circle cx="360" cy="200" r="14" fill="#00f0ff" opacity="0.85" filter="url(#cyanGlow)" />
+  <circle cx="356" cy="196" r="4" fill="#ffffff" />
+
+  <!-- Second Smaller Window -->
+  <circle cx="328" cy="238" r="14" fill="#031633" stroke="#00e5ff" stroke-width="3.5" />
+  <circle cx="328" cy="238" r="9" fill="#00e5ff" opacity="0.75" />
+  <circle cx="325" cy="235" r="2.5" fill="#ffffff" />
+
+
+  <!-- BUSINESSMAN RIDER -->
+  <!-- Trailing Necktie -->
+  <path d="M 240 145 C 205 150 170 162 145 160 C 165 168 190 166 220 156 L 245 150 Z" 
+        fill="#00d8ff" filter="url(#cyanGlow)" />
+  <path d="M 238 147 L 230 205 L 245 210 L 248 150 Z" 
+        fill="#032047" stroke="#00d8ff" stroke-width="1.5" />
+
+  <!-- Suit Body & Jacket -->
+  <path d="M 245 130 
+           L 285 145 
+           L 305 210 
+           L 265 245 
+           L 218 245 
+           L 210 215 
+           L 230 190 
+           Z" 
+        fill="url(#suitGrad)" stroke="#00f0ff" stroke-width="2.5" />
+
+  <!-- White Shirt Collar Notch -->
+  <polygon points="248,132 258,150 242,150" fill="#ffffff" />
+
+  <!-- Left Arm (bent back casually on hip/thigh) -->
+  <path d="M 230 170 L 195 205 L 210 230 L 232 215" 
+        stroke="url(#suitGrad)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 230 170 L 195 205 L 210 230 L 232 215" 
+        stroke="#00f0ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- Right Arm (extended gripping the rocket cockpit) -->
+  <path d="M 285 150 L 325 170 L 340 178" 
+        stroke="url(#suitGrad)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="340" cy="178" r="7" fill="#38bdf8" /> <!-- hand -->
+
+  <!-- Businessman Head & Stylized Hair looking forward-up -->
+  <!-- Neck -->
+  <path d="M 248 120 L 255 135 L 268 132 L 262 118 Z" fill="#38bdf8" />
+  
+  <!-- Face Profile -->
+  <path d="M 252 118 
+           L 265 110 
+           L 272 105 
+           L 270 98 
+           L 262 95 
+           L 252 92 
+           C 240 85 230 95 232 108 
+           C 233 118 242 120 252 118 Z" 
+        fill="url(#skinGrad)" />
+
+  <!-- Dynamic Swoop Hair -->
+  <path d="M 238 92 
+           C 240 75 258 65 270 72 
+           C 260 78 266 84 272 82 
+           C 262 90 268 95 264 98 
+           C 255 94 246 95 238 92 Z" 
+        fill="#00e5ff" filter="url(#cyanGlow)" />
+
+  <!-- Businessman Legs in sleek suit astride the rocket -->
+  <path d="M 250 240 
+           C 270 240 295 248 310 270 
+           C 318 285 305 320 280 340 
+           L 260 325 
+           C 280 305 285 285 275 272 
+           C 268 262 250 255 235 255 
+           Z" 
+        fill="url(#suitGrad)" stroke="#00f0ff" stroke-width="2" />
+
+  <!-- Sleek Business Shoe -->
+  <path d="M 280 340 L 295 348 C 298 350 292 356 280 355 L 260 325 Z" 
+        fill="#021430" stroke="#00ffff" stroke-width="2" />
+</svg>

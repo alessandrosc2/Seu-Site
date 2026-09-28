@@ -62,11 +62,16 @@ export function CheckoutModal({
       <div className="relative w-full max-w-xl my-8 bg-[#091124] border border-cyan-500/40 rounded-3xl shadow-[0_0_80px_rgba(6,182,212,0.25)] overflow-hidden text-white">
         {/* Top Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-slate-900/60">
-          <div className="flex items-center gap-2">
-            <Lock className="w-4 h-4 text-cyan-400" />
-            <span className="text-xs font-semibold tracking-wider uppercase text-cyan-300">
-              Checkout Seguro 256-Bit SSL
-            </span>
+          <div className="flex items-center gap-2.5">
+            <div className="w-6 h-6 rounded-lg bg-cyan-950/80 border border-cyan-500/40 p-0.5 flex items-center justify-center">
+              <img src="/logo.svg" alt="Seu Site Único" className="w-full h-full object-contain" />
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Lock className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="text-xs font-semibold tracking-wider uppercase text-cyan-300">
+                Checkout Seguro 256-Bit SSL
+              </span>
+            </div>
           </div>
           <button
             onClick={onClose}

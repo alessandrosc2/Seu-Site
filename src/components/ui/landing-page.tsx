@@ -284,15 +284,19 @@ export function ScrollGlobe({
       )}
     >
       {/* Top Site Header Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center justify-between px-6 sm:px-12 bg-[#070d1e]/80 backdrop-blur-md border-b border-white/10">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
-            <Sparkles className="w-5 h-5 text-white" />
+      <header className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center justify-between px-6 sm:px-12 bg-[#070d1e]/85 backdrop-blur-md border-b border-white/10">
+        <a href="#metodo" className="flex items-center gap-3 group cursor-pointer">
+          <div className="relative w-11 h-11 rounded-2xl bg-cyan-950/60 border border-cyan-500/40 p-1 flex items-center justify-center shadow-lg shadow-cyan-500/25 group-hover:border-cyan-400 group-hover:scale-105 transition-all">
+            <img 
+              src="/logo.svg" 
+              alt="Logo Seu Site Único" 
+              className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(0,240,255,0.6)]" 
+            />
           </div>
-          <span className="font-bold text-xl tracking-tight text-white">
+          <span className="font-bold text-xl tracking-tight text-white group-hover:text-cyan-300 transition-colors">
             Seu Site <span className="text-cyan-400">Único</span>
           </span>
-        </div>
+        </a>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
           <a href="#metodo" className="hover:text-cyan-400 transition-colors">O Método</a>
