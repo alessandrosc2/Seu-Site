@@ -63,12 +63,16 @@ export default async function handler(req: any, res: any) {
           ],
           installments: 12
         },
+        metadata: {
+          buyer_email: email // Guardamos o email digitado no site para enviar o acesso
+        },
         back_urls: {
           success: 'https://seusite-unico.vercel.app/success',
           failure: 'https://seusite-unico.vercel.app/',
           pending: 'https://seusite-unico.vercel.app/'
         },
         auto_return: 'approved',
+        notification_url: 'https://seusite-unico.vercel.app/api/webhook'
       }
     });
 
