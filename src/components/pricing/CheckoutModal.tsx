@@ -36,7 +36,7 @@ export function CheckoutModal({
     toast.success("Código Copia e Cola Pix copiado para a área de transferência!");
   };
 
-  const handleFinishPurchase = (e: React.FormEvent) => {
+  const handleFinishPurchase = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !email.trim()) {
       toast.error("Por favor, preencha seu nome e e-mail para receber o acesso.");
@@ -44,17 +44,33 @@ export function CheckoutModal({
     }
 
     setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsSuccess(true);
-      confetti({
-        particleCount: 120,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ["#22d3ee", "#38bdf8", "#3b82f6", "#10b981", "#ffffff"],
+    
+    try {
+      const response = await fetch('/api/create-preference', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          planName,
+          price: basePrice,
+          orderBumps
+        })
       });
-      toast.success("Pedido aprovado! Acesso liberado.");
-    }, 1200);
+
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.message || 'Erro ao criar preferência de pagamento');
+      }
+
+      // Redirect to Mercado Pago
+      window.location.href = data.init_point;
+    } catch (error: any) {
+      console.error(error);
+      toast.error("Erro ao conectar com Mercado Pago. " + error.message);
+      setIsLoading(false);
+    }
   };
 
   return (
