@@ -38,9 +38,12 @@ export default function App() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-white/5">
             <div>
               <div className="flex items-center gap-2.5 mb-2">
-                <div className="w-8 h-8 rounded-xl bg-cyan-950/70 border border-cyan-500/40 p-0.5 flex items-center justify-center shadow-md shadow-cyan-500/20">
-                  <img src="/logo-site.png?v=20260928" alt="Seu Site Único" className="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(0,240,255,0.7)]" />
-                </div>
+                <img 
+                  src="/logo-site.png" 
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/logo.svg'; }}
+                  alt="Seu Site Único" 
+                  className="w-8 h-8 object-contain" 
+                />
                 <span className="font-extrabold text-lg tracking-tight text-white">
                   Seu Site <span className="text-cyan-400">Único</span>
                 </span>
