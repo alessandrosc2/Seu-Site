@@ -1,6 +1,7 @@
 import { Toaster } from "sonner";
 import { ScrollGlobe } from "@/components/ui/landing-page";
 import { WordRevealSection } from "@/components/scrollytelling/WordRevealSection";
+import { ConversionScienceSection } from "@/components/analytics/ConversionScienceSection";
 import { InteractiveSelector } from "@/components/ui/interactive-selector";
 import { AudienceSwitcher } from "@/components/scrollytelling/AudienceSwitcher";
 import { PricingSection } from "@/components/pricing/PricingSection";
@@ -22,12 +23,15 @@ export default function App() {
         <InteractiveSelector />
       </div>
 
-      {/* Beat 4: Dois Públicos, Um Só Produto & Calculadora Interativa de Renda Extra */}
+      {/* Beat 4: A Ciência dos Dados & O Custo Invisível de Não Ter um Site (CRO/Bento Grid) */}
+      <ConversionScienceSection />
+
+      {/* Beat 5: Dois Públicos, Um Só Produto & Calculadora Interativa de Renda Extra */}
       <div id="calculadora">
         <AudienceSwitcher />
       </div>
 
-      {/* Beat 5: Tabela de Preços, Order Bump, Saída WhatsApp e FAQ */}
+      {/* Beat 6: Tabela de Preços, Order Bump, Saída WhatsApp e FAQ */}
       <div id="pricing">
         <PricingSection />
       </div>
@@ -55,8 +59,9 @@ export default function App() {
             <div className="flex flex-wrap items-center gap-6 text-sm text-slate-300">
               <a href="#metodo" className="hover:text-cyan-400 transition-colors">O Método</a>
               <a href="#nichos" className="hover:text-cyan-400 transition-colors">Nichos</a>
+              <a href="#dados-conversao" className="hover:text-cyan-400 transition-colors">Por Que Ter Site</a>
               <a href="#calculadora" className="hover:text-cyan-400 transition-colors">Calculadora</a>
-              <a href="#planos" className="hover:text-cyan-400 transition-colors">Planos</a>
+              <a href="#pricing" className="hover:text-cyan-400 transition-colors">Planos</a>
               <a
                 href="https://wa.me/5583999999999?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20o%20Seu%20Site%20%C3%9Anico."
                 target="_blank"

@@ -3,8 +3,14 @@
 :root {
   --background: #070d1e;
   --foreground: #f8fafc;
-  /* Setting base root font-size to 18px elevates the scale across all rem-based typography cleanly */
-  font-size: 18px;
+  /* Balanced responsive root font size: 16px default (mobile/tablet), 17px on desktop */
+  font-size: 16px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    font-size: 17px;
+  }
 }
 
 body {

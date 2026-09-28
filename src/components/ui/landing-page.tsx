@@ -13,7 +13,9 @@ import {
   ShieldCheck,
   Zap,
   Copy,
-  ExternalLink
+  ExternalLink,
+  Menu,
+  X
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -194,6 +196,7 @@ export function ScrollGlobe({
   const [activeSection, setActiveSection] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [globeTransform, setGlobeTransform] = useState("");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
   const animationFrameId = useRef<number | undefined>(undefined);
@@ -284,32 +287,107 @@ export function ScrollGlobe({
       )}
     >
       {/* Top Site Header Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center justify-between px-6 sm:px-12 bg-[#070d1e]/85 backdrop-blur-md border-b border-white/10">
-        <a href="#metodo" className="flex items-center gap-3.5 group cursor-pointer">
+      <header className="fixed top-0 left-0 right-0 z-50 h-16 sm:h-20 flex items-center justify-between px-4 sm:px-8 lg:px-12 bg-[#070d1e]/90 backdrop-blur-md border-b border-white/10">
+        <a href="#metodo" className="flex items-center gap-2.5 sm:gap-3.5 group cursor-pointer shrink-0">
           <img 
             src="/logo-site.png" 
             alt="Logo Seu Site Único" 
-            className="w-12 h-12 object-contain group-hover:scale-105 transition-transform" 
+            className="w-9 h-9 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform" 
           />
-          <span className="font-bold text-xl tracking-tight text-white group-hover:text-cyan-300 transition-colors">
+          <span className="font-bold text-lg sm:text-xl tracking-tight text-white group-hover:text-cyan-300 transition-colors whitespace-nowrap">
             Seu Site <span className="text-cyan-400">Único</span>
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        {/* Desktop Navigation */}
+        <nav className="hidden xl:flex items-center gap-7 text-sm font-medium text-slate-300">
           <a href="#metodo" className="hover:text-cyan-400 transition-colors">O Método</a>
           <a href="#nichos" className="hover:text-cyan-400 transition-colors">Exemplos de Nichos</a>
+          <a href="#dados-conversao" className="hover:text-cyan-400 transition-colors">Diagnóstico & Dados</a>
           <a href="#calculadora" className="hover:text-cyan-400 transition-colors">Renda Extra</a>
           <a href="#pricing" className="hover:text-cyan-400 transition-colors">Planos & Preços</a>
         </nav>
 
-        <a
-          href="#pricing"
-          className="px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs sm:text-sm font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all shadow-md shadow-cyan-500/25 hover:scale-105"
-        >
-          Começar Agora
-        </a>
+        {/* Tablet Navigation (Compact items) */}
+        <nav className="hidden md:flex xl:hidden items-center gap-4 text-xs font-medium text-slate-300">
+          <a href="#metodo" className="hover:text-cyan-400 transition-colors">Método</a>
+          <a href="#nichos" className="hover:text-cyan-400 transition-colors">Nichos</a>
+          <a href="#dados-conversao" className="hover:text-cyan-400 transition-colors">Diagnóstico</a>
+          <a href="#pricing" className="hover:text-cyan-400 transition-colors">Planos</a>
+        </nav>
+
+        <div className="flex items-center gap-2 sm:gap-3">
+          <a
+            href="#pricing"
+            className="px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs sm:text-sm font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all shadow-sm shadow-cyan-500/25 hover:scale-105 whitespace-nowrap"
+          >
+            Começar Agora
+          </a>
+
+          {/* Mobile/Tablet Menu Toggle */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
+            aria-label="Abrir menu de navegação"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </header>
+
+      {/* Mobile Drawer Navigation */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 top-16 z-40 bg-[#070d1e]/98 backdrop-blur-xl border-b border-white/10 md:hidden animate-fadeIn p-6 flex flex-col justify-between">
+          <nav className="flex flex-col space-y-4 pt-2">
+            <a 
+              href="#metodo" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-semibold text-slate-200 hover:text-cyan-400 py-2 border-b border-white/5 transition-colors"
+            >
+              O Método
+            </a>
+            <a 
+              href="#nichos" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-semibold text-slate-200 hover:text-cyan-400 py-2 border-b border-white/5 transition-colors"
+            >
+              Exemplos de Nichos
+            </a>
+            <a 
+              href="#dados-conversao" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-semibold text-slate-200 hover:text-cyan-400 py-2 border-b border-white/5 transition-colors"
+            >
+              Por Que Ter Site (Diagnóstico)
+            </a>
+            <a 
+              href="#calculadora" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-semibold text-slate-200 hover:text-cyan-400 py-2 border-b border-white/5 transition-colors"
+            >
+              Renda Extra
+            </a>
+            <a 
+              href="#pricing" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-semibold text-slate-200 hover:text-cyan-400 py-2 border-b border-white/5 transition-colors"
+            >
+              Planos & Preços
+            </a>
+          </nav>
+
+          <div className="pt-6 pb-4">
+            <a
+              href="#pricing"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full block text-center py-3.5 px-6 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-sm shadow-lg shadow-cyan-500/25"
+            >
+              Ver Planos e Começar
+            </a>
+          </div>
+        </div>
+      )}
 
       {/* Dynamic Background Atmospheric Layers */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_15%,#111e4d_0%,#070d1e_70%)] pointer-events-none" />
