@@ -32,6 +32,18 @@
   overflow-x: hidden;
 }
 
+/* ---------- Legibilidade: equivale a zoom 125% do navegador, só na V2 ----------
+ * Pedido do usuário: a leitura confortável acontecia em 125% de zoom.
+ * Em vez de alterar 262 tamanhos de fonte, aplicamos `zoom` no wrapper raiz:
+ * reproduz exatamente o zoom do navegador (texto, espaçamentos, cards),
+ * fica contido na V2 (a V1 e o restante do app não herdam nada) e degrada
+ * com graça em navegadores antigos (vira 100% se `zoom` não existir).
+ * O min-height compensa o min-h-screen do wrapper: 80vh × 1.25 = 100vh. */
+.v2-root.v2-root {
+  zoom: 1.25;
+  min-height: 80vh;
+}
+
 .v2-display {
   font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
   letter-spacing: -0.025em;
