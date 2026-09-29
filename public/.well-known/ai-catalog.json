@@ -2,7 +2,7 @@
   "specVersion": "1.0",
   "entries": [
     {
-      "identifier": "seu-site-unico-llms-docs",
+      "identifier": "urn:air:seusiteunico:docs:llms",
       "displayName": "Documentacao para IAs do Seu Site Unico",
       "type": "text/markdown; profile=\"urn:air:agent-skills\"",
       "url": "https://seusite-unico.vercel.app/llms.txt",
