@@ -29,6 +29,26 @@ export function CheckoutModal({
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (isOpen && planKey && PLANS[planKey]) {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({
+        event: 'begin_checkout',
+        ecommerce: {
+          currency: 'BRL',
+          value: PLANS[planKey].price,
+          items: [{
+            item_id: planKey,
+            item_name: PLANS[planKey].title,
+            price: PLANS[planKey].price,
+            quantity: 1
+          }]
+        }
+      });
+    }
+  }, [isOpen, planKey]);
+
+
+  useEffect(() => {
     if (!isOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();

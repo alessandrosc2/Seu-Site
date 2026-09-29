@@ -74,8 +74,8 @@ export function ScrollGlobe({
     {
       id: "fase-1-construir",
       badge: "Fase 01 — Construir",
-      title: "Crie o Site do Seu Negócio",
-      subtitle: "Construção Guiada com IA",
+      title: "Crie um Site Profissional para o Seu Negócio",
+      subtitle: "Construção Guiada com Inteligência Artificial",
       description: "Esqueça modelos genéricos. O formulário guiado extrai os diferenciais, serviços e estilo visual da sua empresa para criar prompts de IA sob medida.",
       align: "left",
       icon: <Sparkles className="w-5 h-5 text-cyan-400" />,
@@ -629,4 +629,5 @@ export function ScrollGlobe({
 }
 
 export default ScrollGlobe;
+
 
