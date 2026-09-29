@@ -17,6 +17,10 @@ export default defineConfig(() => {
       hmr: process.env.DISABLE_HMR !== 'true',
       // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
+      // Permite servir o `vite dev` atrás de um host de preview/túnel.
+      // Só afeta o servidor de desenvolvimento (não o build, nem a Vercel),
+      // e só é ativado quando a variável ALLOW_PREVIEW_HOST=true existe.
+      ...(process.env.ALLOW_PREVIEW_HOST === 'true' ? { allowedHosts: true as const } : {}),
     },
   };
 });
