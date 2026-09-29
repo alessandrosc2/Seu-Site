@@ -1,0 +1,178 @@
+/**
+ * ============================================================
+ *  SEU SITE ÚNICO — LANDING V2 (folha de estilo isolada)
+ * ------------------------------------------------------------
+ *  Este arquivo é importado SOMENTE pela página /v2.
+ *  Não altera, sobrescreve ou depende da landing original.
+ *  Todas as classes são prefixadas com "v2-" para evitar
+ *  qualquer colisão com o CSS global existente.
+ * ============================================================
+ */
+
+/* ---------- Tokens da V2 (derivados da identidade do produto) ---------- */
+.v2-root {
+  --v2-bg: #060b18;
+  --v2-bg-alt: #080d20;
+  --v2-panel: #0b1535;
+  --v2-card: #111b36;
+  --v2-card-hi: #152342;
+  --v2-border: #203252;
+  --v2-border-soft: rgba(255, 255, 255, 0.08);
+  --v2-cyan: #00d4e8;
+  --v2-blue: #1769ff;
+  --v2-green: #00e599;
+  --v2-text: #f5f7ff;
+  --v2-muted: #aab6cc;
+  --v2-dim: #71809b;
+
+  background-color: var(--v2-bg);
+  color: var(--v2-text);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.v2-display {
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.v2-mono {
+  font-family: ui-monospace, 'JetBrains Mono', SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* ---------- Malha técnica de fundo (blueprint) ---------- */
+.v2-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(120, 160, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 160, 255, 0.055) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 20%, transparent 78%);
+  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 20%, transparent 78%);
+}
+
+.v2-grid-bg-soft {
+  background-image:
+    linear-gradient(to right, rgba(120, 160, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 160, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ---------- Revelação no scroll ---------- */
+.v2-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--v2-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.v2-reveal[data-visible='true'] {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Linha de progresso narrativa (hero) ---------- */
+@keyframes v2-dash {
+  to {
+    stroke-dashoffset: -220;
+  }
+}
+
+.v2-flowline {
+  stroke-dasharray: 6 10;
+  animation: v2-dash 9s linear infinite;
+}
+
+@keyframes v2-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.v2-float {
+  animation: v2-float 6.5s ease-in-out infinite;
+}
+
+@keyframes v2-pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 212, 232, 0.35);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(0, 212, 232, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 212, 232, 0);
+  }
+}
+
+.v2-pulse {
+  animation: v2-pulse-ring 2.8s ease-out infinite;
+}
+
+/* ---------- Barra de CTA fixa (mobile) ---------- */
+.v2-sticky-cta {
+  transform: translateY(130%);
+  transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.v2-sticky-cta[data-open='true'] {
+  transform: translateY(0);
+}
+
+/* ---------- Foco visível (acessibilidade) ---------- */
+.v2-root :where(a, button, input, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--v2-cyan);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---------- Âncoras com offset do header ---------- */
+.v2-root section[id] {
+  scroll-margin-top: 92px;
+}
+
+/* ---------- Texto com gradiente da marca ---------- */
+.v2-gradient-text {
+  background: linear-gradient(92deg, #7df3ff 0%, #00d4e8 38%, #6ea8ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Cartões de interface (mockups fiéis ao produto) ---------- */
+.v2-app-frame {
+  background: linear-gradient(180deg, #0a1128 0%, #080d20 100%);
+  border: 1px solid var(--v2-border);
+  box-shadow:
+    0 40px 90px -30px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(0, 212, 232, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.v2-chip {
+  border: 1px solid var(--v2-border);
+  background: #0e1938;
+}
+
+/* ---------- Respeito a prefers-reduced-motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .v2-root,
+  .v2-root * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .v2-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

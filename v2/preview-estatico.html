@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Seu negócio merece uma presença digital profissional | Seu Site Único — V2 (preview estático)</title>
+<meta name="description" content="Prévia estática (somente HTML/CSS) da landing V2 do Seu Site Único. A versão interativa oficial vive na rota /v2 do projeto." />
+<style>
+/* ============================================================
+   PREVIEW ESTÁTICO DA LANDING V2 — somente HTML + CSS.
+   Nenhum script, nenhum handler: acordeões via <details>,
+   navegação via âncoras, scroll suave e animações via CSS.
+   ============================================================ */
+:root{
+  --bg:#060b18; --bg2:#070c1c; --panel:#0b1535; --card:#111b36; --line:#203252;
+  --line-soft:rgba(255,255,255,.08); --cyan:#00d4e8; --cyan-l:#7df3ff; --blue:#1769ff;
+  --green:#00e599; --text:#f5f7ff; --mut:#aab6cc; --dim:#8b98b0;
+  --grad:linear-gradient(100deg,#22d3ee 0%,#38bdf8 45%,#60a5fa 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:hidden;
+}
+.disp{font-family:'Space Grotesk','Plus Jakarta Sans',system-ui,sans-serif;letter-spacing:-.025em}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section{scroll-margin-top:92px;position:relative}
+.band{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);background:var(--bg2)}
+
+/* ---------- ícones (símbolos inline, sem JS) ---------- */
+.ic{width:16px;height:16px;flex:none;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-2px}
+.ic-lg{width:20px;height:20px}
+
+/* ---------- header ---------- */
+.hd{position:fixed;inset:0 0 auto 0;z-index:40;background:rgba(6,11,24,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+.hd-in{max-width:1180px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo b{font-size:15px;letter-spacing:-.02em}
+.logo b span{color:var(--cyan)}
+.logo small{display:block;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.nav{display:flex;gap:26px}
+.nav a{font-size:13px;font-weight:600;color:var(--mut);text-decoration:none}
+.nav a:hover{color:var(--cyan-l)}
+.hd-cta{display:flex;align-items:center;gap:10px}
+.pill-ghost{font-size:12.5px;font-weight:700;color:var(--cyan-l);border:1px solid rgba(0,212,232,.3);border-radius:999px;padding:8px 14px;text-decoration:none}
+.pill-ghost:hover{background:rgba(0,212,232,.1)}
+
+/* ---------- botões ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--grad);color:#04101f;font-weight:800;border-radius:12px;padding:15px 28px;font-size:15px;text-decoration:none;box-shadow:0 16px 44px -14px rgba(0,212,232,.65);transition:transform .2s,filter .2s}
+.btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn-sm{padding:10px 18px;font-size:13px;border-radius:10px}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03);color:var(--text);font-weight:700;font-size:14px;border-radius:12px;padding:14px 22px;text-decoration:none}
+.btn-ghost:hover{border-color:rgba(0,212,232,.5);background:rgba(0,212,232,.08)}
+
+/* ---------- utilidades de texto ---------- */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(0,212,232,.28);background:rgba(0,212,232,.07);color:var(--cyan-l);border-radius:999px;padding:6px 14px;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.eyebrow.gray{border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:var(--mut)}
+.eyebrow.green{border-color:rgba(0,229,153,.3);background:rgba(0,229,153,.07);color:#7cf5c8}
+.eyebrow.amber{border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.07);color:#fcd34d}
+.chap{font-size:11px;font-weight:700;letter-spacing:.2em;color:rgba(0,212,232,.75)}
+h1{font-size:clamp(29px,4.4vw,46px);line-height:1.12;font-weight:700;letter-spacing:-.025em}
+h2{font-size:clamp(25px,3.2vw,35px);line-height:1.15;font-weight:700;letter-spacing:-.02em}
+h3{font-size:15px;font-weight:800;line-height:1.35}
+.lead{color:var(--mut);font-size:15.5px;line-height:1.65}
+.dim{color:var(--dim)}
+.grad-text{background:linear-gradient(92deg,#7df3ff 0%,#00d4e8 38%,#6ea8ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec{padding:76px 0}
+
+/* ---------- grade blueprint ---------- */
+.grid-bg::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(to right,rgba(120,160,255,.055) 1px,transparent 1px),linear-gradient(to bottom,rgba(120,160,255,.055) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 78%);
+  mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 78%);}
+
+/* ---------- hero ---------- */
+.hero{padding:120px 0 60px}
+.hero-grid{display:grid;gap:48px;align-items:center}
+@media(min-width:1000px){.hero-grid{grid-template-columns:1fr 1.05fr}}
+.trust{display:flex;flex-wrap:wrap;gap:10px 20px;list-style:none;font-size:12.5px;font-weight:600;color:var(--mut);margin-top:30px;align-items:center}
+.trust li{display:flex;align-items:center;gap:7px}
+.price-chip{font-size:11px;color:var(--mut);border:1px solid var(--line-soft);background:rgba(255,255,255,.03);border-radius:999px;padding:5px 12px}
+
+/* painel do método */
+.panel{position:relative;border:1px solid rgba(255,255,255,.1);border-radius:22px;background:linear-gradient(160deg,#0b1535,#070d1e 70%);padding:18px;box-shadow:0 50px 120px -40px rgba(0,0,0,.95)}
+.panel-hd{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:12px}
+.panel-hd .t{font-size:12.5px;font-weight:800}
+.panel-hd .s{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:3px}
+.tag{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 10px;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.tag.green{border:1px solid rgba(0,229,153,.3);background:rgba(0,229,153,.1);color:#7cf5c8}
+.tag.cyan{border:1px solid rgba(0,212,232,.35);background:rgba(0,212,232,.1);color:var(--cyan-l)}
+.tag.slate{border:1px solid var(--line-soft);background:rgba(255,255,255,.03);color:var(--mut)}
+.pipe{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+@media(min-width:640px){.pipe{grid-template-columns:repeat(6,1fr)}}
+.step{border:1px solid var(--line-soft);background:rgba(255,255,255,.02);border-radius:12px;padding:8px}
+.step .n{font-size:9.5px;font-weight:700;color:var(--dim)}
+.step .l{display:block;font-size:11px;font-weight:800;margin-top:6px;line-height:1.2}
+.step .h{display:block;font-size:9px;color:var(--dim);line-height:1.2;margin-top:2px}
+.step.on{border-color:rgba(0,212,232,.6);background:rgba(0,212,232,.09);box-shadow:0 0 28px -8px rgba(0,212,232,.7)}
+.step.on .n{color:var(--cyan-l)}
+.step.done{border-color:rgba(0,229,153,.25);background:rgba(0,229,153,.05)}
+.step.done .n{color:rgba(0,229,153,.8)}
+.promptbox{margin-top:14px;border:1px solid rgba(255,255,255,.08);background:#050a16;border-radius:12px;padding:14px}
+.promptbox .hd2{display:flex;justify-content:space-between;align-items:center;font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(0,212,232,.8)}
+.copy-chip{background:var(--green);color:#04101f;border-radius:6px;padding:3px 8px;font-size:9px;font-weight:800;letter-spacing:0;text-transform:none}
+.plines{margin-top:10px;font-size:10.5px;line-height:1.9}
+.plines p{color:var(--mut)}
+.plines p.off{color:#3d4a63}
+.plines i{color:rgba(0,212,232,.5);font-style:normal;margin-right:6px}
+.colorstrip{margin-top:12px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.02);border-radius:12px;padding:10px 14px}
+.sw{display:flex;gap:6px;align-items:center}
+.sw span{width:16px;height:16px;border-radius:999px;border:1px solid rgba(255,255,255,.15)}
+.prog{margin-top:14px}
+.prog .lbl{display:flex;justify-content:space-between;font-size:9.5px;color:var(--dim)}
+.bar{margin-top:6px;height:8px;border:1px solid rgba(255,255,255,.08);background:var(--panel);border-radius:999px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--cyan),var(--blue))}
+.badge-float{position:absolute;top:-16px;right:-10px;display:flex;align-items:center;gap:8px;border:1px solid rgba(0,212,232,.35);background:rgba(11,21,53,.95);border-radius:999px;padding:8px 14px;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan-l);box-shadow:0 18px 44px -18px rgba(0,212,232,.6)}
+.dot{width:6px;height:6px;border-radius:999px;background:var(--cyan);animation:pulse 2.8s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(0,212,232,.35)}70%{box-shadow:0 0 0 10px rgba(0,212,232,0)}100%{box-shadow:0 0 0 0 rgba(0,212,232,0)}}
+.hero-note{margin-top:44px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.02);border-radius:16px;padding:16px 20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:13px;color:var(--mut)}
+.hero-note a{color:var(--cyan-l);font-weight:700;text-decoration:none;font-size:12.5px}
+
+/* ---------- grids genéricos ---------- */
+.g2{display:grid;gap:24px}
+@media(min-width:900px){.g2{grid-template-columns:1fr 1fr}}
+.g2w{display:grid;gap:40px}
+@media(min-width:1000px){.g2w{grid-template-columns:.95fr 1.05fr;gap:56px}}
+.g3{display:grid;gap:16px}
+@media(min-width:900px){.g3{grid-template-columns:repeat(3,1fr)}}
+.g4{display:grid;gap:14px}
+@media(min-width:640px){.g4{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.g4{grid-template-columns:repeat(4,1fr)}}
+
+.card{border:1px solid var(--line-soft);background:rgba(255,255,255,.02);border-radius:16px;padding:20px}
+.card.hl{border-color:rgba(0,212,232,.25);background:linear-gradient(165deg,#0b1a33,#070c1c)}
+.card p{font-size:13.5px;color:var(--mut);line-height:1.6}
+.card h3{margin-bottom:8px}
+.num{font-size:10.5px;font-weight:700;letter-spacing:.14em;color:rgba(0,212,232,.7)}
+
+/* listas com check */
+.chk{list-style:none;display:grid;gap:10px}
+.chk li{display:flex;gap:10px;font-size:13.5px;color:var(--mut);line-height:1.55}
+.chk li .ic{color:var(--cyan-l);margin-top:3px}
+.chk.green li .ic{color:var(--green)}
+
+/* ---------- details (acordeões sem JS) ---------- */
+details.acc{border:1px solid var(--line-soft);background:rgba(255,255,255,.02);border-radius:16px;overflow:hidden}
+details.acc[open]{border-color:rgba(0,212,232,.35);background:var(--panel)}
+details.acc summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;font-weight:800;font-size:14.5px}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary .chev{transition:transform .25s;color:var(--cyan)}
+details.acc[open] summary .chev{transform:rotate(180deg)}
+details.acc .body{border-top:1px solid rgba(255,255,255,.07);padding:16px 20px 20px;font-size:13.5px;color:var(--mut);line-height:1.65}
+details.acc .body .out{margin-top:14px;border:1px solid rgba(0,229,153,.2);background:rgba(0,229,153,.06);border-radius:12px;padding:12px 14px;color:var(--text);font-size:13.5px}
+details.acc .body .out b{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#7cf5c8;margin-bottom:4px}
+
+/* ---------- mockups ---------- */
+.app{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#0a1128,#080d20);box-shadow:0 40px 90px -30px rgba(0,0,0,.85)}
+.app-bar{display:flex;align-items:center;gap:10px;background:#0a1128;border-bottom:1px solid var(--line);padding:10px 14px}
+.wd{display:flex;gap:5px}
+.wd i{width:9px;height:9px;border-radius:999px}
+.url{font-size:9px;color:var(--dim);border:1px solid var(--line);background:#060b18;border-radius:6px;padding:4px 10px}
+.app-body{display:grid}
+@media(min-width:760px){.app-body{grid-template-columns:168px 1fr}}
+.side{display:none;border-right:1px solid var(--line);background:#080d20;padding:10px}
+@media(min-width:760px){.side{display:block}}
+.side .it{border-radius:8px;padding:7px 9px;font-size:10.5px;font-weight:600;color:var(--mut);margin-bottom:3px;display:flex;justify-content:space-between;gap:6px}
+.side .it.on{background:rgba(0,212,232,.12);color:var(--cyan-l);box-shadow:inset 0 0 0 1px rgba(0,212,232,.35)}
+.side .grp{margin:12px 4px 5px;font-size:8.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.side .st{width:7px;height:7px;border-radius:999px;border:1px solid var(--line);background:var(--card);display:inline-block;margin-right:6px}
+.side .st.ok{border-color:var(--green);background:rgba(0,229,153,.7)}
+.app-main{background:#080d20;padding:14px;min-width:0}
+.mcard{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:12px;margin-bottom:10px}
+.mcard.glow{border-color:rgba(0,212,232,.4);box-shadow:0 0 28px -8px rgba(0,212,232,.45)}
+.mt{font-size:11px;font-weight:800}
+.ms{font-size:9.5px;color:var(--dim);line-height:1.5;margin-top:3px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.kv{font-size:9.5px}
+.kv b{display:block;color:var(--dim);font-weight:600}
+.kv span{color:var(--text);font-weight:600}
+.pal{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:8px}
+.pal div i{display:block;height:30px;border-radius:6px;border:1px solid rgba(255,255,255,.1)}
+.pal div b,.pal div span{display:block;text-align:center;font-size:8px;font-weight:700;color:var(--mut)}
+.pal div span{color:var(--dim);font-weight:500}
+.mini-btn{display:inline-block;background:var(--cyan);color:#04101f;border-radius:8px;padding:6px 12px;font-size:9.5px;font-weight:800;margin-top:8px}
+.mini-btn.green{background:var(--green)}
+.codebox{border:1px solid var(--line);background:#060b18;border-radius:8px;padding:10px;font-size:8.5px;line-height:1.8;color:var(--dim);margin-top:8px}
+.codebox b{color:var(--cyan-l);font-weight:700}
+
+/* ---------- stats ---------- */
+.stat{border:1px solid rgba(255,255,255,.09);border-radius:24px;background:linear-gradient(170deg,#0c1730,#070c1c);padding:26px}
+.stat .v{font-size:clamp(48px,5vw,64px);font-weight:700;line-height:1;letter-spacing:-.03em}
+.stat .v small{font-size:.5em}
+.stat p{font-size:14.5px;color:#dbe3f0;line-height:1.6;margin-top:16px}
+.stat .src{margin-top:18px;border-top:1px solid rgba(255,255,255,.08);padding-top:14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.stat .src a{color:var(--mut);text-decoration:underline dotted;text-underline-offset:4px}
+.c1{color:var(--cyan-l)}.c2{color:#7dd3fc}.c3{color:#6ee7b7}
+
+/* ---------- transformação ---------- */
+.tr{display:grid;gap:18px;align-items:stretch}
+@media(min-width:1000px){.tr{grid-template-columns:.85fr .3fr 1fr}}
+.tr-mid{display:flex;align-items:center;justify-content:center;min-height:70px}
+.tr-mid .pill{display:flex;align-items:center;gap:8px;border:1px solid rgba(0,212,232,.28);background:rgba(0,212,232,.08);color:#a5f3fc;border-radius:999px;padding:8px 16px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.03);border-radius:10px;padding:8px 12px;font-size:12.5px;font-weight:600;color:#dbe3f0}
+.chips li.off{color:var(--dim);text-decoration:line-through}
+
+/* ---------- nichos ---------- */
+.niche-grid{display:grid;gap:24px}
+@media(min-width:1000px){.niche-grid{grid-template-columns:.85fr 1.15fr;align-items:start}}
+.nchips{display:flex;flex-wrap:wrap;gap:8px}
+.nchips span{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.02);border-radius:12px;padding:10px 14px;font-size:12.5px;font-weight:700;color:var(--mut)}
+.nchips span.on{border-color:rgba(0,212,232,.5);background:rgba(0,212,232,.1);color:#fff}
+.siteprev{border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden;background:var(--panel);box-shadow:0 30px 70px -30px rgba(0,0,0,.9);margin-bottom:18px}
+.siteprev .bar2{display:flex;align-items:center;gap:8px;background:#0a1128;border-bottom:1px solid var(--line);padding:8px 12px;font-size:9px;color:var(--dim)}
+.siteprev .body{padding:22px;position:relative;overflow:hidden}
+.siteprev .body .glow{position:absolute;top:-40px;right:-40px;width:130px;height:130px;border-radius:999px;opacity:.25;filter:blur(28px)}
+.siteprev .grp{display:inline-block;border-radius:999px;padding:4px 10px;font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.siteprev h4{font-size:18px;font-weight:800;line-height:1.25;margin-top:12px;max-width:34ch}
+.siteprev .svcs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.siteprev .svcs span{border-radius:8px;border:1px solid;padding:5px 10px;font-size:10px;font-weight:600}
+.siteprev .cta{display:inline-block;margin-top:16px;border-radius:12px;padding:10px 16px;font-size:11.5px;font-weight:800;color:#061018}
+.siteprev .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--line);padding:10px 14px;font-size:9.5px;color:var(--dim)}
+
+/* ---------- canais ---------- */
+.chan{border-radius:16px;padding:20px;border:1px solid;background:rgba(255,255,255,.02)}
+.chan .role{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-top:4px}
+.chan p{font-size:13px;color:var(--mut);margin-top:10px;line-height:1.6}
+.chan .nm{font-size:15px;font-weight:800;margin-top:14px}
+.diagram{margin-top:18px;border:1px solid rgba(255,255,255,.08);background:#060b18;border-radius:16px;padding:18px}
+.diagram svg{width:100%;height:88px;display:none}
+@media(min-width:700px){.diagram svg{display:block}}
+.diagram ol{display:grid;gap:10px;list-style:none;counter-reset:d}
+@media(min-width:700px){.diagram ol{display:none}}
+.diagram ol li{counter-increment:d;display:flex;align-items:center;gap:12px;font-size:13.5px;font-weight:600;color:#dbe3f0}
+.diagram ol li::before{content:counter(d);width:24px;height:24px;flex:none;display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,212,232,.3);background:rgba(0,212,232,.1);color:var(--cyan-l);border-radius:999px;font-size:10px;font-weight:800}
+.flowline{stroke-dasharray:6 10;animation:dash 9s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-220}}
+
+/* ---------- oferta ---------- */
+.offer{border:1px solid rgba(0,212,232,.35);border-radius:28px;background:linear-gradient(165deg,#0b1a33,#070c1c 70%);padding:32px;box-shadow:0 0 80px -24px rgba(0,212,232,.55)}
+.offer-hd{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:flex-start}
+.pricebox{border:1px solid rgba(255,255,255,.1);background:#060b18;border-radius:16px;padding:12px 20px;text-align:right}
+.pricebox .v{font-size:34px;font-weight:700;line-height:1.1}
+.pricebox .v small{font-size:20px}
+.pricebox span{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:700}
+.offer ul{list-style:none;display:grid;gap:10px;margin-top:26px}
+@media(min-width:700px){.offer ul{grid-template-columns:1fr 1fr}}
+.offer ul li{display:flex;gap:10px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025);border-radius:12px;padding:12px 14px;font-size:13px;color:#dbe3f0;line-height:1.45}
+.offer ul li .ic{color:var(--cyan-l);margin-top:2px}
+.guar{margin-top:20px;border:1px solid rgba(0,229,153,.25);background:rgba(0,229,153,.05);border-radius:24px;padding:24px;display:flex;gap:16px}
+.guar .icw{width:48px;height:48px;flex:none;border:1px solid rgba(0,229,153,.3);background:rgba(0,229,153,.1);border-radius:16px;display:flex;align-items:center;justify-content:center;color:#6ee7b7}
+.guar p{font-size:14px;color:var(--mut);line-height:1.65;margin-top:8px}
+.guar a{color:#6ee7b7;font-weight:700;font-size:13px}
+
+/* ---------- cta fixo mobile ---------- */
+.sticky{position:fixed;inset:auto 0 0 0;z-index:40;background:rgba(6,11,24,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line-soft);padding:12px 16px;display:flex;align-items:center;gap:12px}
+@media(min-width:820px){.sticky{display:none}}
+.sticky .p{flex:1;min-width:0;line-height:1.2}
+.sticky .p b{font-size:15px}
+.sticky .p span{display:block;font-size:11px;color:var(--mut)}
+body{padding-bottom:74px}
+@media(min-width:820px){body{padding-bottom:0}}
+
+/* ---------- rodapé ---------- */
+footer{border-top:1px solid var(--line-soft);background:#050814;padding:44px 0;color:var(--mut)}
+.ft{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:32px}
+.ft nav{display:grid;grid-template-columns:repeat(2,auto);gap:10px 40px;font-size:13px}
+@media(min-width:700px){.ft nav{grid-template-columns:repeat(3,auto)}}
+.ft a{color:var(--mut);text-decoration:none}
+.ft a:hover{color:var(--cyan-l)}
+.ft-bottom{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding-top:26px;font-size:12px;color:var(--dim)}
+
+/* ---------- acessibilidade / movimento ---------- */
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sr:focus{position:fixed;top:12px;left:12px;z-index:60;width:auto;height:auto;clip:auto;background:var(--cyan);color:#04101f;padding:10px 16px;border-radius:10px;font-weight:800;font-size:14px}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+.banner{background:rgba(0,212,232,.08);border-bottom:1px solid rgba(0,212,232,.2);color:var(--cyan-l);font-size:12px;text-align:center;padding:8px 16px;position:fixed;top:64px;left:0;right:0;z-index:39;backdrop-filter:blur(10px)}
+.banner a{color:#fff;font-weight:700}
+.hero{padding-top:150px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+</svg>
+
+<a class="sr" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- ================= HEADER ================= -->
+<header class="hd">
+  <div class="hd-in">
+    <a class="logo" href="#topo" aria-label="Seu Site Único — voltar ao topo">
+      <svg class="ic ic-lg" style="color:var(--cyan)" aria-hidden="true"><use href="#i-check"/></svg>
+      <span><b>Seu Site <span>Único</span></b><small class="mono">método guiado</small></span>
+    </a>
+    <nav class="nav" aria-label="Seções da página">
+      <a href="#metodo">O método</a>
+      <a href="#produto">Por dentro</a>
+      <a href="#incluido">O que você recebe</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#oferta">Acesso</a>
+    </nav>
+    <div class="hd-cta">
+      <a class="btn btn-sm" href="#oferta">Quero criar meu site</a>
+    </div>
+  </div>
+</header>
+<p class="banner">Prévia estática (sem scripts) para o viewer · a versão interativa oficial é a rota <a href="#oferta">/v2</a> do projeto.</p>
+
+<main id="conteudo">
+<!-- ================= HERO ================= -->
+<section class="hero grid-bg" id="topo">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Manual interativo + método guiado com IA</span>
+        <h1 class="disp" style="margin-top:22px">Seu negócio merece uma presença digital <span class="grad-text">tão profissional quanto o serviço que você oferece.</span></h1>
+        <p class="lead" style="margin-top:18px;font-size:17px">Crie seu próprio site profissional usando IA — mesmo que você não saiba programar.</p>
+        <div style="margin-top:30px;display:flex;flex-wrap:wrap;gap:12px">
+          <a class="btn" href="#oferta">Quero criar meu site <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn-ghost" href="#metodo">Conhecer o método <svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></a>
+        </div>
+        <ul class="trust">
+          <li><svg class="ic" style="color:var(--cyan)" aria-hidden="true"><use href="#i-check"/></svg>Sem programar</li>
+          <li><svg class="ic" style="color:var(--green)" aria-hidden="true"><use href="#i-shield"/></svg>Garantia de 7 dias</li>
+          <li><svg class="ic" style="color:var(--cyan)" aria-hidden="true"><use href="#i-arrow"/></svg>Acesso imediato</li>
+          <li class="price-chip mono">R$ 47,90 · pagamento único</li>
+        </ul>
+      </div>
+
+      <!-- painel do método -->
+      <div class="panel" role="img" aria-label="Painel do método: seis etapas, briefing consolidado em prompt e progresso da publicação">
+        <span class="badge-float"><span class="dot" aria-hidden="true"></span>método em 6 etapas</span>
+        <div class="panel-hd">
+          <div>
+            <p class="t">Manual interativo &amp; guiado</p>
+            <p class="s mono">informar → preparar → gerar → revisar → publicar</p>
+          </div>
+          <span class="tag green">Etapa 04 de 06</span>
+        </div>
+        <ol class="pipe" aria-label="Etapas do método">
+          <li class="step done"><span class="n mono">01</span><span class="l">Meu Projeto</span><span class="h">dados do negócio</span></li>
+          <li class="step done"><span class="n mono">02</span><span class="l">Conteúdo</span><span class="h">textos do site</span></li>
+          <li class="step done"><span class="n mono">03</span><span class="l">Visual</span><span class="h">cores e tipografia</span></li>
+          <li class="step on"><span class="n mono">04</span><span class="l">Imagens</span><span class="h">direção de arte</span></li>
+          <li class="step"><span class="n mono">05</span><span class="l">Gerar site</span><span class="h">prompt mestre</span></li>
+          <li class="step"><span class="n mono">06</span><span class="l">Publicar</span><span class="h">domínio e Google</span></li>
+        </ol>
+        <div class="promptbox">
+          <div class="hd2"><span class="mono">Briefing consolidado → prompt</span><span class="copy-chip">Copiar</span></div>
+          <div class="plines mono">
+            <p><i>›</i>Negócio: Studio Barba &amp; Navalha · Barbearia · João Pessoa/PB</p>
+            <p><i>›</i>Posicionamento: atendimento premium com hora marcada</p>
+            <p><i>›</i>Paleta: #0E1420 · #C9A227 · #00D4E8 · tipografia Space Grotesk</p>
+            <p class="off"><i>›</i>Seções: Hero, Serviços, Diferenciais, Sobre, FAQ, Contato</p>
+            <p class="off"><i>›</i>CTA principal: agendar no WhatsApp — visível em mobile</p>
+          </div>
+        </div>
+        <div class="colorstrip">
+          <span class="sw" aria-hidden="true">
+            <span style="background:#0E1420"></span><span style="background:#C9A227"></span><span style="background:#00D4E8"></span><span style="background:#F5F7FF"></span>
+          </span>
+          <span class="mono" style="font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)">sistema de cores do nicho</span>
+          <span class="mono" style="font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(0,212,232,.9)">Prompt Mestre Final · 25 seções</span>
+        </div>
+        <div class="prog">
+          <div class="lbl"><span>Início do projeto</span><span>Site publicado &amp; indexado no Google</span></div>
+          <div class="bar"><i style="width:66%"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-note">
+      <p><strong style="color:#dbe3f0">Para quem é:</strong> pequenos negócios, prestadores de serviço e profissionais liberais que dependem de Instagram e WhatsApp — e querem um endereço próprio, organizado, do jeito que o negócio realmente é.</p>
+      <a href="#problema">Ver o problema que isso resolve →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 01 PROBLEMA ================= -->
+<section class="sec band" id="problema">
+  <div class="wrap g2w">
+    <div>
+      <span class="chap mono">01 — O PONTO DE PARTIDA</span>
+      <h2 class="disp" style="margin-top:16px">O negócio existe.<br /><span style="color:var(--mut)">A presença digital ainda não representa isso.</span></h2>
+      <p class="lead" style="margin-top:20px">Você pode ter um ótimo serviço, bons clientes e anos de experiência. Mas quando alguém procura sua empresa na internet, o que aparece não mostra nada disso.</p>
+      <div style="margin-top:28px;display:grid;gap:12px">
+        <div class="card" style="display:flex;gap:14px;align-items:flex-start"><span class="tag slate mono">IG</span><div><h3>Perfil no Instagram</h3><p>Fotos recentes, bio curta e um link na bio.</p></div></div>
+        <div class="card" style="display:flex;gap:14px;align-items:flex-start"><span class="tag slate mono">WA</span><div><h3>Número de WhatsApp</h3><p>A conversa começa sem nenhuma informação prévia.</p></div></div>
+        <div class="card" style="display:flex;gap:14px;align-items:flex-start"><span class="tag slate mono">G</span><div><h3>Cadastro no Google</h3><p>Endereço e telefone — quando alguém atualizou.</p></div></div>
+        <div class="card" style="display:flex;gap:14px;align-items:flex-start"><span class="tag slate mono">WWW</span><div><h3>Página antiga</h3><p>Feita há anos, com serviços e preços desatualizados.</p></div></div>
+      </div>
+    </div>
+    <div class="card hl">
+      <span class="eyebrow gray">O que passa pela cabeça de quem procura</span>
+      <div style="margin-top:22px;display:grid;gap:12px">
+        <p class="card" style="background:rgba(6,11,24,.7);border-radius:12px;padding:14px 16px;color:#dbe3f0">“Não achei o site. Será que é confiável?”</p>
+        <p class="card" style="background:rgba(6,11,24,.7);border-radius:12px;padding:14px 16px;color:#dbe3f0">“Os preços e serviços não estão em lugar nenhum.”</p>
+        <p class="card" style="background:rgba(6,11,24,.7);border-radius:12px;padding:14px 16px;color:#dbe3f0">“O concorrente tem uma página bem melhor organizada.”</p>
+        <p class="card" style="background:rgba(6,11,24,.7);border-radius:12px;padding:14px 16px;color:#dbe3f0">“Vou mandar mensagem para ele e ver se responde.”</p>
+      </div>
+      <p style="margin-top:24px;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:15px;color:var(--mut);line-height:1.65">Nenhum desses canais é ruim. O problema é que <strong style="color:#fff">nenhum deles apresenta o negócio por completo</strong> — com posicionamento, serviços, diferenciais, prova de estrutura e um caminho claro para o contato.</p>
+      <p style="margin-top:14px;font-size:14px;color:var(--dim)">É isso que um site próprio resolve. E é isso que o método organiza.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 PEDIDO GENÉRICO × MÉTODO ================= -->
+<section class="sec">
+  <div class="wrap">
+    <span class="chap mono">02 — O MAL-ENTENDIDO</span>
+    <h2 class="disp" style="margin-top:16px;max-width:22ch">O problema não é falta de ferramenta. <span style="color:var(--mut)">É não saber o que pedir.</span></h2>
+    <p class="lead" style="margin-top:18px;max-width:60ch">Digitar “IA, crie um site para minha empresa” gera uma página. Não gera a <strong style="color:#fff">sua</strong> página — com o seu posicionamento, os seus serviços, as suas cores e um caminho claro até o seu WhatsApp.</p>
+
+    <div class="g2" style="margin-top:40px">
+      <div class="card" style="border-color:rgba(244,63,94,.2)">
+        <span class="tag" style="border:1px solid rgba(244,63,94,.25);background:rgba(244,63,94,.08);color:#fda4af">Pedido genérico</span>
+        <div class="codebox" style="font-size:12px;margin-top:16px">
+          <p><b style="color:#fb7185">você ›</b> “Crie um site para a minha empresa.”</p>
+          <p style="color:#203252">------------------------------------------</p>
+          <p><b style="color:var(--dim)">ia ›</b> modelo pronto, texto de exemplo, cores aleatórias, imagens genéricas.</p>
+        </div>
+        <ul class="chk" style="margin-top:18px">
+          <li>Textos que não descrevem o seu serviço</li>
+          <li>Cores que não têm relação com a sua marca</li>
+          <li>Imagens que poderiam ser de qualquer empresa</li>
+          <li>Sem ideia de o que revisar, ajustar ou publicar depois</li>
+        </ul>
+      </div>
+      <div class="card hl">
+        <span class="tag cyan">Pedido com método</span>
+        <div class="codebox" style="font-size:12px;margin-top:16px">
+          <p><b>você ›</b> briefing do negócio + conteúdo revisado + paleta definida + imagens + instruções de estrutura e CTA.</p>
+          <p style="color:#203252">------------------------------------------</p>
+          <p><b style="color:var(--dim)">ia ›</b> site com a sua cara, pronto para revisar, publicar e indexar.</p>
+        </div>
+        <p style="margin-top:20px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)">As decisões que vêm antes do prompt</p>
+        <ul class="chips" style="margin-top:12px">
+          <li>Posicionamento</li><li>Conteúdo</li><li>Estrutura de páginas</li><li>Textos</li><li>Imagens</li><li>Identidade visual</li><li>Cores</li><li>Tipografia</li><li>Experiência e navegação</li><li>Chamadas para ação</li><li>Informações de contato</li><li>Publicação</li><li>Domínio</li><li>Presença no Google</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:36px;text-align:center;padding:34px 26px">
+      <p class="disp" style="font-size:clamp(19px,2.4vw,26px);font-weight:700;line-height:1.35;max-width:44ch;margin:0 auto">A IA consegue criar. O problema é saber <span class="grad-text">o que pedir, em qual ordem e como avaliar o resultado.</span></p>
+      <p style="margin-top:20px"><a class="btn btn-sm" href="#oferta">Quero o método completo</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 MÉTODO ================= -->
+<section class="sec band grid-bg" id="metodo">
+  <div class="wrap">
+    <span class="chap mono">03 — A SOLUÇÃO</span>
+    <h2 class="disp" style="margin-top:16px">Você não precisa aprender programação.<br /><span class="grad-text">Precisa saber o que fazer.</span></h2>
+    <p class="lead" style="margin-top:18px;max-width:62ch">O Seu Site Único é um manual interativo que organiza o processo inteiro em seis etapas consecutivas. Cada etapa diz o que fazer, por que aquilo importa e o que você deve ter em mãos antes de avançar.</p>
+    <ul class="chips" style="margin-top:24px">
+      <li style="border-color:rgba(0,212,232,.25);background:rgba(0,212,232,.07);color:#a5f3fc">Informar</li>
+      <li style="border-color:rgba(0,212,232,.25);background:rgba(0,212,232,.07);color:#a5f3fc">Preparar</li>
+      <li style="border-color:rgba(0,212,232,.25);background:rgba(0,212,232,.07);color:#a5f3fc">Gerar</li>
+      <li style="border-color:rgba(0,212,232,.25);background:rgba(0,212,232,.07);color:#a5f3fc">Revisar</li>
+      <li style="border-color:rgba(0,212,232,.25);background:rgba(0,212,232,.07);color:#a5f3fc">Publicar</li>
+    </ul>
+
+    <div style="margin-top:36px;display:grid;gap:12px">
+      <details class="acc" open>
+        <summary><span><span class="num mono">MÓDULO 01 ·</span> Meu Projeto — entenda e informe o seu negócio</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="body">
+          Você cadastra a fonte de verdade do projeto: nome, segmento, cidade e região, WhatsApp, Instagram, endereço, horário, serviços, público-alvo, diferenciais, objetivo do site e tom de voz.
+          <ul class="chk" style="margin-top:14px"><li>Formulário guiado com as informações do negócio</li><li>Prompt de estruturação do negócio com IA</li><li>Dados salvos e reutilizados em todas as etapas seguintes</li></ul>
+          <p class="out"><b>Você termina esta etapa com</b>Briefing estruturado, sem informações soltas em conversas de chat.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span><span class="num mono">MÓDULO 02 ·</span> Prepare o Conteúdo — defina o que o site vai dizer</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="body">
+          Um estúdio único de copy para revisar e salvar os textos do site: Hero, Sobre Nós, Serviços (puxados de Meu Projeto), FAQ em accordion e a otimização de SEO local, com prévia de como o site aparece no Google.
+          <ul class="chk" style="margin-top:14px"><li>Prompt de copywriting preenchido com os seus dados</li><li>Textos de Hero, Sobre, Serviços e FAQ</li><li>SEO local: título e descrição com prévia no Google</li></ul>
+          <p class="out"><b>Você termina esta etapa com</b>Conteúdo pronto e salvo antes de gerar qualquer linha de site.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span><span class="num mono">MÓDULO 03 ·</span> Defina o Visual — identidade visual e sistema de cores</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="body">
+          Fluxo de quatro passos: confirme seu nicho, copie o prompt do Diretor de Arte, cole no ChatGPT e registre a resposta no projeto. O resultado vira paleta (primary, secondary, accent, fundo, texto e CTA) e direção visual.
+          <ul class="chk" style="margin-top:14px"><li>Prompt do Diretor de Arte para sistema de cores profissional</li><li>Paleta compatível com as cores da sua marca</li><li>Posicionamento visual e personalidade registrados</li></ul>
+          <p class="out"><b>Você termina esta etapa com</b>Um site com critério visual — e não com cores escolhidas no impulso.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span><span class="num mono">MÓDULO 04 ·</span> Prepare as Imagens — descubra quais fotos o site precisa</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="body">
+          Direção de arte fotográfica: quais imagens cada seção pede, o que fotografar no seu negócio, como gerar ou melhorar imagens com IA e como usá-las no Prompt Mestre. Com exemplos práticos por nicho.
+          <ul class="chk" style="margin-top:14px"><li>Guia de direção de arte fotográfica</li><li>Lista de imagens por tipo de negócio</li><li>Onde criar: Google Flow, Leonardo.ai, Ideogram, Midjourney</li></ul>
+          <p class="out"><b>Você termina esta etapa com</b>Imagens coerentes com o posicionamento definido na etapa anterior.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span><span class="num mono">MÓDULO 05 ·</span> Gere Seu Site com IA — transforme tudo em um site real</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="body">
+          O manual consolida dados, textos, paleta, tipografia e regras de contraste (WCAG AA) no Prompt Mestre Final de 25 seções. Você copia, anexa as imagens e cola na ferramenta de IA escolhida — Claude, Arena.ai, Manus, Bolt.new ou Google AI Studio.
+          <ul class="chk" style="margin-top:14px"><li>Prompt Mestre Final de 25 seções consolidado</li><li>Lista das melhores IAs para criação de sites</li><li>Comandos de refinamento para ajustar o resultado</li></ul>
+          <p class="out"><b>Você termina esta etapa com</b>Um site gerado a partir das suas decisões, não de um modelo qualquer.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span><span class="num mono">MÓDULO 06 ·</span> Revise e Publique — coloque no ar e seja encontrado</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="body">
+          Checklist obrigatório antes de publicar (conteúdo, design, conversão e mobile), guia de registro de domínio e hospedagem e a Fase 3 de presença no Google: Perfil da Empresa, Search Console, LGPD e Analytics.
+          <ul class="chk" style="margin-top:14px"><li>Checklist pré-lançamento com 17 pontos de revisão</li><li>Netlify, Vercel, Hostinger e apontamento de domínio próprio</li><li>Google Meu Negócio, Search Console, LGPD e GA4</li></ul>
+          <p class="out"><b>Você termina esta etapa com</b>Site no ar, com endereço próprio e indexado no Google.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- publicação em 3 colunas -->
+    <div class="g3" style="margin-top:28px">
+      <div class="card">
+        <span class="tag green">Etapa 06 · Revisão</span>
+        <h3 style="margin-top:12px">Checklist Obrigatório Antes de Publicar</h3>
+        <div style="margin-top:12px;display:grid;gap:10px">
+          <div><div style="display:flex;justify-content:space-between;font-size:10px;color:var(--mut)"><span>Conteúdo</span><span class="mono">4 itens</span></div><div class="bar" style="margin-top:5px;height:6px"><i style="width:75%"></i></div></div>
+          <div><div style="display:flex;justify-content:space-between;font-size:10px;color:var(--mut)"><span>Design</span><span class="mono">5 itens</span></div><div class="bar" style="margin-top:5px;height:6px"><i style="width:80%"></i></div></div>
+          <div><div style="display:flex;justify-content:space-between;font-size:10px;color:var(--mut)"><span>Conversão</span><span class="mono">4 itens</span></div><div class="bar" style="margin-top:5px;height:6px"><i style="width:75%"></i></div></div>
+          <div><div style="display:flex;justify-content:space-between;font-size:10px;color:var(--mut)"><span>Mobile</span><span class="mono">4 itens</span></div><div class="bar" style="margin-top:5px;height:6px"><i style="width:50%"></i></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="tag cyan">Registro &amp; Hospedagem</span>
+        <h3 style="margin-top:12px">Coloque o site no ar</h3>
+        <div style="margin-top:12px;display:grid;gap:8px;font-size:10.5px">
+          <p class="card" style="padding:9px 10px;border-radius:10px"><b style="color:#fff">Netlify</b><br /><span class="dim">Arrastar e soltar a pasta — link gratuito (.netlify.app)</span></p>
+          <p class="card" style="padding:9px 10px;border-radius:10px"><b style="color:#fff">Vercel</b><br /><span class="dim">Conectar via GitHub com deploy automático (.vercel.app)</span></p>
+          <p class="card" style="padding:9px 10px;border-radius:10px"><b style="color:#fff">Hostinger</b><br /><span class="dim">Domínio próprio (.com.br) + hospedagem + e-mail</span></p>
+          <p class="card" style="padding:9px 10px;border-radius:10px"><b style="color:#fff">Já tenho domínio</b><br /><span class="dim">Apontar DNS (Registro.br, GoDaddy ou similar)</span></p>
+        </div>
+      </div>
+      <div class="card">
+        <span class="tag amber">Fase 3 · Ser Encontrado</span>
+        <h3 style="margin-top:12px">Presença no Google</h3>
+        <div style="margin-top:12px;display:grid;gap:8px;font-size:10.5px">
+          <p class="card" style="padding:9px 10px;border-radius:10px"><b style="color:#fff">1. SEO Local</b><br /><span class="dim">Google Meu Negócio (Maps e buscas locais)</span></p>
+          <p class="card" style="padding:9px 10px;border-radius:10px"><b style="color:#fff">2. Indexação Oficial</b><br /><span class="dim">Google Search Console + envio do sitemap.xml</span></p>
+          <p class="card" style="padding:9px 10px;border-radius:10px"><b style="color:#fff">3. Confiança Jurídica</b><br /><span class="dim">LGPD, aviso de cookies e política de privacidade</span></p>
+          <p class="card" style="padding:9px 10px;border-radius:10px"><b style="color:#fff">4. Bônus: Visitas</b><br /><span class="dim">Google Analytics 4 (GA4) para medir acessos</span></p>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:26px" ><a class="btn btn-sm" href="#oferta">Quero seguir esse caminho <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ================= 04 PRODUTO POR DENTRO ================= -->
+<section class="sec" id="produto">
+  <div class="wrap">
+    <span class="chap mono">04 — POR DENTRO DO PRODUTO</span>
+    <h2 class="disp" style="margin-top:16px">Isto não é uma promessa abstrata.<br /><span style="color:var(--mut)">É a área que você abre depois da compra.</span></h2>
+    <p class="lead" style="margin-top:16px;max-width:60ch">Um manual interativo com painel de jornada, projeto do seu negócio, briefing consolidado, central de prompts e guias de publicação — tudo no mesmo lugar, com o progresso salvo na sua conta. Abra cada tela abaixo.</p>
+
+    <div style="margin-top:32px;display:grid;gap:14px" class="g2">
+      <details class="acc" open>
+        <summary><span>Painel Geral &amp; Jornada</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="body">
+          <div class="app">
+            <div class="app-bar"><span class="wd" aria-hidden="true"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span><span class="url mono">seusiteunico.com.br/dashboard</span></div>
+            <div class="app-body">
+              <div class="side">
+                <p class="it on">Painel Geral &amp; Jornada</p><p class="it">Central de Prompts</p><p class="it">Meu Projeto</p><p class="it">Briefing Mestre</p>
+                <p class="grp mono">Módulos de Execução</p>
+                <p class="it"><span><i class="st ok"></i>Meu Projeto</span>01</p>
+                <p class="it"><span><i class="st ok"></i>Prepare o Conteúdo</span>02</p>
+                <p class="it"><span><i class="st ok"></i>Defina o Visual</span>03</p>
+                <p class="it"><span><i class="st"></i>Prepare as Imagens</span>04</p>
+                <p class="it"><span><i class="st"></i>Gere Seu Site com IA</span>05</p>
+                <p class="it"><span><i class="st"></i>Revise e Publique</span>06</p>
+                <p class="grp mono">Publicação &amp; Presença</p>
+                <p class="it">Registro &amp; Hospedagem</p><p class="it">Fase 3: Ser Encontrado</p><p class="it">Plano Completo</p>
+              </div>
+              <div class="app-main">
+                <div class="mcard" style="background:linear-gradient(120deg,#0b1535,#152342)">
+                  <span class="tag cyan">Manual interativo &amp; guiado</span>
+                  <p class="mt" style="margin-top:8px;font-size:13px">Seu site será construído em poucos passos com ferramentas de IA.</p>
+                  <p class="ms">Você não precisa saber programar. Siga o fluxo: <b style="color:var(--mut)">INFORMAR → PREPARAR → GERAR → REVISAR → PUBLICAR</b></p>
+                  <div class="bar" style="margin-top:10px"><i style="width:50%"></i></div>
+                  <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--dim);margin-top:4px"><span>Início do Projeto</span><span>Site Publicado &amp; Indexado no Google (100%)</span></div>
+                </div>
+                <div class="mgrid">
+                  <div class="mcard"><span class="mono" style="font-size:9px;color:var(--cyan)">13 Prompts</span><p class="mt">Central de Prompts</p><p class="ms">Comandos calibrados com seus dados</p></div>
+                  <div class="mcard"><span class="mono" style="font-size:9px;color:#5b8bff">Briefing</span><p class="mt">Meu Projeto</p><p class="ms">Informações que alimentam os prompts</p></div>
+                  <div class="mcard"><span class="mono" style="font-size:9px;color:var(--green)">Aprovado</span><p class="mt">Briefing Mestre</p><p class="ms">Visão unificada de dados e textos</p></div>
+                  <div class="mcard"><span class="mono" style="font-size:9px;color:var(--green)">Novo Módulo</span><p class="mt">Registro &amp; Hospedagem</p><p class="ms">Vercel, Netlify e Hostinger</p></div>
+                </div>
+                <div class="mcard glow">
+                  <span class="tag cyan">Ação recomendada agora</span>
+                  <p class="mt" style="margin-top:8px">Prepare as Imagens</p>
+                  <p class="ms">Descubra quais fotos seu site precisa e como gerá-las ou melhorá-las com IA.</p>
+                  <span class="mini-btn">Executar Esta Etapa</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p style="margin-top:14px">O painel mostra a jornada completa, a barra de progresso e o próximo passo recomendado. Você nunca precisa adivinhar o que fazer agora.</p>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary><span>Meu Projeto &amp; Briefing Mestre</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="body">
+          <div class="app"><div class="app-bar"><span class="wd" aria-hidden="true"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span><span class="url mono">…/briefing-mestre</span></div>
+          <div class="app-main">
+            <div class="mcard">
+              <p class="mt">Briefing Mestre — dados consolidados e prontos para alimentar a geração com IA.</p>
+              <div class="mgrid" style="margin-top:10px;gap:10px">
+                <div class="kv"><b>Nome Comercial</b><span>Studio Barba &amp; Navalha</span></div>
+                <div class="kv"><b>Segmento</b><span>Barbearia premium</span></div>
+                <div class="kv"><b>Cidade &amp; Região</b><span>João Pessoa (PB)</span></div>
+                <div class="kv"><b>WhatsApp de Vendas</b><span style="color:var(--green)">(83) 99999-0000</span></div>
+                <div class="kv"><b>Instagram</b><span>@barbaenavalha</span></div>
+                <div class="kv"><b>Tom de Voz</b><span>Direto e confiante</span></div>
+              </div>
+            </div>
+            <div class="mcard">
+              <p class="mt">Paleta de Cores e Interface</p>
+              <div class="pal">
+                <div><i style="background:#00D4E8"></i><b>Primary</b><span>#00D4E8</span></div>
+                <div><i style="background:#1769FF"></i><b>Secondary</b><span>#1769FF</span></div>
+                <div><i style="background:#00E599"></i><b>Accent</b><span>#00E599</span></div>
+                <div><i style="background:#080D20"></i><b>Fundo</b><span>#080D20</span></div>
+                <div><i style="background:#F5F7FF"></i><b>Texto</b><span>#F5F7FF</span></div>
+                <div><i style="background:#00D4E8"></i><b>CTA Ação</b><span>#00D4E8</span></div>
+              </div>
+            </div>
+          </div></div>
+          <p style="margin-top:14px">Você cadastra as informações do seu negócio uma única vez. Esses dados alimentam automaticamente todos os prompts — sem redigitar nada.</p>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary><span>Central de Prompts</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="body">
+          <div class="app"><div class="app-bar"><span class="wd" aria-hidden="true"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span><span class="url mono">…/central-de-prompts</span></div>
+          <div class="app-main">
+            <ul class="chips" style="margin-top:0">
+              <li style="border-color:rgba(0,212,232,.5);background:rgba(0,212,232,.1);color:#fff;font-size:10px;padding:5px 10px">Todos os Prompts</li>
+              <li style="font-size:10px;padding:5px 10px">Fundação &amp; Planejamento</li>
+              <li style="font-size:10px;padding:5px 10px">Copywriting &amp; Textos</li>
+              <li style="font-size:10px;padding:5px 10px">Identidade &amp; Fotos</li>
+              <li style="font-size:10px;padding:5px 10px">Construção &amp; Código com IA</li>
+            </ul>
+            <div class="mcard" style="margin-top:10px"><p class="mt" style="font-size:10.5px">PROMPT — ESTRUTURAÇÃO DO NEGÓCIO COM IA</p><p class="ms">Etapa 01 · IA: ChatGPT / Claude / Gemini</p><span class="mini-btn green" style="margin-top:6px">Copiar</span></div>
+            <div class="mcard"><p class="mt" style="font-size:10.5px">PROMPT DO DIRETOR DE ARTE — SISTEMA DE CORES</p><p class="ms">Etapa 03 · IA: ChatGPT</p><span class="mini-btn green" style="margin-top:6px">Copiar</span></div>
+            <div class="mcard"><p class="mt" style="font-size:10.5px">PROMPT MESTRE FINAL DE 25 SEÇÕES (CONSTRUÇÃO DO SITE)</p><p class="ms">Etapa 05 · IA: Google AI Studio / Arena.ai / Manus / Claude</p><span class="mini-btn green" style="margin-top:6px">Copiar</span></div>
+          </div></div>
+          <p style="margin-top:14px">Comandos organizados por categoria, com objetivo, quando usar e a IA recomendada para cada etapa.</p>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary><span>Prompt Mestre Final &amp; publicação</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="body">
+          <div class="app"><div class="app-bar"><span class="wd" aria-hidden="true"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span><span class="url mono">…/etapa-05</span></div>
+          <div class="app-main">
+            <div class="mcard glow">
+              <span class="tag green">Etapa central — construção do site</span>
+              <div class="codebox"><b>CONTEXTO DO NEGÓCIO</b><br/>Nome: Studio Barba &amp; Navalha · Nicho: Barbearia<br/><span style="color:#203252">------------------------------------------</span><br/><b>IDENTIDADE VISUAL</b><br/>primary #0E1420 · accent #C9A227 · cta #00D4E8<br/><span style="color:#203252">------------------------------------------</span><br/><b>SEÇÕES 01–25</b><br/>Hero · Serviços · Diferenciais · Sobre · FAQ · Contato...</div>
+              <span class="mini-btn green">COPIAR PROMPT MESTRE FINAL</span>
+            </div>
+            <div class="mcard"><p class="mt" style="font-size:10.5px">Como refinar o resultado na IA externa (se necessário)</p><p class="ms"><b style="color:var(--cyan)">Ajustar espaçamento:</b> “Aumente o espaçamento vertical da seção de serviços.”<br/><b style="color:var(--cyan)">Trocar ícone:</b> “No card de corte, utilize o ícone Scissors da Lucide.”</p></div>
+          </div></div>
+          <p style="margin-top:14px">Tudo que você decidiu é consolidado em um único briefing de 25 seções, pronto para colar na ferramenta de IA que cria o site.</p>
+        </div>
+      </details>
+    </div>
+    <p class="dim" style="font-size:12px;margin-top:14px;text-align:center">As interfaces acima reconstroem a área de membros real do produto, com dados de exemplo para ilustração.</p>
+  </div>
+</section>
+
+<!-- ================= 05 DADOS ================= -->
+<section class="sec band" id="dados">
+  <div class="wrap">
+    <span class="chap mono">05 — COMO O CLIENTE DECIDE</span>
+    <h2 class="disp" style="margin-top:16px">A decisão começa antes do contato. <span style="color:var(--mut)">Começa na pesquisa.</span></h2>
+    <div class="g3" style="margin-top:36px">
+      <div class="stat"><p class="v disp c1">84<small>%</small></p><p>Consideram uma empresa com site mais confiável do que uma empresa presente apenas nas redes sociais.</p><p class="src">Fonte: <a href="https://blog.verisign.com/getting-online/verisign-2015-online-survey-97-percent-of-smbs-would-recommend-having-a-website-to-other-smbs/" rel="noopener">Verisign</a></p></div>
+      <div class="stat"><p class="v disp c2">79<small>%</small></p><p>Dos brasileiros pesquisam informações online antes de decidir uma compra.</p><p class="src">Fonte: <a href="https://www.pwc.com/gx/en/industries/retail-consumer/global-consumer-insights-survey.html" rel="noopener">PwC — Global Consumer Insights Survey</a></p></div>
+      <div class="stat"><p class="v disp c3">46,1<small>%</small></p><p>Avaliaram a credibilidade de um site a partir do design: layout, tipografia e esquema de cores.</p><p class="src">Fonte: <a href="https://credibility.stanford.edu/" rel="noopener">Stanford Web Credibility Project</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 BENEFÍCIOS ================= -->
+<section class="sec" id="beneficios">
+  <div class="wrap">
+    <span class="chap mono">06 — O QUE MUDA NA PRÁTICA</span>
+    <h2 class="disp" style="margin-top:16px">Oito coisas que você passa a conseguir fazer sozinho.</h2>
+    <div class="g4" style="margin-top:34px">
+      <div class="card"><span class="num mono">01</span><h3 style="margin-top:10px">Pare de depender apenas das redes sociais</h3><p style="margin-top:8px">Tenha um endereço próprio para apresentar o negócio — sem depender do alcance de terceiros.</p></div>
+      <div class="card"><span class="num mono">02</span><h3 style="margin-top:10px">Saiba exatamente o que pedir para a IA</h3><p style="margin-top:8px">Cada etapa tem um prompt estruturado, com objetivo, quando usar e a ferramenta recomendada.</p></div>
+      <div class="card"><span class="num mono">03</span><h3 style="margin-top:10px">Organize o conteúdo do seu negócio</h3><p style="margin-top:8px">Transforme informações soltas em Hero, Sobre, Serviços, FAQ e SEO local revisados.</p></div>
+      <div class="card"><span class="num mono">04</span><h3 style="margin-top:10px">Crie uma identidade visual coerente</h3><p style="margin-top:8px">Defina cores, tipografia e direção visual a partir do seu nicho e das cores da sua marca.</p></div>
+      <div class="card"><span class="num mono">05</span><h3 style="margin-top:10px">Prepare imagens com direção de arte</h3><p style="margin-top:8px">Saiba quais fotos o seu site pede e como gerá-las ou melhorá-las com IA.</p></div>
+      <div class="card"><span class="num mono">06</span><h3 style="margin-top:10px">Crie o site sem aprender programação</h3><p style="margin-top:8px">O Prompt Mestre Final de 25 seções leva as suas decisões para a ferramenta de IA criar o site.</p></div>
+      <div class="card"><span class="num mono">07</span><h3 style="margin-top:10px">Saiba como publicar</h3><p style="margin-top:8px">Guias de Netlify, Vercel, Hostinger e apontamento de domínio próprio (.com.br).</p></div>
+      <div class="card"><span class="num mono">08</span><h3 style="margin-top:10px">Estruture sua presença digital</h3><p style="margin-top:8px">Site, Google Meu Negócio, Search Console, LGPD e Analytics trabalhando juntos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 TRANSFORMAÇÃO ================= -->
+<section class="sec band grid-bg" id="transformacao">
+  <div class="wrap">
+    <span class="chap mono">07 — A TRANSFORMAÇÃO</span>
+    <h2 class="disp" style="margin-top:16px">Você começa com uma frase.<br /><span class="grad-text">Termina com um site profissional no ar.</span></h2>
+    <div class="tr" style="margin-top:36px">
+      <div class="card">
+        <span class="eyebrow gray">Você começa com</span>
+        <p class="disp" style="font-size:24px;font-weight:700;margin-top:16px;color:#dbe3f0">“Preciso de um site.”</p>
+        <ul class="chk" style="margin-top:18px">
+          <li style="color:var(--dim)">Fotos no celular</li>
+          <li style="color:var(--dim)">Textos soltos no WhatsApp</li>
+          <li style="color:var(--dim)">Ideia de cores</li>
+          <li style="color:var(--dim)">Dúvida sobre onde publicar</li>
+        </ul>
+        <p style="margin-top:18px;border-top:1px solid rgba(255,255,255,.07);padding-top:16px;font-size:13px;color:var(--dim)">Informação dispersa, nenhuma ordem definida e a sensação de que falta algo técnico que você não domina.</p>
+      </div>
+      <div class="tr-mid"><span class="pill">o método <svg class="ic" style="transform:rotate(90deg)" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+      <div class="card hl">
+        <span class="eyebrow">Você termina com</span>
+        <p class="disp" style="font-size:24px;font-weight:700;margin-top:16px">Um site profissional para apresentar o seu negócio na internet.</p>
+        <ul class="chk green" style="margin-top:18px">
+          <li>Informações organizadas no Briefing Mestre</li>
+          <li>Posicionamento e tom de voz definidos</li>
+          <li>Conteúdo revisado seção por seção</li>
+          <li>Identidade visual e sistema de cores</li>
+          <li>Imagens com direção de arte</li>
+          <li>Prompt Mestre Final de 25 seções</li>
+          <li>Publicação, domínio e presença no Google</li>
+        </ul>
+        <p style="margin-top:20px"><a class="btn btn-sm" href="#oferta">Quero esse resultado <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a> <span class="price-chip mono" style="margin-left:8px">R$ 47,90 · pagamento único</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 NICHOS ================= -->
+<section class="sec" id="nichos">
+  <div class="wrap">
+    <span class="chap mono">08 — SERVE PARA O SEU NEGÓCIO?</span>
+    <h2 class="disp" style="margin-top:16px">O método se adapta ao negócio.<br /><span style="color:var(--mut)">O site não é o mesmo para todo mundo.</span></h2>
+    <div class="niche-grid" style="margin-top:32px">
+      <div>
+        <div class="nchips">
+          <span class="on">Barbearia</span><span>Clínica</span><span>Advocacia</span><span>Restaurante</span><span>Imobiliária</span><span>Fisioterapia</span><span>Salão de beleza</span><span>Consultório</span><span>Fotógrafo</span><span>Eletricista</span><span>Arquiteto</span><span>Personal trainer</span><span>Empresa de serviços</span><span>Profissional autônomo</span>
+        </div>
+        <div class="card" style="margin-top:20px">
+          <p style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan-l)">O que muda de um negócio para outro</p>
+          <p style="margin-top:10px">Posicionamento, conteúdo, paleta, imagens e chamada para ação. O briefing coleta os serviços, diferenciais, público e canais de contato específicos de cada segmento — e é isso que diferencia o resultado final. Nenhum site é copiado de um modelo pronto.</p>
+        </div>
+      </div>
+      <div>
+        <div class="siteprev">
+          <div class="bar2"><span class="wd" aria-hidden="true"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span><span class="mono">barbaenavalha.com.br</span><span style="margin-left:auto">prévia gerada pelo método</span></div>
+          <div class="body" style="background:linear-gradient(140deg,#12100e,#0a1020)"><span class="glow" style="background:#c9a227" aria-hidden="true"></span>
+            <span class="grp" style="background:rgba(201,162,39,.14);color:#c9a227">Estética &amp; imagem</span>
+            <h4 style="color:#f6f1e7">Corte e barba com hora marcada no Tambaú.</h4>
+            <div class="svcs"><span style="border-color:rgba(201,162,39,.4);color:#f6f1e7">Corte + barba</span><span style="border-color:rgba(201,162,39,.4);color:#f6f1e7">Pigmentação</span><span style="border-color:rgba(201,162,39,.4);color:#f6f1e7">Dia do noivo</span></div>
+            <span class="cta" style="background:#c9a227">Agendar no WhatsApp</span>
+          </div>
+          <div class="foot"><span class="sw" aria-hidden="true"><span style="background:#12100e"></span><span style="background:#c9a227"></span><span style="background:#f6f1e7"></span></span><span>Posicionamento premium e masculino</span></div>
+        </div>
+        <div class="siteprev">
+          <div class="bar2"><span class="wd" aria-hidden="true"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span><span class="mono">clinicavidaepb.com.br</span><span style="margin-left:auto">prévia gerada pelo método</span></div>
+          <div class="body" style="background:linear-gradient(140deg,#071a1c,#0a1020)"><span class="glow" style="background:#12b8a6" aria-hidden="true"></span>
+            <span class="grp" style="background:rgba(18,184,166,.14);color:#12b8a6">Saúde</span>
+            <h4 style="color:#f2fbfa">Atendimento humanizado, do primeiro contato à consulta.</h4>
+            <div class="svcs"><span style="border-color:rgba(18,184,166,.4);color:#f2fbfa">Consultas</span><span style="border-color:rgba(18,184,166,.4);color:#f2fbfa">Exames</span><span style="border-color:rgba(18,184,166,.4);color:#f2fbfa">Retorno online</span></div>
+            <span class="cta" style="background:#12b8a6">Marcar avaliação</span>
+          </div>
+          <div class="foot"><span class="sw" aria-hidden="true"><span style="background:#071a1c"></span><span style="background:#12b8a6"></span><span style="background:#f2fbfa"></span></span><span>Confiança, clareza e acolhimento</span></div>
+        </div>
+        <div class="siteprev">
+          <div class="bar2"><span class="wd" aria-hidden="true"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span><span class="mono">casadoprato.com.br</span><span style="margin-left:auto">prévia gerada pelo método</span></div>
+          <div class="body" style="background:linear-gradient(140deg,#170d09,#0a1020)"><span class="glow" style="background:#e07a3f" aria-hidden="true"></span>
+            <span class="grp" style="background:rgba(224,122,63,.14);color:#e07a3f">Alimentação</span>
+            <h4 style="color:#fdf3ea">Cozinha autoral no centro histórico, de terça a domingo.</h4>
+            <div class="svcs"><span style="border-color:rgba(224,122,63,.4);color:#fdf3ea">Menu do dia</span><span style="border-color:rgba(224,122,63,.4);color:#fdf3ea">Reservas</span><span style="border-color:rgba(224,122,63,.4);color:#fdf3ea">Eventos privados</span></div>
+            <span class="cta" style="background:#e07a3f">Reservar mesa</span>
+          </div>
+          <div class="foot"><span class="sw" aria-hidden="true"><span style="background:#170d09"></span><span style="background:#e07a3f"></span><span style="background:#fdf3ea"></span></span><span>Apetite, ambiente e horário claros</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 09 CANAIS ================= -->
+<section class="sec band" id="canais">
+  <div class="wrap">
+    <span class="chap mono">09 — O SITE NÃO SUBSTITUI NADA</span>
+    <h2 class="disp" style="margin-top:16px">Ele entra no lugar que hoje está vazio.</h2>
+    <p class="lead" style="margin-top:16px;max-width:62ch">Você continua no Instagram e no WhatsApp. A diferença é que agora existe um lugar que apresenta o negócio por completo — e que pode ser encontrado no Google, enviado por mensagem e linkado na bio.</p>
+    <div class="g4" style="margin-top:32px">
+      <div class="chan" style="border-color:rgba(244,114,182,.25);background:rgba(244,114,182,.06)"><span class="tag slate mono">IG</span><p class="nm">Instagram</p><p class="role" style="color:#f9a8d4">Atrai</p><p>Mostra movimento, gera desejo e traz a primeira atenção para o seu negócio.</p></div>
+      <div class="chan" style="border-color:rgba(0,229,153,.25);background:rgba(0,229,153,.06)"><span class="tag slate mono">WA</span><p class="nm">WhatsApp</p><p class="role" style="color:#6ee7b7">Conversa</p><p>É onde a dúvida vira atendimento, orçamento e agendamento.</p></div>
+      <div class="chan" style="border-color:rgba(56,189,248,.25);background:rgba(56,189,248,.06)"><span class="tag slate mono">G</span><p class="nm">Google</p><p class="role" style="color:#7dd3fc">Ajuda a encontrar</p><p>Perfil da Empresa, Maps e busca orgânica colocam você na frente de quem procura na sua região.</p></div>
+      <div class="chan" style="border-color:rgba(0,212,232,.35);background:rgba(0,212,232,.08);position:relative"><span class="tag cyan" style="position:absolute;top:14px;right:14px">é o que falta</span><span class="tag slate mono">WWW</span><p class="nm">Site</p><p class="role" style="color:var(--cyan-l)">Apresenta o negócio</p><p>Endereço próprio com posicionamento, serviços, diferenciais, estrutura e contato — aberto 24h.</p></div>
+    </div>
+    <div class="diagram">
+      <svg viewBox="0 0 900 90" role="img" aria-label="Instagram atrai, Google ajuda a encontrar, o site apresenta o negócio e o WhatsApp fecha o contato.">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f472b6"/><stop offset=".35" stop-color="#38bdf8"/><stop offset=".68" stop-color="#00d4e8"/><stop offset="1" stop-color="#00e599"/></linearGradient></defs>
+        <path d="M20 55 H 880" stroke="url(#lg)" stroke-width="2" fill="none" class="flowline" opacity=".85"/>
+        <g font-family="sans-serif" font-size="13" font-weight="700" fill="#aab6cc">
+          <circle cx="110" cy="55" r="6" fill="#0b1535" stroke="#00d4e8" stroke-width="2"/><text x="110" y="28" text-anchor="middle">Instagram atrai</text>
+          <circle cx="340" cy="55" r="6" fill="#0b1535" stroke="#00d4e8" stroke-width="2"/><text x="340" y="28" text-anchor="middle">Google ajuda a encontrar</text>
+          <circle cx="580" cy="55" r="6" fill="#0b1535" stroke="#00d4e8" stroke-width="2"/><text x="580" y="28" text-anchor="middle">O site apresenta o negócio</text>
+          <circle cx="800" cy="55" r="6" fill="#0b1535" stroke="#00e599" stroke-width="2"/><text x="800" y="28" text-anchor="middle">WhatsApp fecha o contato</text>
+        </g>
+      </svg>
+      <ol>
+        <li>Instagram atrai</li>
+        <li>Google ajuda a encontrar</li>
+        <li>O site apresenta o negócio</li>
+        <li>WhatsApp fecha o contato</li>
+      </ol>
+      <p style="margin-top:16px;border-top:1px solid rgba(255,255,255,.07);padding-top:16px;font-size:14px;color:var(--mut)">O método conecta esses canais no próprio site: botão de WhatsApp, link do Instagram, endereço e horário para o Maps, e conteúdo pensado para a busca local.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10 SEM PROGRAMAR ================= -->
+<section class="sec" id="sem-programar">
+  <div class="wrap">
+    <span class="eyebrow amber">A objeção mais comum</span>
+    <h2 class="disp" style="margin-top:18px">“Mas eu não sei programar.”</h2>
+    <p class="disp" style="margin-top:12px;font-size:clamp(18px,2.2vw,24px);font-weight:700;color:var(--mut)">Você não precisa virar programador para criar um site profissional.</p>
+    <p class="lead" style="margin-top:14px;max-width:60ch">O método mostra o que fazer em cada etapa e usa ferramentas de IA para executar a parte técnica. O seu trabalho é decidir e informar — não escrever código.</p>
+    <div class="g2" style="margin-top:34px">
+      <div class="card">
+        <p style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)">O caminho tradicional exigiria</p>
+        <p style="font-size:15px;font-weight:800;color:var(--mut);margin-top:6px">Dominar tudo isto</p>
+        <ul class="chips" style="margin-top:16px">
+          <li class="off">Programação</li><li class="off">HTML</li><li class="off">CSS</li><li class="off">JavaScript</li><li class="off">Hospedagem</li><li class="off">Domínio</li><li class="off">SEO</li><li class="off">Design</li><li class="off">Copywriting</li>
+        </ul>
+        <p style="margin-top:18px;border-top:1px solid rgba(255,255,255,.07);padding-top:16px;font-size:13.5px;color:var(--dim)">Meses de estudo, ou um orçamento de agência para cada ajuste simples de texto.</p>
+      </div>
+      <div class="card hl">
+        <p style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan-l)">Com o método você faz</p>
+        <p style="font-size:15px;font-weight:800;margin-top:6px">Seis movimentos</p>
+        <ul class="chk" style="margin-top:16px">
+          <li><strong style="color:#fff">Briefing.</strong> Você informa o negócio uma vez, em formulário guiado.</li>
+          <li><strong style="color:#fff">Conteúdo.</strong> Você revisa e salva os textos que a IA escreveu com os seus dados.</li>
+          <li><strong style="color:#fff">Identidade.</strong> Você escolhe a paleta e a direção visual do seu nicho.</li>
+          <li><strong style="color:#fff">Prompts.</strong> Você copia comandos já estruturados para cada etapa.</li>
+          <li><strong style="color:#fff">IA.</strong> A ferramenta de IA gera o site a partir dessas instruções.</li>
+          <li><strong style="color:#fff">Publicação.</strong> Você segue o guia de hospedagem, domínio e Google.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="card" style="margin-top:22px;font-size:13px"><strong style="color:#dbe3f0">Expectativa honesta:</strong> nenhuma programação é exigida, mas registrar um domínio e publicar um site envolvem etapas técnicas com cliques, contas e configurações. O manual acompanha cada uma delas com passo a passo — e, se algo específico do seu caso fugir do previsto, você pode precisar de apoio pontual.</p>
+  </div>
+</section>
+
+<!-- ================= 11 INCLUÍDO ================= -->
+<section class="sec band" id="incluido">
+  <div class="wrap">
+    <span class="chap mono">10 — O QUE VOCÊ RECEBE</span>
+    <h2 class="disp" style="margin-top:16px">Um sistema completo — não um pacote de prompts.</h2>
+    <p class="lead" style="margin-top:14px;max-width:64ch">Os prompts fazem parte do método. Mas o que você compra é o caminho organizado: contexto do negócio, sequência de decisões, orientação em cada etapa e as ferramentas para revisar, publicar e ser encontrado.</p>
+    <div class="g3" style="margin-top:32px">
+      <div class="card"><span class="num mono">01</span><h3 style="margin-top:8px">Método passo a passo em 6 módulos</h3><p style="margin-top:6px">De Meu Projeto a Revise e Publique, com o que fazer e por que cada etapa existe.</p></div>
+      <div class="card"><span class="num mono">02</span><h3 style="margin-top:8px">Área Meu Projeto</h3><p style="margin-top:6px">Formulário guiado que salva os dados do seu negócio e alimenta todos os prompts.</p></div>
+      <div class="card"><span class="num mono">03</span><h3 style="margin-top:8px">Briefing Mestre</h3><p style="margin-top:6px">Visão unificada de dados, textos, paleta e checklist em um só documento vivo.</p></div>
+      <div class="card"><span class="num mono">04</span><h3 style="margin-top:8px">Central de Prompts</h3><p style="margin-top:6px">Comandos organizados por categoria, com objetivo, quando usar e IA recomendada.</p></div>
+      <div class="card"><span class="num mono">05</span><h3 style="margin-top:8px">Identidade visual e sistema de cores</h3><p style="margin-top:6px">Prompt do Diretor de Arte que devolve paleta, contraste e direção de interface.</p></div>
+      <div class="card"><span class="num mono">06</span><h3 style="margin-top:8px">Direção de arte para imagens</h3><p style="margin-top:6px">Quais fotos o seu site pede e como gerá-las ou melhorá-las com IA.</p></div>
+      <div class="card"><span class="num mono">07</span><h3 style="margin-top:8px">Prompt Mestre Final de 25 seções</h3><p style="margin-top:6px">O briefing consolidado que vira site dentro da ferramenta de IA que você escolher.</p></div>
+      <div class="card"><span class="num mono">08</span><h3 style="margin-top:8px">Publicação, domínio e hospedagem</h3><p style="margin-top:6px">Guias de Netlify, Vercel, Hostinger e apontamento de domínio próprio.</p></div>
+      <div class="card"><span class="num mono">09</span><h3 style="margin-top:8px">Fase 3: presença no Google</h3><p style="margin-top:6px">Perfil da Empresa, Search Console e sitemap, LGPD e Google Analytics 4.</p></div>
+      <div class="card"><span class="num mono">10</span><h3 style="margin-top:8px">Checklist pré-lançamento</h3><p style="margin-top:6px">Revisão de conteúdo, design, conversão e mobile antes de colocar o site no ar.</p></div>
+      <div class="card"><span class="num mono">11</span><h3 style="margin-top:8px">Acompanhamento de progresso</h3><p style="margin-top:6px">Barra de jornada do início do projeto até o site publicado e indexado.</p></div>
+      <div class="card"><span class="num mono">12</span><h3 style="margin-top:8px">Direção de conteúdo</h3><p style="margin-top:6px">Hero, Sobre, Serviços, FAQ e SEO local revisados em um estúdio de copy.</p></div>
+    </div>
+    <div class="card" style="margin-top:30px;text-align:center;padding:32px 24px;background:linear-gradient(120deg,rgba(0,212,232,.06),rgba(23,105,255,.04))">
+      <p class="disp" style="font-size:clamp(18px,2.2vw,24px);font-weight:700;line-height:1.4;max-width:46ch;margin:0 auto">Em vez de descobrir sozinho o que fazer, você segue um processo estruturado do briefing à publicação.</p>
+      <p style="margin-top:18px"><a class="btn btn-sm" href="#oferta">Quero criar meu site <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 12 RENDA EXTRA ================= -->
+<section class="sec">
+  <div class="wrap" style="max-width:960px">
+    <div class="card" style="padding:30px">
+      <span class="eyebrow green">E existe outra possibilidade</span>
+      <h2 class="disp" style="margin-top:16px;font-size:clamp(21px,2.6vw,29px)">O mesmo processo pode ser aplicado ao negócio de outra pessoa.</h2>
+      <p class="lead" style="margin-top:14px;max-width:64ch">O motivo principal para comprar o Seu Site Único é criar o site do <strong style="color:#fff">seu</strong> negócio. Mas quem percorre o processo inteiro entende como ele funciona — e pode usar esse conhecimento para criar sites para outros negócios da sua cidade.</p>
+      <div class="g2" style="margin-top:22px;gap:10px">
+        <p class="card" style="padding:12px 14px;font-size:12.5px"><span class="num mono">01</span> · A oportunidade de mercado: sites de R$ 1.500 a R$ 3.500</p>
+        <p class="card" style="padding:12px 14px;font-size:12.5px"><span class="num mono">02</span> · Portfólio inicial sem clientes anteriores</p>
+        <p class="card" style="padding:12px 14px;font-size:12.5px"><span class="num mono">03</span> · Precificação estratégica e formas de parcelamento</p>
+        <p class="card" style="padding:12px 14px;font-size:12.5px"><span class="num mono">04</span> · Contrato de prestação de serviços e escopo definido</p>
+        <p class="card" style="padding:12px 14px;font-size:12.5px"><span class="num mono">05</span> · Prospecção no Google Maps sem abordagem invasiva</p>
+        <p class="card" style="padding:12px 14px;font-size:12.5px"><span class="num mono">06</span> · Reunião de fechamento de 15 minutos</p>
+        <p class="card" style="padding:12px 14px;font-size:12.5px"><span class="num mono">07</span> · Coleta de informações do cliente em um único formulário</p>
+        <p class="card" style="padding:12px 14px;font-size:12.5px"><span class="num mono">08</span> · Montagem com o Prompt Mestre em menos de 48 horas</p>
+        <p class="card" style="padding:12px 14px;font-size:12.5px"><span class="num mono">09</span> · Entrega oficial, pagamento final e registro de domínio</p>
+        <p class="card" style="padding:12px 14px;font-size:12.5px"><span class="num mono">10</span> · Manutenção mensal e recorrência</p>
+      </div>
+      <p style="margin-top:22px;border-top:1px solid rgba(255,255,255,.08);padding-top:18px;font-size:13px;color:var(--mut)">Isso está incluído no acesso como uma trilha adicional (Plano Completo), com módulos e scripts comerciais. <strong style="color:#dbe3f0">Não é uma promessa de ganhos: nenhum resultado financeiro é garantido</strong> — depende de como você aplica o processo, do seu mercado e da sua execução.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 13 OBJEÇÕES ================= -->
+<section class="sec band" id="objecoes">
+  <div class="wrap">
+    <span class="chap mono">11 — O QUE COSTUMA PASSAR PELA CABEÇA</span>
+    <h2 class="disp" style="margin-top:16px">As dúvidas de quem está decidido a resolver isso.</h2>
+    <div class="g3" style="margin-top:32px">
+      <div class="card"><h3>“Não entendo nada de programação.”</h3><p style="margin-top:10px">O método foi desenhado justamente para quem não é programador. Você informa, decide e copia prompts; a ferramenta de IA executa a parte técnica.</p></div>
+      <div class="card"><h3>“Eu já tenho Instagram.”</h3><p style="margin-top:10px">Ótimo — continue usando. O site complementa a sua presença digital: é o lugar que apresenta o negócio por completo e pode ser encontrado no Google.</p></div>
+      <div class="card"><h3>“A IA já cria sites sozinha.”</h3><p style="margin-top:10px">Ela cria. O diferencial está em saber o que fornecer, em qual ordem, como orientar a geração e como avaliar o resultado antes de publicar.</p></div>
+      <div class="card"><h3>“Não sei o que colocar no meu site.”</h3><p style="margin-top:10px">Essa é a primeira etapa do manual: um formulário guiado organiza nome, serviços, diferenciais, público, contatos, horário e objetivo do site.</p></div>
+      <div class="card"><h3>“Preciso contratar alguém?”</h3><p style="margin-top:10px">O objetivo é que você conduza o processo usando IA e ferramentas acessíveis, inclusive opções gratuitas de publicação. Se surgir algo muito específico do seu caso, aí sim pode ser útil um apoio pontual.</p></div>
+      <div class="card"><h3>“E se eu já tiver um site antigo?”</h3><p style="margin-top:10px">O método serve para reestruturar: você refaz posicionamento, conteúdo, identidade visual e presença no Google — e gera uma versão nova do site.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 14 OFERTA ================= -->
+<section class="sec" id="oferta">
+  <div class="wrap" style="max-width:900px">
+    <div style="text-align:center">
+      <span class="eyebrow">Acesso imediato</span>
+      <h2 class="disp" style="margin-top:16px">Tudo isso por um valor único.</h2>
+      <p class="lead" style="margin-top:12px">Sem mensalidade, sem renovação, sem taxa por site criado.</p>
+    </div>
+
+    <div class="offer" style="margin-top:36px">
+      <div class="offer-hd">
+        <div>
+          <p style="font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan-l)">Seu Site Único</p>
+          <p class="disp" style="font-size:clamp(22px,2.6vw,29px);font-weight:700;margin-top:8px">Acesso completo ao manual interativo</p>
+        </div>
+        <div class="pricebox"><span>Pagamento único</span><p class="v disp">R$ 47<small>,90</small></p></div>
+      </div>
+      <ul>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Fase 1 — Construir:</b> Briefing Mestre, conteúdo, identidade visual, imagens e Prompt Mestre Final</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Fase 2 — Publicar:</b> Domínio próprio, hospedagem, HTTPS e botão de WhatsApp estratégico</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Fase 3 — Ser Encontrado:</b> SEO local, Perfil da Empresa no Google, Search Console, LGPD</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Bônus 01 — Google Analytics:</b> instalação e leitura do GA4 para acompanhar acessos e conversões</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Bônus 02 — Extensão de vendas:</b> recursos complementares de checkout para o seu site</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Trilha Plano Completo:</b> módulos e scripts comerciais para criar sites para outros negócios</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Central de Prompts:</b> comandos por categoria, com objetivo, quando usar e IA recomendada</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Progresso e checklist:</b> jornada salva na sua conta + revisão pré-lançamento</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Suporte no WhatsApp:</b> canal direto para dúvidas sobre o método</span></li>
+      </ul>
+      <div style="margin-top:28px;text-align:center">
+        <a class="btn" href="https://seu-site-unico.vercel.app/" rel="noopener">Quero criar meu site <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <p style="margin-top:12px;font-size:13.5px;font-weight:600;color:var(--mut)">Acesso por R$ 47,90 — pagamento único.</p>
+        <p style="margin-top:6px;font-size:12px;color:var(--dim);display:flex;gap:8px;justify-content:center;align-items:center"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Checkout seguro via Mercado Pago · liberação imediata do acesso</p>
+        <p style="margin-top:4px;font-size:11px;color:var(--dim)">(Nesta prévia estática o botão aponta para a página oficial; no projeto, abre o checkout da rota /v2.)</p>
+      </div>
+    </div>
+
+    <div class="guar">
+      <span class="icw"><svg class="ic ic-lg" aria-hidden="true"><use href="#i-shield"/></svg></span>
+      <div>
+        <h3 style="font-size:17px">Garantia de 7 dias</h3>
+        <p>Pelo Artigo 49 do Código de Defesa do Consumidor, você tem 7 dias corridos a partir da liberação do acesso para solicitar a devolução de 100% do valor, sem burocracia. O pedido é feito pelo e-mail de suporte ou pelo WhatsApp oficial e o reembolso é processado pela mesma plataforma do pagamento (Mercado Pago).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 15 FAQ ================= -->
+<section class="sec band" id="duvidas">
+  <div class="wrap" style="max-width:820px">
+    <div style="text-align:center">
+      <span class="eyebrow gray">Perguntas frequentes</span>
+      <h2 class="disp" style="margin-top:16px">Respostas diretas, sem rodeios.</h2>
+    </div>
+    <div style="margin-top:30px;display:grid;gap:10px">
+      <details class="acc" open><summary>Preciso saber programação?<svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="body">Não. O método foi construído para quem não programa: você informa os dados do negócio, revisa conteúdo, define identidade visual e copia os prompts. A ferramenta de IA gera o site.</div></details>
+      <details class="acc"><summary>O método serve para qualquer tipo de negócio?<svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="body">Sim, para sites institucionais e de apresentação: prestadores de serviço, clínicas, escritórios, barbearias, salões, restaurantes, academias, imobiliárias, autônomos e profissionais liberais. O briefing se adapta ao seu segmento. Não é um método focado em lojas virtuais, carrinho ou checkout de e-commerce.</div></details>
+      <details class="acc"><summary>Posso usar IA para criar meu site?<svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="body">É exatamente assim que funciona. O manual indica as ferramentas para cada etapa — ChatGPT, Claude, Gemini, Bolt.new, Google AI Studio, Leonardo.ai, Ideogram, Midjourney, entre outras — e mostra o que colar em cada uma.</div></details>
+      <details class="acc"><summary>Preciso contratar um programador?<svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="body">O objetivo é que você conduza todo o processo sozinho, usando IA e ferramentas acessíveis (há opções gratuitas de publicação). Se aparecer uma necessidade muito específica do seu negócio, um apoio pontual pode ser útil.</div></details>
+      <details class="acc"><summary>Posso usar meu próprio domínio?<svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="body">Sim. Existe um guia de registro de domínio (.com.br no Registro.br, por exemplo) e de apontamento para Netlify, Vercel ou Hostinger. O valor do domínio e da hospedagem não está incluído no acesso.</div></details>
+      <details class="acc"><summary>O método serve para quem já tem um site?<svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="body">Serve. Você pode usá-lo para reestruturar posicionamento, conteúdo, identidade visual, imagens e presença no Google — e gerar uma versão nova e profissional do seu site.</div></details>
+      <details class="acc"><summary>É um curso?<svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="body">Não é um curso tradicional em vídeo. É um manual interativo: você abre a área de membros, preenche o seu projeto, segue as etapas e usa os prompts. O progresso fica salvo na sua conta.</div></details>
+      <details class="acc"><summary>É um gerador automático de sites?<svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="body">Não. A geração acontece em ferramentas de IA externas, seguindo as instruções do método. O produto organiza as decisões, o conteúdo, a identidade visual e a sequência de execução até a publicação.</div></details>
+      <details class="acc"><summary>Posso criar sites para clientes?<svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="body">Pode. O acesso inclui uma trilha adicional (Plano Completo) com módulos e scripts comerciais para quem quiser oferecer criação de sites a outros negócios. Não há qualquer promessa de ganhos: o resultado depende da sua execução.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA FINAL ================= -->
+<section class="sec grid-bg" style="text-align:center;padding:96px 0">
+  <div class="wrap" style="max-width:760px">
+    <h2 class="disp" style="font-size:clamp(26px,3.6vw,40px)">Seu negócio já existe.</h2>
+    <p class="disp grad-text" style="font-size:clamp(22px,3.2vw,34px);font-weight:700;margin-top:6px">Agora dê a ele uma presença digital à altura.</p>
+    <p class="lead" style="margin:22px auto 0;max-width:34ch">Aprenda a criar seu próprio site profissional com IA, seguindo um método organizado e passo a passo — do briefing à publicação no Google.</p>
+    <p style="margin-top:32px"><a class="btn" href="#oferta">Quero criar meu site <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+    <p style="margin-top:14px;font-size:13.5px;font-weight:600;color:var(--mut)">Acesso por R$ 47,90 — pagamento único.</p>
+    <p style="margin-top:10px;font-size:12px;color:var(--dim);display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center">
+      <span style="display:inline-flex;gap:6px;align-items:center"><svg class="ic" style="color:var(--green)" aria-hidden="true"><use href="#i-shield"/></svg>Garantia de 7 dias</span>
+      <span style="display:inline-flex;gap:6px;align-items:center"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Pagamento seguro</span>
+      <span style="display:inline-flex;gap:6px;align-items:center"><svg class="ic" style="color:var(--cyan)" aria-hidden="true"><use href="#i-check"/></svg>Acesso imediato</span>
+    </p>
+  </div>
+</section>
+</main>
+
+<!-- ================= RODAPÉ ================= -->
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div style="max-width:380px">
+        <p style="font-size:19px;font-weight:800;letter-spacing:-.02em">Seu Site <span style="color:var(--cyan)">Único</span></p>
+        <p style="margin-top:12px;font-size:13.5px;line-height:1.6">Manual interativo e método guiado para pequenos negócios, prestadores de serviço e profissionais liberais criarem um site profissional com apoio de inteligência artificial.</p>
+      </div>
+      <nav aria-label="Links do rodapé">
+        <a href="#oferta">Acesso</a>
+        <a href="#metodo">O método</a>
+        <a href="#produto">Por dentro</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#dados">Dados</a>
+        <a href="#topo">Voltar ao topo</a>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <p>Prévia estática da landing V2 · o produto real, interativo, vive na rota /v2 do repositório.</p>
+      <p style="display:flex;gap:8px;align-items:center"><svg class="ic" style="color:rgba(0,212,232,.7)" aria-hidden="true"><use href="#i-shield"/></svg>Compra segura · acesso imediato</p>
+    </div>
+  </div>
+</footer>
+
+<!-- CTA fixo mobile (somente CSS) -->
+<div class="sticky">
+  <div class="p"><span>Acesso completo</span><b>R$ 47,90 <span style="display:inline;font-size:11px;color:var(--mut);font-weight:600">· único</span></b></div>
+  <a class="btn btn-sm" href="#oferta">Quero criar meu site</a>
+</div>
+</body>
+</html>
