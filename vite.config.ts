@@ -22,5 +22,10 @@ export default defineConfig(() => {
       // e só é ativado quando a variável ALLOW_PREVIEW_HOST=true existe.
       ...(process.env.ALLOW_PREVIEW_HOST === 'true' ? { allowedHosts: true as const } : {}),
     },
+    // O `vite preview` (build de produção servido localmente) também precisa
+    // aceitar o host do túnel de preview. Não afeta o deploy na Vercel.
+    preview: {
+      allowedHosts: true as const,
+    },
   };
 });
