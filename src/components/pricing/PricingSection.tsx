@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Check, ArrowRight, Sparkles, ChevronDown, MessageCircle, ArrowDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { CheckoutModal } from './CheckoutModal';
+import { Suspense, lazy } from 'react';
+const CheckoutModal = lazy(() => import('./CheckoutModal').then(module => ({ default: module.CheckoutModal })));
 
 export function PricingSection() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
