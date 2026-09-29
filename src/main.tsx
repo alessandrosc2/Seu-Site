@@ -15,6 +15,10 @@ const PoliticaDeReembolso = lazy(() => import('./pages/PoliticaDeReembolso.tsx')
 const Success = lazy(() => import('./pages/Success.tsx'));
 const PrivateRoute = lazy(() => import('./components/auth/PrivateRoute.tsx'));
 
+// 3. Landing Page V2 (experiência alternativa de venda) — rota isolada e lazy.
+//    A landing original em "/" continua exatamente como está.
+const LandingV2 = lazy(() => import('./components/v2/LandingV2.tsx'));
+
 const PageLoader = () => (
   <div className="min-h-screen bg-[#070d1e] flex items-center justify-center">
     <div className="w-8 h-8 border-4 border-cyan-500/20 border-t-cyan-500 rounded-full animate-spin"></div>
@@ -27,6 +31,7 @@ createRoot(document.getElementById('root')!).render(
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/v2" element={<LandingV2 />} />
           <Route path="/login" element={<Login />} />
           <Route path="/success" element={<Success />} />
           <Route path="/termos-de-uso" element={<TermosDeUso />} />
