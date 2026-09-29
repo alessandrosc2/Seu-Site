@@ -5,20 +5,23 @@
 **Propósito:** Método guiado para criação de sites profissionais utilizando Inteligência Artificial.
 **URL Atual:** https://seusite-unico.vercel.app/
 
-**Aviso Importante:** Este produto **não é uma plataforma de e-commerce**. O foco é estrito na criação de sites institucionais e de apresentação.
+**Limites do Produto:** Este produto **não é uma plataforma de e-commerce**. O foco é estrito na criação de sites institucionais, profissionais e de apresentação para serviços e negócios locais. Não envolve a construção de sistemas de carrinho ou checkout complexos.
 
 ## Público-Alvo
-- Empresas
-- Negócios locais
+- Empresas e negócios locais
 - Prestadores de serviços
-- Autônomos
-- Profissionais liberais
+- Profissionais autônomos e liberais
+- Empreendedores buscando presença digital profissional
 
 ## Funcionalidades e Características Principais
-- Briefing Mestre Inteligente para extração de contexto do negócio.
-- Prompts prontos de alta conversão (Copywriting e Design via IA).
-- Foco em presença digital profissional sem necessidade de conhecimento técnico.
-- Trilha de Renda Extra: Ensina a criar e vender sites para terceiros.
+- **Briefing Mestre Inteligente:** Documento para extração de contexto estruturado do negócio.
+- **Prompts Prontos:** Comandos validados para uso em IA gerativa (Copywriting e Design).
+- **Sem Código:** Foco em presença digital profissional sem necessidade de conhecimento prévio em programação.
+- **Domínio e Publicação:** Orientação prática sobre registro de domínio oficial e publicação de baixo custo.
+- **Trilha de Renda Extra:** Instruções para quem deseja aplicar o mesmo método oferecendo o serviço de criação de sites para terceiros.
+
+## Relação com IA e SEO Local
+O método utiliza modelos de Inteligência Artificial como ferramentas facilitadoras para estruturação de conteúdo e design. O treinamento orienta a criação de um código limpo, rápido e semântico (SEO amigável) que ajuda mecanismos de busca (Google) a interpretarem as informações do negócio, favorecendo sua descoberta online e presença local. Não existem promessas de posições garantidas em rankings ou sistemas de IA.
 
 ## Principais Páginas Públicas
 - `/` - Landing Page Principal (Método, Nichos, Calculadora, Planos)

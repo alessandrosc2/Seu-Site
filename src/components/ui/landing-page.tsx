@@ -169,7 +169,7 @@ export function ScrollGlobe({
       badge: "Fase 04 — Trilha Renda Extra",
       title: "Fature Criando Sites",
       subtitle: "A PARTIR DE R$ 200 POR PROJETO",
-      description: "Mais de 50% das empresas locais ainda não têm site. Use o mesmo método para oferecer criação de sites na sua cidade com propostas prontas e abordagem ética.",
+      description: "Muitos negócios locais ainda não possuem uma presença digital estruturada. Use o mesmo método para oferecer criação de sites na sua cidade de forma ética.",
       align: "center",
       icon: <TrendingUp className="w-5 h-5 text-purple-400" />,
       actions: [

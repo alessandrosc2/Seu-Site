@@ -9,7 +9,7 @@ export function WordRevealSection() {
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  const headline = "Mais de 50% das empresas brasileiras não têm site próprio. A maioria fica invisível no Google, deixando dinheiro na mesa.";
+  const headline = "Diversos pequenos negócios e autônomos não têm um site profissional ativo. Sem presença clara no Google, perdem contatos e deixam clientes na mesa.";
   const words = headline.split(" ");
 
   useEffect(() => {

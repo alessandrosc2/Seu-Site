@@ -251,10 +251,10 @@ export function ConversionScienceSection() {
             <div className="p-5 sm:p-6 rounded-2xl bg-cyan-950/40 border border-cyan-500/30">
               <div className="flex items-center gap-2.5 text-cyan-300 font-bold text-base sm:text-lg mb-2">
                 <CheckCircle2 className="w-5 h-5 text-cyan-400 shrink-0" />
-                75% — Índice de Credibilidade de Stanford
+                O Valor da Credibilidade Visual
               </div>
               <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-normal">
-                Estudos da Universidade de Stanford revelam que 75% dos usuários julgam a idoneidade, seriedade e tamanho real da empresa exclusivamente pela estética e consistência do seu site.
+                Pesquisas de experiência do usuário indicam que a grande maioria das pessoas avalia a seriedade e a credibilidade de um negócio com base na estética e profissionalismo do seu site.
               </p>
             </div>
           </div>
@@ -353,13 +353,13 @@ export function ConversionScienceSection() {
                   Construir negócio unicamente no Instagram ou TikTok é <strong className="text-white">construir casa de luxo em terreno alugado</strong>.
                 </p>
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-                  O algoritmo entrega posts para menos de 5% da sua audiência, não permite instalar Google Analytics nem Pixel profundo para remarketing e pode banir sua conta sem aviso prévio.
+                  Redes sociais tendem a limitar a distribuição orgânica, restringem métricas avançadas (como Google Analytics) e mantêm o negócio vulnerável a regras de terceiros.
                 </p>
               </div>
 
               <div className="mt-8 pt-5 border-t border-white/10 flex items-center gap-2.5 text-sm font-semibold text-amber-400">
                 <AlertTriangle className="w-4 h-4 shrink-0" />
-                Dependência total de algoritmos instáveis
+                Exposição a mudanças de alcance não controladas pelo dono do negócio
               </div>
             </div>
 
