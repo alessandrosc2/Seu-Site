@@ -288,6 +288,15 @@ footer{border-top:1px solid var(--line-soft);background:#050814;padding:44px 0;c
 .banner{background:rgba(0,212,232,.08);border-bottom:1px solid rgba(0,212,232,.2);color:var(--cyan-l);font-size:12px;text-align:center;padding:8px 16px;position:fixed;top:64px;left:0;right:0;z-index:39;backdrop-filter:blur(10px)}
 .banner a{color:#fff;font-weight:700}
 .hero{padding-top:150px}
+/* ---------- Mobile responsivo: nada de conteudo cortado (zoom 1.25) ---------- */
+body :where(.g2 > *, .g2w > *, .g3 > *, .g4 > *, .flex > *, .app-bar > *, .hd-in > *) { min-width: 0; }
+.mono, .url { overflow-wrap: anywhere; }
+.url { min-width: 0; }
+.pipe { grid-template-columns: repeat(2, 1fr); }
+.pal { grid-template-columns: repeat(3, 1fr); }
+@media (min-width: 480px) { .pipe { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 640px) { .pipe { grid-template-columns: repeat(6, 1fr); } .pal { grid-template-columns: repeat(6, 1fr); } }
+@media (max-width: 899px) { .nav { display: none; } }
 </style>
 </head>
 <body>

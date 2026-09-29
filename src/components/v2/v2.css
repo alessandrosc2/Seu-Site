@@ -44,6 +44,20 @@
   min-height: 80vh;
 }
 
+/* ---------- Mobile responsivo: nada de conteúdo cortado ----------
+ * Com zoom 1.25 o layout mobile passa a ter ~312px úteis em telas de
+ * 390px. Itens de grid/flex têm min-width:auto por padrão, o que faz
+ * o conteudo minimo estourar a coluna e ser cortado pelo overflow-x
+ * da raiz. Zeramos o min-width dos filhos (exceto os que pedem min-w
+ * ou shrink-0 explicitamente, como os cards do scroller horizontal)
+ * e permitimos quebra segura nas linhas monoespacadas longas. */
+.v2-root :where(.grid > *:not([class*='min-w']):not([class*='shrink-0']), .flex > *:not([class*='min-w']):not([class*='shrink-0'])) {
+  min-width: 0;
+}
+.v2-root :where(pre, .v2-mono) {
+  overflow-wrap: anywhere;
+}
+
 .v2-display {
   font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
   letter-spacing: -0.025em;

@@ -205,7 +205,7 @@ function HeroPipeline() {
         </div>
 
         {/* Pipeline */}
-        <ol className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-6" aria-label="Etapas do método">
+        <ol className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-6" aria-label="Etapas do método">
           {PIPELINE.map((step, i) => {
             const isActive = i === active;
             const isDone = i < active;
