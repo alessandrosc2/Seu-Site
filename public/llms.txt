@@ -1,9 +1,11 @@
 # Seu Site Único
 
+> Um método guiado passo a passo para criar presença digital e sites profissionais usando Inteligência Artificial.
+
 ## Visão Geral
-**Nome do produto:** Seu Site Único
+**Nome do produto:** [Seu Site Único](https://seusite-unico.vercel.app/)
 **Propósito:** Método guiado para criação de sites profissionais utilizando Inteligência Artificial.
-**URL Atual:** https://seusite-unico.vercel.app/
+**URL Atual:** [https://seusite-unico.vercel.app/](https://seusite-unico.vercel.app/)
 
 **Limites do Produto:** Este produto **não é uma plataforma de e-commerce**. O foco é estrito na criação de sites institucionais, profissionais e de apresentação para serviços e negócios locais. Não envolve a construção de sistemas de carrinho ou checkout complexos.
 
@@ -21,10 +23,10 @@
 - **Trilha de Renda Extra:** Instruções para quem deseja aplicar o mesmo método oferecendo o serviço de criação de sites para terceiros.
 
 ## Relação com IA e SEO Local
-O método utiliza modelos de Inteligência Artificial como ferramentas facilitadoras para estruturação de conteúdo e design. O treinamento orienta a criação de um código limpo, rápido e semântico (SEO amigável) que ajuda mecanismos de busca (Google) a interpretarem as informações do negócio, favorecendo sua descoberta online e presença local. Não existem promessas de posições garantidas em rankings ou sistemas de IA.
+O método utiliza modelos de Inteligência Artificial como ferramentas facilitadoras para estruturação de conteúdo e design. O treinamento orienta a criação de um código limpo, rápido e semântico (SEO amigável) que ajuda mecanismos de busca a interpretarem as informações do negócio, favorecendo sua descoberta online e presença local.
 
 ## Principais Páginas Públicas
-- `/` - Landing Page Principal (Método, Nichos, Calculadora, Planos)
-- `/termos-de-uso` - Termos de Uso
-- `/politica-de-privacidade` - Política de Privacidade
-- `/politica-de-reembolso` - Política de Reembolso e Garantia
+- [Landing Page Principal](https://seusite-unico.vercel.app/) - Onde apresentamos o Método, Nichos, Calculadora e Planos.
+- [Termos de Uso](https://seusite-unico.vercel.app/termos-de-uso) - Regras de utilização do manual.
+- [Política de Privacidade](https://seusite-unico.vercel.app/politica-de-privacidade) - Como tratamos seus dados (LGPD).
+- [Política de Reembolso](https://seusite-unico.vercel.app/politica-de-reembolso) - Detalhes sobre nossa garantia incondicional.

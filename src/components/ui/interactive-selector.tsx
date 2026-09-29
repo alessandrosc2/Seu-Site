@@ -257,7 +257,7 @@ export const InteractiveSelector: React.FC<InteractiveSelectorProps> = ({
         </div>
 
         {/* Mobile Accordion Card View */}
-        <div className="sm:hidden flex flex-col gap-4 w-full">
+        <div role="tablist" aria-label="Nichos de Mercado Mobile" className="sm:hidden flex flex-col gap-4 w-full">
           {options.map((option, index) => {
             const isActive = activeIndex === index;
             return (

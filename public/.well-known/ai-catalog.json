@@ -1,0 +1,10 @@
+{
+  "schema_version": "v1",
+  "catalog_name": "Seu Site Único",
+  "description": "Recursos de descoberta agêntica e documentação (llms.txt) do Seu Site Único.",
+  "resources": {
+    "llms": {
+      "url": "https://seusite-unico.vercel.app/llms.txt"
+    }
+  }
+}
