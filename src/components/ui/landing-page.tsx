@@ -194,10 +194,11 @@ export function ScrollGlobe({
   ], [sections]);
 
   const [activeSection, setActiveSection] = useState(0);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  
   const [globeTransform, setGlobeTransform] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const progressBarRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
   const animationFrameId = useRef<number | undefined>(undefined);
   const [isInView, setIsInView] = useState(true);
@@ -215,7 +216,7 @@ export function ScrollGlobe({
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = Math.min(Math.max(scrollTop / docHeight, 0), 1);
     
-    setScrollProgress(progress);
+    if (progressBarRef.current) progressBarRef.current.style.transform = `scaleX(${progress})`;
 
     if (containerRef.current) {
       const containerRect = containerRef.current.getBoundingClientRect();
@@ -403,8 +404,9 @@ export function ScrollGlobe({
       <div className="fixed top-0 left-0 w-full h-1 bg-white/5 z-50">
         <div 
           className="h-full bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 will-change-transform shadow-[0_0_12px_rgba(6,182,212,0.8)]"
-          style={{ 
-            transform: `scaleX(${scrollProgress})`,
+          ref={progressBarRef}
+            style={{
+              transform: `scaleX(0)`,
             transformOrigin: "left center",
             transition: "transform 0.15s ease-out"
           }}
@@ -627,3 +629,4 @@ export function ScrollGlobe({
 }
 
 export default ScrollGlobe;
+
