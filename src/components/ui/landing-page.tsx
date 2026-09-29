@@ -289,8 +289,7 @@ export function ScrollGlobe({
       {/* Top Site Header Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 h-16 sm:h-20 flex items-center justify-between px-4 sm:px-8 lg:px-12 bg-[#070d1e]/90 backdrop-blur-md border-b border-white/10">
         <a href="#metodo" className="flex items-center gap-2.5 sm:gap-3.5 group cursor-pointer shrink-0">
-          <img 
-            src="/logo-site.webp" 
+          <img width="160" height="40" src="/logo-site.webp" 
             alt="Logo Seu Site Único" 
             className="w-9 h-9 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform" 
           />

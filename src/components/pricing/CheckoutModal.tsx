@@ -110,8 +110,7 @@ export function CheckoutModal({
         {/* Header */}
         <div className="bg-slate-900/80 px-6 py-4 border-b border-white/5 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <img 
-              src="/logo-site.webp" 
+            <img width="160" height="40" src="/logo-site.webp" 
               alt="Seu Site Único" 
               className="w-7 h-7 object-contain" 
             />

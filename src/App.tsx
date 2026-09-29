@@ -42,8 +42,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-white/5">
             <div>
               <div className="flex items-center gap-3.5 mb-2.5">
-                <img 
-                  src="/logo-site.webp" 
+                <img width="160" height="40" src="/logo-site.webp" 
                   alt="Seu Site Único" 
                   className="w-14 h-14 object-contain" 
                 />
@@ -84,7 +83,7 @@ export default function App() {
               </div>
             </div>
             <div className="flex flex-col items-center sm:items-end gap-4">
-              <img src="/pagamentos.webp" alt="Formas de Pagamento Aceitas" className="w-64 sm:w-80 md:w-96 h-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
+              <img width="384" height="48" src="/pagamentos.webp" alt="Formas de Pagamento Aceitas" className="w-64 sm:w-80 md:w-96 h-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
               <div className="flex items-center gap-2 text-slate-500">
                 <ShieldCheck className="w-4 h-4 text-cyan-500/60" />
                 <span>Compra 100% Segura • Acesso Imediato</span>
