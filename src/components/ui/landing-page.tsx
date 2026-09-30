@@ -74,8 +74,8 @@ export function ScrollGlobe({
     {
       id: "fase-1-construir",
       badge: "Fase 01 — Construir",
-      title: "Crie um Site Profissional para o Seu Negócio",
-      subtitle: "Construção Guiada com Inteligência Artificial",
+      title: "O seu cliente pesquisa no Google, mas quem vende é a concorrência.",
+      subtitle: "Tenha um site profissional gerado por IA em minutos e pare de perder vendas.",
       description: "Esqueça modelos genéricos. O formulário guiado extrai os diferenciais, serviços e estilo visual da sua empresa para criar prompts de IA sob medida.",
       align: "left",
       icon: <Sparkles className="w-5 h-5 text-cyan-400" />,
@@ -95,7 +95,7 @@ export function ScrollGlobe({
       ],
       actions: [
         { 
-          label: "Quero Meu Site Único", 
+          label: "Quero Dominar o Google", 
           variant: "primary", 
           onClick: () => {
             const el = document.getElementById("pricing");

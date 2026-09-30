@@ -94,9 +94,13 @@ export function PricingSection() {
               onClick={() => handleCheckout("completo")}
               className="w-full py-3.5 sm:py-4 px-6 rounded-xl font-bold text-sm sm:text-base bg-gradient-to-r from-blue-600 via-cyan-400 to-cyan-300 text-slate-950 hover:brightness-110 shadow-lg shadow-cyan-500/30 transition-all transform hover:-translate-y-0.5 cursor-pointer inline-flex items-center justify-center gap-2 group active:scale-[0.98]"
             >
-              <span>Garantir o Plano Completo</span>
+              <span>Quero Resgatar Minha Autoridade</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
             </button>
+            <div className="mt-4 flex items-center justify-center gap-2 text-xs text-slate-400">
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <span>Garantia de 7 dias ou seu dinheiro de volta. Compra segura.</span>
+            </div>
           </div>
         </div>
 
@@ -183,3 +187,4 @@ export function PricingSection() {
     </section>
   );
 }
+

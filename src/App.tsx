@@ -1,5 +1,6 @@
 import { Toaster } from "sonner";
 import { ScrollGlobe } from "@/components/ui/landing-page";
+import { SocialProofSection } from "@/components/pricing/SocialProofSection";
 import { WordRevealSection } from "@/components/scrollytelling/WordRevealSection";
 import { ConversionScienceSection } from "@/components/analytics/ConversionScienceSection";
 import { InteractiveSelector } from "@/components/ui/interactive-selector";
@@ -15,6 +16,7 @@ export default function App() {
 
       {/* Beat 1: O Método Guiado das 4 Fases com o Globo 3D em Scrollytelling */}
       <ScrollGlobe />
+      <SocialProofSection />
 
       {/* Beat 2: O Dilema da Presença Digital & Comparativo com Sites Genéricos */}
       <WordRevealSection />
@@ -96,3 +98,4 @@ export default function App() {
     </main>
   );
 }
+
