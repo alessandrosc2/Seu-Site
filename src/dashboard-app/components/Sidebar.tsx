@@ -45,7 +45,7 @@ export const Sidebar: React.FC<{
 
   const handleLogout = async () => {
     try {
-      await signOut(auth);
+      if (auth) { await signOut(auth); }
       navigate('/');
     } catch (error) {
       console.error('Logout error:', error);
@@ -341,3 +341,4 @@ export const Sidebar: React.FC<{
     </>
   );
 };
+

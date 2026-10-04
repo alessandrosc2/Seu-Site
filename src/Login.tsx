@@ -16,7 +16,7 @@ export default function Login() {
     setIsLoading(true);
     
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      if (!auth) { /* MODO DEMO: simula login sucesso */ await new Promise(r => setTimeout(r, 1000)); } else { await signInWithEmailAndPassword(auth, email, password); }
       toast.success('Login efetuado com sucesso!');
       navigate('/dashboard');
     } catch (error: any) {
@@ -105,3 +105,4 @@ export default function Login() {
     </div>
   );
 }
+

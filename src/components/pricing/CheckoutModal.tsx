@@ -77,15 +77,14 @@ export function CheckoutModal({
     try {
       // 1. Salvar os dados (Lead) no Firebase para Remarketing / Checkout Abandonado
       try {
-        await addDoc(collection(db, "leads"), {
+        if (db) { await addDoc(collection(db, "leads"), {
           name,
           email,
           phone,
           planKey,
           status: 'checkout_initiated', // status inicial
           createdAt: serverTimestamp(),
-        });
-      } catch (dbError) {
+        }); } } catch (dbError) {
         console.error("Erro ao salvar lead no Firebase (ignorando para não travar a venda):", dbError);
       }
 
@@ -231,3 +230,9 @@ export function CheckoutModal({
     </div>
   );
 }
+
+
+
+
+
+
