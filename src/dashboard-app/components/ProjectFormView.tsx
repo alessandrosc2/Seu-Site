@@ -234,7 +234,7 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-sm text-[#AAB6CC] mb-1 font-semibold">
-                Endereço Físico Completo (se houver atendimento presencial)
+                Seu Endereço Completo (se houver)
               </label>
               <input
                 type="text"
@@ -905,3 +905,4 @@ export const ProjectFormView: React.FC<ProjectFormViewProps> = ({
     </div>
   );
 };
+
