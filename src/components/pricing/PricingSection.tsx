@@ -85,7 +85,7 @@ export function PricingSection() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Check className="w-4 h-4 text-cyan-400 shrink-0" />
-                  <span><strong>Bônus 02:</strong> Extensão de Vendas no Checkout (Order Bump)</span>
+                  <span><strong>Bônus 02:</strong> Google Meu Negócio (Aparecer no Maps e buscas locais)</span>
                 </div>
               </div>
             </div>
@@ -187,5 +187,6 @@ export function PricingSection() {
     </section>
   );
 }
+
 
 
