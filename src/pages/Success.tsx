@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Success() {
@@ -28,28 +28,33 @@ export default function Success() {
             Seja bem-vindo(a) ao Seu Site Único!
           </h1>
           <p className="text-slate-300 text-sm leading-relaxed">
-            Seu pagamento foi aprovado com sucesso.
-          </p>
-          <p className="text-slate-300 text-sm mt-2 leading-relaxed">
-            Enviamos os <strong>dados de acesso imediato</strong> (seu login da plataforma) para o <strong>e-mail cadastrado na compra</strong>.
+            Enviamos o link exclusivo de criação de senha para o <strong>e-mail cadastrado na compra</strong>.
           </p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-cyan-950/30 border border-cyan-500/30 text-left text-xs space-y-2">
-          <p className="text-slate-300">
-            <strong>Não encontrou o e-mail?</strong><br />
-            Verifique sua caixa de spam ou promoções. O remetente do e-mail é o <strong>Seu Site Único</strong> (via Firebase).
-          </p>
+        <div className="p-5 rounded-2xl bg-amber-950/30 border border-amber-500/30 text-left text-sm space-y-3">
+          <div className="flex items-start gap-3">
+            <AlertTriangle className="w-6 h-6 text-amber-400 shrink-0 mt-0.5" />
+            <div className="space-y-1">
+              <p className="text-amber-400 font-bold">Aviso Importante (SPAM)</p>
+              <p className="text-amber-200/80 text-xs leading-relaxed">
+                Como é o seu primeiro acesso, o e-mail com o link de criação de senha <strong>pode ter caído na pasta de SPAM (Lixo Eletrônico) ou Promoções</strong>. Por favor, verifique lá.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="pt-4">
+        <div className="pt-4 space-y-4">
           <Link
             to="/login"
             className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 via-cyan-400 to-cyan-300 text-slate-950 font-bold text-sm hover:brightness-110 shadow-lg transition-all flex items-center justify-center gap-2"
           >
-            <span>Ir para a Página de Login</span>
+            <span>Já criei minha senha (Ir para Login)</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
+          <p className="text-xs text-slate-500">
+            Link direto: https://seusite-unico.vercel.app/login
+          </p>
         </div>
       </div>
     </div>
