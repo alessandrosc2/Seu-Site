@@ -649,7 +649,7 @@ The final image must still look like a real photograph of the original business,
         </div>
 
         <p className="text-sm md:text-sm text-[#F5F7FF] leading-relaxed">
-          Você <strong>não precisa enviar nem salvar as fotos dentro desta tela</strong>. Guarde os arquivos no seu computador. Quando chegar na etapa de execução do <strong>Prompt Mestre Final</strong>, você anexará essas fotos no chat da ferramenta de IA (Arena.ai, Manus, Google AI Studio, Claude ou Bolt.new).
+          Você <strong>não precisa enviar nem salvar as fotos dentro desta tela</strong>. Guarde os arquivos no seu computador. Quando chegar na etapa de execução do <strong>Prompt Mestre Final</strong>, você anexará essas fotos no chat da ferramenta de IA (Arena.ai, Manus, Google AI Studio, Claude ou Lovable).
         </p>
 
         <div className="p-4 bg-[#111B36] border border-[#203252] rounded-xl space-y-2">
@@ -726,3 +726,4 @@ The final image must still look like a real photograph of the original business,
     </div>
   );
 };
+

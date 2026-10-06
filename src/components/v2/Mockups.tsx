@@ -364,7 +364,7 @@ function ScreenPrompts() {
       <div>
         <Tag>Central de prompts guiados</Tag>
         <p className="mt-2 text-[10.5px] leading-relaxed text-[#71809b]">
-          Comandos pré-estruturados para alimentar o ChatGPT, Claude, Gemini ou Bolt.new. Clique em{' '}
+          Comandos pré-estruturados para alimentar o ChatGPT, Claude, Gemini ou Lovable. Clique em{' '}
           <strong className="text-[#00d4e8]">Copiar Prompt</strong> e cole na IA.
         </p>
       </div>
@@ -803,3 +803,4 @@ export function NicheSiteCard({ niche }: { niche: NichePreviewData }) {
     </div>
   );
 }
+

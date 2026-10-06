@@ -41,7 +41,21 @@ export const MasterPromptStep: React.FC<MasterPromptStepProps> = ({ onComplete }
     if (onComplete) onComplete();
   };
 
-  const recommendedTools = [
+    const recommendedTools = [
+    {
+      name: 'Google Antigravity',
+      model: 'Advanced Agentic Coding',
+      url: 'https://github.com/google/antigravity',
+      badge: 'Orquestrador Absoluto',
+      desc: 'Agente de IA do Google operando nativamente para construir o código do zero (o mesmo que construiu este painel).'
+    },
+    {
+      name: 'Lovable',
+      model: 'Construtor IA Premium',
+      url: 'https://lovable.dev/',
+      badge: 'Pago (Premium)',
+      desc: 'Um dos melhores construtores visuais de IA do mercado atualmente. Possui excelente design, mas exige plano pago.'
+    },
     {
       name: 'Google AI Studio',
       model: 'Gemini 1.5 Pro / Flash',
@@ -69,13 +83,6 @@ export const MasterPromptStep: React.FC<MasterPromptStepProps> = ({ onComplete }
       url: 'https://manus.im/app',
       badge: 'Boa Opção',
       desc: 'Agente autônomo inovador capaz de programar, executar tarefas complexas e estruturar o site sob demanda.'
-    },
-    {
-      name: 'Bolt.new',
-      model: 'WebContainer Dev',
-      url: 'https://bolt.new',
-      badge: 'Ambiente Completo',
-      desc: 'Executa Node.js e React diretamente no navegador com preview ao vivo e deploy integrado.'
     }
   ];
 
@@ -280,3 +287,4 @@ export const MasterPromptStep: React.FC<MasterPromptStepProps> = ({ onComplete }
     </div>
   );
 };
+

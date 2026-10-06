@@ -31,7 +31,7 @@ function getCategoryForStep(stepId: string): { category: 'fundacao' | 'copywriti
 function getRecommendedAi(stepId: string): string {
   if (stepId === '04-01' || stepId === '05-04') return 'Google Flow / Leonardo.ai / Ideogram / Midjourney';
   if (stepId === '05-01' || stepId === '06-02') return 'Google AI Studio / Arena.ai / Manus / Claude Artifacts';
-  if (stepId.startsWith('06')) return 'Bolt.new / Arena.ai / ChatGPT';
+  if (stepId.startsWith('06')) return 'Lovable / Arena.ai / ChatGPT';
   return 'ChatGPT / Claude / Gemini';
 }
 
@@ -184,3 +184,4 @@ export const ALL_HUB_PROMPTS: HubPrompt[] = [
   ...CURRICULUM_27_PROMPTS,
   ...COMMERCIAL_SCRIPTS
 ];
+

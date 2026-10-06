@@ -231,7 +231,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'Posso usar IA para criar meu site?',
-    a: 'É exatamente assim que funciona. O manual indica as ferramentas para cada etapa — ChatGPT, Claude, Gemini, Bolt.new, Google AI Studio, Leonardo.ai, Ideogram, Midjourney, entre outras — e mostra o que colar em cada uma.',
+    a: 'É exatamente assim que funciona. O manual indica as ferramentas para cada etapa — ChatGPT, Claude, Gemini, Lovable, Google AI Studio, Leonardo.ai, Ideogram, Midjourney, entre outras — e mostra o que colar em cada uma.',
   },
   {
     q: 'Preciso contratar um programador?',
@@ -470,3 +470,4 @@ export function V2Footer() {
     </footer>
   );
 }
+

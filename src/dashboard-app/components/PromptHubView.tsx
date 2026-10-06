@@ -65,7 +65,7 @@ export const PromptHubView: React.FC = () => {
           </h1>
 
           <p className="text-base md:text-base text-[#AAB6CC] max-w-2xl leading-relaxed">
-            Aqui você encontra todos os comandos pré-estruturados para alimentar o ChatGPT, Claude, Gemini ou Bolt.new. Basta clicar em <strong className="text-[#00D4E8]">Copiar Prompt</strong> e colar na IA.
+            Aqui você encontra todos os comandos pré-estruturados para alimentar o ChatGPT, Claude, Gemini ou Lovable. Basta clicar em <strong className="text-[#00D4E8]">Copiar Prompt</strong> e colar na IA.
           </p>
         </div>
       </div>
@@ -216,3 +216,4 @@ export const PromptHubView: React.FC = () => {
     </div>
   );
 };
+

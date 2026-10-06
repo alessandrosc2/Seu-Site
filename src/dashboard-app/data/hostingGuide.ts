@@ -223,7 +223,7 @@ export const HOSTING_OPTIONS: HostingPathOption[] = [
           {
             number: 2,
             title: 'Suba o projeto para o GitHub (2 formas simples)',
-            description: 'Você pode subir os arquivos do site para o GitHub de duas maneiras muito simples, sem precisar de terminal:\n\n• Forma A (Direto pela IA que gerou seu site): Se você usou ferramentas como Bolt.new, Lovable, v0, Cursor ou Windsurf, localize o botão "GitHub" ou "Export / Push to GitHub" no canto superior da tela. Clique nele, autorize sua conta e a própria IA criará o repositório e enviará os arquivos em 5 segundos!\n\n• Forma B (Pelo próprio site do GitHub): No GitHub, clique no botão verde "+ New" (ou "Create repository"). Digite o nome do projeto (ex: meu-site) e clique em "Create repository". Na tela seguinte, clique no link "uploading an existing file", arraste a pasta com os arquivos do site (com o index.html) e clique no botão verde "Commit changes".',
+            description: 'Você pode subir os arquivos do site para o GitHub de duas maneiras muito simples, sem precisar de terminal:\n\n• Forma A (Direto pela IA que gerou seu site): Se você usou ferramentas como Lovable, Lovable, v0, Cursor ou Windsurf, localize o botão "GitHub" ou "Export / Push to GitHub" no canto superior da tela. Clique nele, autorize sua conta e a própria IA criará o repositório e enviará os arquivos em 5 segundos!\n\n• Forma B (Pelo próprio site do GitHub): No GitHub, clique no botão verde "+ New" (ou "Create repository"). Digite o nome do projeto (ex: meu-site) e clique em "Create repository". Na tela seguinte, clique no link "uploading an existing file", arraste a pasta com os arquivos do site (com o index.html) e clique no botão verde "Commit changes".',
             tip: 'Se a ferramenta de IA que você usou tiver o botão "Push to GitHub", use ele! É a forma mais rápida de todas.'
           },
           {
@@ -339,3 +339,4 @@ export const HOSTING_OPTIONS: HostingPathOption[] = [
     ]
   }
 ];
+

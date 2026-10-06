@@ -83,7 +83,7 @@ const METHOD_MODULES: ModuleInfo[] = [
     name: 'Gere Seu Site com IA',
     claim: 'Transforme tudo isso em um site real',
     description:
-      'O manual consolida dados, textos, paleta, tipografia e regras de contraste (WCAG AA) no Prompt Mestre Final de 25 seções. Você copia, anexa as imagens e cola na ferramenta de IA escolhida — Claude, Arena.ai, Manus, Bolt.new ou Google AI Studio.',
+      'O manual consolida dados, textos, paleta, tipografia e regras de contraste (WCAG AA) no Prompt Mestre Final de 25 seções. Você copia, anexa as imagens e cola na ferramenta de IA escolhida — Claude, Arena.ai, Manus, Lovable ou Google AI Studio.',
     tasks: [
       'Prompt Mestre Final de 25 seções consolidado',
       'Lista das melhores IAs para criação de sites',
@@ -407,3 +407,4 @@ export function ProductDemoSection() {
     </section>
   );
 }
+
