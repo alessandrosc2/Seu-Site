@@ -89,7 +89,8 @@ export const MasterPromptStep: React.FC<MasterPromptStepProps> = ({ onComplete }
       model: 'Agente Autônomo',
       url: 'https://manus.im/app',
       badge: 'Exige Plano Pago',
-      desc: 'Agente autônomo inovador capaz de programar e estruturar projetos complexos. O uso intenso requer plano pago.'
+      desc: 'Agente autônomo inovador capaz de programar e estruturar projetos complexos. O uso intenso requer plano pago.',
+      tip: 'Cada indicação te dá +500 tokens. Dá para criar o site grátis usando os 1800 tokens de cadastro + indicações falsas ou reais (gmail, hotmail). 5 indicações = 2500 tokens!'
     }
   ];
 
@@ -239,7 +240,17 @@ export const MasterPromptStep: React.FC<MasterPromptStepProps> = ({ onComplete }
                 </div>
                 <span className="text-sm font-mono text-[#00E599] block">{tool.model}</span>
                 <p className="text-sm text-[#AAB6CC] leading-relaxed">{tool.desc}</p>
-              </div>
+                  {(tool as any).tip && (
+                    <div className="mt-3 p-3 rounded-lg bg-[#00E599]/10 border border-[#00E599]/20">
+                      <div className="flex items-start gap-2">
+                        <Lightbulb className="w-4 h-4 text-[#00E599] shrink-0 mt-0.5" />
+                        <span className="text-xs text-[#AAB6CC] leading-relaxed">
+                          <strong className="text-[#00E599]">Dica de Ouro:</strong> {(tool as any).tip}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                </div>
 
               <div className="mt-3 pt-2 border-t border-[#203252]/60 text-sm text-[#00D4E8] font-semibold flex items-center gap-1">
                 <span>Abrir {tool.name}</span>
@@ -294,5 +305,7 @@ export const MasterPromptStep: React.FC<MasterPromptStepProps> = ({ onComplete }
     </div>
   );
 };
+
+
 
 
