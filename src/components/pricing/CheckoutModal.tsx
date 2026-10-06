@@ -116,18 +116,12 @@ export function CheckoutModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
-      {/* Backdrop */}
-      <div 
-        className="absolute inset-0 bg-[#050814]/90 backdrop-blur-sm transition-opacity"
-        onClick={onClose}
-      />
-
+    <div className="fixed inset-0 z-[100] overflow-y-auto overflow-x-hidden bg-[#050814]/95 backdrop-blur-sm flex items-start sm:items-center justify-center p-0 sm:p-6">
       {/* Modal Content */}
-      <div role="dialog" aria-modal="true" aria-labelledby="checkout-title" ref={modalRef} tabIndex={-1} className="relative w-full max-w-xl focus:outline-none bg-[#0a1128] border border-cyan-900/50 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-300">
+      <div role="dialog" aria-modal="true" aria-labelledby="checkout-title" ref={modalRef} tabIndex={-1} className="relative w-full max-w-xl bg-[#0a1128] sm:border sm:border-cyan-900/50 sm:rounded-3xl min-h-screen sm:min-h-0 shadow-2xl animate-in fade-in zoom-in-95 duration-300 focus:outline-none flex flex-col">
         
         {/* Header */}
-        <div className="bg-slate-900/80 px-6 py-4 border-b border-white/5 flex items-center justify-between">
+        <div className="bg-slate-900 px-4 sm:px-6 py-4 border-b border-white/5 flex items-center justify-between sticky top-0 z-20">
           <div className="flex items-center gap-2.5">
             <img width="160" height="40" src="/logo-site.webp" 
               alt="Seu Site Único" 
@@ -148,7 +142,7 @@ export function CheckoutModal({
           </button>
         </div>
 
-        <form onSubmit={handleFinishPurchase} className="p-6 sm:p-8 space-y-6">
+        <form onSubmit={handleFinishPurchase} className="p-4 sm:p-8 space-y-6 flex-1 pb-12 sm:pb-8">
           {/* Plan Summary Card */}
           <div className="p-4 rounded-2xl bg-cyan-950/30 border border-cyan-500/30 flex items-center justify-between">
             <div>
@@ -230,6 +224,7 @@ export function CheckoutModal({
     </div>
   );
 }
+
 
 
 
