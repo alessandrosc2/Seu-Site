@@ -13,7 +13,7 @@ import {
   TrendingUp,
   Sparkles,
   Search,
-  LogOut
+  LogOut, MessageCircle
 } from 'lucide-react';
 import { MODULES } from '../data/curriculum';
 import { useProject } from '../context/ProjectContext';
@@ -294,7 +294,26 @@ export const Sidebar: React.FC<{
                 Como transformar essa habilidade em serviço para clientes.
               </p>
             </button>
-          </div>
+              <a
+                href="https://wa.me/5583993595124?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20o%20Seu%20Site%20%C3%9Anico."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-left p-3 rounded-xl border bg-[#111B36] border-[#203252] text-[#AAB6CC] hover:text-[#F5F7FF] hover:border-[#00E599]/40 transition-all cursor-pointer"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-sm font-bold text-[#00E599] flex items-center gap-1.5">
+                    <MessageCircle className="w-4 h-4" />
+                    <span>SUPORTE AO USUÁRIO</span>
+                  </span>
+                  <span className="text-xs px-1.5 py-0.5 rounded bg-[#00E599]/15 text-[#00E599] font-bold">
+                    WhatsApp
+                  </span>
+                </div>
+                <p className="text-sm text-[#AAB6CC] leading-snug">
+                  Fale com a nossa equipe para tirar suas dúvidas.
+                </p>
+              </a>
+            </div>
         </div>
 
         {/* Footer Progress & Reset */}
@@ -341,4 +360,7 @@ export const Sidebar: React.FC<{
     </>
   );
 };
+
+
+
 
