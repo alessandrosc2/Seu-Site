@@ -1919,207 +1919,50 @@ A liberdade para inventar fatos deve ser zero.
 
 ---
 
-# 03. ORQUESTRADOR DE SKILLS
+# 03. ORQUESTRADOR DE HABILIDADES E LEITURA DE REPOSITÓRIOS (WEB BROWSING)
 
-Antes de iniciar a criação ou alteração significativa da interface, determine quais capacidades especializadas são necessárias.
+Como você está operando em um ambiente de chat avançado (como Arena.ai, Claude ou ChatGPT), você não deve tentar rodar comandos de terminal (como 
+px). 
+Em vez disso, você TEM A OBRIGAÇÃO de usar sua ferramenta de acesso à internet (Web Search / Browsing) para ACESSAR, LER e ABSORVER o código-fonte e a documentação dos links do GitHub que eu passar neste prompt.
 
-Você possui acesso ao ecossistema de Agent Skills.
+Sempre que eu indicar um link do GitHub, você deve:
+1. Acessar a URL.
+2. Ler a documentação (README) e a estrutura dos componentes.
+3. Incorporar aquela técnica de código no seu resultado final.
 
-Use o sistema de skills como um mecanismo de especialização, não como decoração.
-
-Primeiro verifique as skills existentes.
-
-Use:
-
-npx skills list
-
-Quando precisar encontrar uma capacidade específica, utilize:
-
-npx skills find [consulta]
-
-O sistema oficial de descoberta de skills é:
-
-https://github.com/vercel-labs/skills
-
-A skill de orquestração/descoberta:
-
-https://github.com/vercel-labs/skills/tree/main/skills/find-skills
-
-Instalação:
-
-npx skills add https://github.com/vercel-labs/skills --skill find-skills
+Isso garante que você não use padrões antigos de 2021, mas sim bibliotecas modernas de 2024.
 
 ---
 
-# 04. FIND-SKILLS COMO ORQUESTRADOR
+# 04. BIBLIOTECAS MODERNAS OBRIGATÓRIAS PARA LEITURA
 
-Use a skill \`find-skills\` para descobrir capacidades especializadas quando elas forem necessárias.
+Você deve buscar ativamente e ler as documentações destes repositórios antes de construir layouts complexos:
+- Magic UI: Acesse https://github.com/magicuidesign/magicui e estude seus componentes de animação e interatividade.
+- Aceternity UI: Acesse https://github.com/aceternity/ui e absorva a forma como criam Bento Grids e text reveals.
+- Impeccable: Acesse https://github.com/pbakaus/impeccable e extraia seus princípios inegociáveis de tipografia, hierarquia e polish final.
+- Framer Motion: Acesse https://github.com/framer/motion para entender as propriedades físicas de animação de mola (spring).
+- Emil Kowalski: Acesse https://github.com/emilkowalski para absorver padrões de interações invisíveis e componentes perfeitamente polidos.
 
-Não instale dezenas de skills indiscriminadamente.
-
-Não instale uma skill somente porque ela parece interessante.
-
-Primeiro identifique o problema.
-
-Depois procure a skill.
-
-Depois avalie a relevância.
-
-Depois instale somente o que realmente contribui.
-
-Priorize:
-
-1. skills oficiais
-2. skills de fontes reconhecidas
-3. skills maduras e bem documentadas
-4. skills relevantes para o problema atual
-5. skills com boa adoção/comunidade
-6. skills compatíveis com o ambiente disponível
-
-Evite duplicar skills que resolvem o mesmo problema.
-
-Quando uma skill especializada for encontrada, leia suas instruções antes de utilizá-la.
-
-Nunca assuma o conteúdo de uma skill apenas pelo nome.
+Não tente simular essas bibliotecas. Use sua capacidade de leitura de URLs para estudar como elas são construídas e aplique seus princípios no site que você vai gerar.
 
 ---
 
-# 05. SKILLS FUNDAMENTAIS DE DESIGN
+# 05. AUDITORIA WEB E ACESSIBILIDADE DE ALTO PADRÃO
 
-Para trabalhos de frontend e design, avalie a utilização do Impeccable.
+Antes de finalizar qualquer implementação estrutural, acesse e leia as diretrizes deste repositório da Vercel:
+https://github.com/vercel-labs/agent-skills (focando nas web-design-guidelines).
 
-Repositório oficial:
-
-https://github.com/pbakaus/impeccable
-
-A skill do Impeccable pode ser instalada conforme o ambiente disponível.
-
-Quando compatível, utilize:
-
-npx impeccable install
-
-Depois inicialize conforme as instruções da própria skill.
-
-O Impeccable deve ser utilizado para melhorar:
-
-* direção visual
-* tipografia
-* hierarquia
-* espaçamento
-* composição
-* responsividade
-* interação
-* UX
-* motion
-* acessibilidade
-* consistência
-* refinamento
-* remoção de padrões genéricos
-* qualidade visual
-* auditoria
-* polish final
-
-Não copie automaticamente as decisões visuais do Impeccable.
-
-Use seus princípios como especialização.
-
-A identidade do negócio continua sendo a autoridade visual.
+Isso servirá como sua base de validação técnica, garantindo:
+* Acessibilidade severa (teclado, focus state).
+* Touch targets com tamanhos corretos para mobile.
+* Hierarquia HTML semântica impecável.
 
 ---
 
-# 06. SKILL DE AUDITORIA WEB
+# 06. DESCOBERTA DINÂMICA DE SOLUÇÕES
 
-Quando disponível, utilize também a skill oficial da Vercel:
-
-web-design-guidelines
-
-Repositório:
-
-https://github.com/vercel-labs/agent-skills
-
-Instalação:
-
-npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines
-
-Essa skill deve ser usada principalmente para auditoria.
-
-Verifique:
-
-* acessibilidade
-* teclado
-* foco
-* touch targets
-* responsividade
-* alinhamento
-* overflow
-* formulários
-* navegação
-* hierarquia
-* consistência
-* comportamento mobile
-* problemas de UX
-* problemas de implementação
-
-Não confunda essa skill com direção artística.
-
-Ela é uma camada de validação.
-
----
-
-# 07. DESCOBERTA DINÂMICA DE OUTRAS SKILLS
-
-O ecossistema pode conter skills para:
-
-* frontend
-* UX
-* UI
-* motion
-* scroll animation
-* accessibility
-* performance
-* SEO
-* React
-* Next.js
-* Tailwind
-* typography
-* responsive design
-* testing
-* browser automation
-* visual QA
-* image handling
-* animation
-* WebGL
-* 3D
-* forms
-* conversion
-* content design
-* design systems
-
-Quando o projeto exigir uma dessas capacidades, procure uma skill especializada antes de improvisar uma solução complexa.
-
-Exemplos de consultas:
-
-npx skills find frontend design
-
-npx skills find motion
-
-npx skills find scroll animation
-
-npx skills find accessibility
-
-npx skills find responsive design
-
-npx skills find performance
-
-npx skills find seo
-
-npx skills find testing
-
-npx skills find browser
-
-Não instale tudo.
-
-Escolha somente as capacidades necessárias para aquele projeto.
+Sempre que a solução técnica exigir algo complexo (ex: partículas 3D, formulários avançados de conversão), não tente alucinar código do zero.
+Ative seu modo de pesquisa: busque no Google ou GitHub pela biblioteca mais madura do ecossistema React/Tailwind, leia a documentação mais recente e só então escreva o código.
 
 ---
 
@@ -2985,4 +2828,5 @@ Nunca sacrifique originalidade em favor de templates.
 
 O objetivo é criar experiências digitais específicas, não variações do mesmo site.`;
 }
+
 
