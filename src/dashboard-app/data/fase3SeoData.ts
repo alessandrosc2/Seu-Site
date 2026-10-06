@@ -178,8 +178,8 @@ export const FASE3_DATA: Fase3DataConfig = {
       tag: 'Indexação Oficial',
       tagType: 'cyan',
       icon: 'Search',
-      youtubeVideoId: 'f0g0bS2o4X8',
-      youtubeUrl: 'https://www.youtube.com/watch?v=f0g0bS2o4X8',
+      youtubeVideoId: '8hpEK-LAj5g',
+      youtubeUrl: 'https://www.youtube.com/watch?v=8hpEK-LAj5g',
       whyImportant: 'Sem avisar o Google, pode levar semanas até que um robô descubra seu site por acaso. Com o Search Console, você entra na fila de prioridade em minutos.',
       overview: 'O Search Console é o canal oficial de comunicação entre o dono do site e o buscador do Google. Nele você vê quantas vezes seu site apareceu nas buscas, quais palavras as pessoas digitaram e garante que todas as suas páginas estão lidas e indexadas.',
       steps: [
@@ -411,4 +411,5 @@ export const FASE3_DATA: Fase3DataConfig = {
     }
   ]
 };
+
 
