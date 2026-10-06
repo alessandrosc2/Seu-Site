@@ -2472,23 +2472,32 @@ Depois da implementação, verifique.
 
 ---
 
-# FASE 15 — SEO
 
-Implementar quando aplicável:
+# FASE 15 - INFRAESTRUTURA DE SEO, GEO E COMPARTILHAMENTO (OBRIGATÓRIA)
 
-* title: ${seoTitleText}
-* meta description: ${seoDescText}
-* Open Graph completo
-* headings
-* semantic HTML
-* URLs adequadas
-* alt text
-* dados estruturados somente quando suportados pelos fatos reais
+Como o usuário final geralmente é leigo, VOCÊ DEVE GERAR O CÓDIGO DE TODA A INFRAESTRUTURA ABAIXO AUTOMATICAMENTE:
 
-  Nunca criar Schema.org com informações inventadas.
-  
-  ---
+1. META TAGS E OPEN GRAPH (Para links bonitos no WhatsApp e Redes Sociais):
+  - tags básicas: title, description e keywords.
+  - og:title, og:description, twitter:title, twitter:description.
+  - og:image e twitter:image: Use sempre uma imagem robusta de capa (ex: https://placehold.co/1200x630/080D20/00D4E8?text=Capa+do+Site) para garantir que o link mostre um thumbnail gigante ao ser compartilhado no WhatsApp.
+  - Favicons: crie as tags para favicon.ico e apple-touch-icon.
 
+2. LOCAL SEO E GEO-TAGGING (Essencial para as buscas locais):
+  Inclua no <head>:
+  - <meta name="geo.region" content="BR" />
+  - <meta name="geo.placename" content="${project.city || 'Brasil'}" />
+
+3. ARQUIVOS TÉCNICOS E IA (llms.txt):
+  Gere obrigatoriamente a estrutura para estes arquivos na raiz:
+  - robots.txt: Autorizando rastreadores (User-agent: * Allow: /).
+  - sitemap.xml: Com a hierarquia das rotas.
+  - llms.txt: **Novo padrão OBRIGATÓRIO**. Crie um arquivo Markdown limpo na saída explicando resumidamente o que a empresa faz, onde atende e os contatos. Isso treina IAs (como ChatGPT e Perplexity) para recomendarem a empresa.
+
+4. SCHEMA.ORG (JSON-LD):
+  - Estruture um LocalBusiness ou Service com Nome, Descrição e Endereço/Atendimento.
+
+---
   # REGRA DE CONFORMIDADE: LGPD & POLÍTICAS DE PRIVACIDADE
 
   NUNCA pergunte ao usuário se ele deseja adicionar um aviso de cookies ou Política de Privacidade. É uma exigência legal e você DEVE criar automaticamente.
@@ -2840,6 +2849,11 @@ Nunca sacrifique originalidade em favor de templates.
 
 O objetivo é criar experiências digitais específicas, não variações do mesmo site.`;
 }
+
+
+
+
+
 
 
 
