@@ -329,8 +329,8 @@ export const FASE3_DATA: Fase3DataConfig = {
       icon: 'BarChart3',
       isBonus: true,
       bonusBadge: 'BÔNUS ESPECIAL',
-      youtubeVideoId: 'wQp3fGg2o4E', // Tutorial demonstrativo de GA4 para iniciantes
-      youtubeUrl: 'https://www.youtube.com/results?search_query=como+criar+conta+no+google+analytics+4+passo+a+passo',
+      youtubeVideoId: 'U2fYVGoCnpw', // Tutorial demonstrativo de GA4 para iniciantes
+      youtubeUrl: 'https://www.youtube.com/watch?v=U2fYVGoCnpw',
       youtubeSearchTerms: [
         'como criar conta no google analytics 4 passo a passo',
         'como instalar tag do google analytics 4 no site',
@@ -411,5 +411,6 @@ export const FASE3_DATA: Fase3DataConfig = {
     }
   ]
 };
+
 
 
