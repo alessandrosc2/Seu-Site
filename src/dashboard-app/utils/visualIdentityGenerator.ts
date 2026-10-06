@@ -2485,11 +2485,23 @@ Implementar quando aplicável:
 * alt text
 * dados estruturados somente quando suportados pelos fatos reais
 
-Nunca criar Schema.org com informações inventadas.
+  Nunca criar Schema.org com informações inventadas.
+  
+  ---
 
----
+  # REGRA DE CONFORMIDADE: LGPD & POLÍTICAS DE PRIVACIDADE
 
-# FASE 16 — AUDITORIA MULTICAMADA
+  NUNCA pergunte ao usuário se ele deseja adicionar um aviso de cookies ou Política de Privacidade. É uma exigência legal e você DEVE criar automaticamente.
+  
+  Instruções de implementação:
+  1. O aviso de cookies (LGPD) não deve ser um banner feio e genérico no rodapé.
+  2. Implemente no estilo "Modal Flutuante" (um popup elegante no canto inferior esquerdo ou direito), respeitando a paleta de cores do negócio, a tipografia e o border-radius definido.
+  3. Crie textos base padrão focados em negócios locais para "Termos de Uso" e "Política de Privacidade".
+  4. Certifique-se de que o design do modal se integre perfeitamente à identidade do site gerado.
+  
+  ---
+  
+  # FASE 16 — AUDITORIA MULTICAMADA
 
 Depois de gerar o site, NÃO considere o trabalho terminado.
 
@@ -2828,5 +2840,6 @@ Nunca sacrifique originalidade em favor de templates.
 
 O objetivo é criar experiências digitais específicas, não variações do mesmo site.`;
 }
+
 
 
