@@ -41,7 +41,7 @@ export const MasterPromptStep: React.FC<MasterPromptStepProps> = ({ onComplete }
     if (onComplete) onComplete();
   };
 
-    const recommendedTools = [
+      const recommendedTools = [
     {
       name: 'Google Antigravity',
       model: 'Advanced Agentic Coding',
@@ -50,39 +50,46 @@ export const MasterPromptStep: React.FC<MasterPromptStepProps> = ({ onComplete }
       desc: 'Agente de IA do Google operando nativamente para construir o código do zero (o mesmo que construiu este painel).'
     },
     {
-      name: 'Lovable',
-      model: 'Construtor IA Premium',
-      url: 'https://lovable.dev/',
-      badge: 'Pago (Premium)',
-      desc: 'Um dos melhores construtores visuais de IA do mercado atualmente. Possui excelente design, mas exige plano pago.'
-    },
-    {
       name: 'Google AI Studio',
       model: 'Gemini 1.5 Pro / Flash',
       url: 'https://aistudio.google.com',
-      badge: 'Recomendado',
-      desc: 'Janela de contexto gigante (2M tokens), rápido e gratuito para prototipar a página completa.'
-    },
-    {
-      name: 'Claude Artifacts',
-      model: 'Claude 3.5 Sonnet',
-      url: 'https://claude.ai',
-      badge: 'Excelente Design',
-      desc: 'Gera o código React + Tailwind no painel de visualização ao vivo com estética de alto nível.'
+      badge: '100% Gratuito',
+      desc: 'Janela de contexto gigante (2M tokens), permite prototipar a página completa sem bater limites de uso.'
     },
     {
       name: 'Arena.ai',
       model: 'Multi-Modelos IA',
       url: 'https://arena.ai/',
-      badge: 'Testado & Boa Opção',
-      desc: 'Plataforma comprovada para testar e comparar os melhores modelos de IA gerando código com rapidez.'
+      badge: 'Gratuito / Testes',
+      desc: 'Plataforma comprovada para testar e comparar os melhores modelos de IA gerando código com rapidez e sem custos.'
+    },
+    {
+      name: 'Lovable',
+      model: 'Construtor IA Premium',
+      url: 'https://lovable.dev/',
+      badge: 'Exige Plano Pago',
+      desc: 'Um dos melhores construtores visuais de IA do mercado atualmente. Possui excelente design, mas exige plano pago.'
+    },
+    {
+      name: 'ChatGPT',
+      model: 'GPT-4o / o1',
+      url: 'https://chatgpt.com/',
+      badge: 'Exige Plano Pago',
+      desc: 'O mais popular e acessível. Excelente para código, mas gerar um site inteiro sem travar pelo limite exige a assinatura Plus.'
+    },
+    {
+      name: 'Claude Artifacts',
+      model: 'Claude 3.5 Sonnet',
+      url: 'https://claude.ai',
+      badge: 'Exige Plano Pago',
+      desc: 'Gera código React + Tailwind incrível no painel visual (Artifacts). O limite gratuito é baixo para sites inteiros.'
     },
     {
       name: 'Manus',
-      model: 'Agente Autônomo IA',
+      model: 'Agente Autônomo',
       url: 'https://manus.im/app',
-      badge: 'Boa Opção',
-      desc: 'Agente autônomo inovador capaz de programar, executar tarefas complexas e estruturar o site sob demanda.'
+      badge: 'Exige Plano Pago',
+      desc: 'Agente autônomo inovador capaz de programar e estruturar projetos complexos. O uso intenso requer plano pago.'
     }
   ];
 
@@ -287,4 +294,5 @@ export const MasterPromptStep: React.FC<MasterPromptStepProps> = ({ onComplete }
     </div>
   );
 };
+
 
