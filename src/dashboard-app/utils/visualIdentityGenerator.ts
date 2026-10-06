@@ -2265,9 +2265,9 @@ Transforme conceitos abstratos em decisões concretas.
 
 ---
 
-# FASE 4 — SISTEMA ANTI-GENERICIDADE
+# FASE 4 — SISTEMA ANTI-GENERICIDADE E TASTE DESIGN
 
-Antes de implementar, crie uma estratégia visual que impeça o resultado de parecer um template.
+Antes de implementar, crie uma estratégia visual que impeça o resultado de parecer um template. Leia os repositórios públicos do Aceternity UI (https://github.com/aceternity/ui) ou Magic UI (https://github.com/magicuidesign/magicui) para usar como base de design system moderno.
 
 Evite automaticamente:
 
@@ -2400,9 +2400,16 @@ Não distribua espaços arbitrariamente.
 
 ---
 
-# FASE 8 — MOTION DESIGN
+# FASE 8 — MOTION DESIGN E SCROLL SUTIL (NÍVEL APPLE)
 
-Motion não deve ser aplicado somente para "deixar bonito".
+Motion não deve ser aplicado como um "efeito de powerpoint". Ele deve ser físico, fluido e invisível. Estude o repositório do Framer Motion (https://github.com/framer/motion) e os componentes do Emil Kowalski (https://github.com/emilkowalski) para absorver física de mola (springs) e interações naturais.
+
+DIRETRIZES DE MOTION:
+1. Spring Physics: transições baseadas em mola.
+2. Staggered Word Reveal: revelação de H1 palavra por palavra amarrada ao Scroll.
+3. Blur-in: elementos surgindo do desfoque para o foco.
+
+Motion deve guiar os olhos do visitante.
 
 Cada animação deve possuir função.
 
@@ -2978,3 +2985,4 @@ Nunca sacrifique originalidade em favor de templates.
 
 O objetivo é criar experiências digitais específicas, não variações do mesmo site.`;
 }
+
