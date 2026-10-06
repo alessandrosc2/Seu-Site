@@ -98,8 +98,8 @@ export const FASE3_DATA: Fase3DataConfig = {
       tag: 'Essencial para Negócios Locais',
       tagType: 'green',
       icon: 'MapPin',
-      youtubeVideoId: 'U_Qe3W2E65g',
-      youtubeUrl: 'https://www.youtube.com/watch?v=U_Qe3W2E65g',
+      youtubeVideoId: 'ufv7zo_TW_8',
+      youtubeUrl: 'https://www.youtube.com/watch?v=ufv7zo_TW_8',
       whyImportant: 'Mais de 70% dos clientes que buscam no celular ligam ou mandam mensagem direto do Google Maps para agendar serviços.',
       overview: 'O Perfil da Empresa no Google (antigo Google Meu Negócio) é a ferramenta gratuita mais poderosa do mundo para empresas locais. Ao conectar seu novo site ao perfil, sua nota de relevância sobe e você ultrapassa concorrentes na sua cidade.',
       steps: [
@@ -411,3 +411,4 @@ export const FASE3_DATA: Fase3DataConfig = {
     }
   ]
 };
+
