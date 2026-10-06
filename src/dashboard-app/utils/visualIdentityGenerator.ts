@@ -2218,11 +2218,12 @@ ${vi.typographyDirection || `* Fonte principal de títulos (H1, H2, H3): Sans-se
 
 ${chromaticSectionContent}
 
-## Fotografia
+## Fotografia e Gestão de Imagens (Fallback Automático)
 
-${vi.photographyDirection || `* Estilo: Fotos comerciais de alta resolução, iluminação natural, sem filtros artificiais.
-* Enquadramento: Ângulos limpos e humanos alinhados ao segmento de ${businessSegment}.
-* Proporção e comportamento no layout: Cantos arredondados (rounded-2xl), borda sutil de 1px em ${vi.border} e diálogo cromático com a marca (${vi.primary}).`}
+${vi.photographyDirection || `* REGRA DE IMAGENS: Se o usuário NÃO forneceu links para imagens próprias, você DEVE gerar as imagens ou utilizar bancos de imagens gratuitos (como links diretos do Unsplash via tags <img>) perfeitamente alinhados ao nicho de ${businessSegment}.
+* Estilo: Fotos comerciais de alta resolução, iluminação natural, sem filtros artificiais.
+* Ação Automática: Não deixe o site sem imagens e não peça para o usuário enviar antes de criar. Crie primeiro com as imagens de placeholder/geradas.
+* Comportamento no layout: Cantos arredondados (rounded-2xl) com borda de 1px em ${vi.border}.`}
 
 ## Forma
 
@@ -2847,7 +2848,17 @@ Nunca sacrifique performance em favor de animações.
 
 Nunca sacrifique originalidade em favor de templates.
 
-O objetivo é criar experiências digitais específicas, não variações do mesmo site.`;
+O objetivo é criar experiências digitais específicas, não variações do mesmo site.
+
+---
+
+# 27. MENSAGEM FINAL OBRIGATÓRIA (AVISO SOBRE AS IMAGENS)
+
+Após finalizar a entrega de TODO o código e a estrutura do site, você DEVE obrigatoriamente adicionar uma nota amigável ao final da sua resposta no chat informando o usuário sobre as imagens.
+
+Use um texto semelhante a este:
+
+"🖼️ **Observação sobre as fotos:** Como você não enviou imagens próprias da sua empresa no início, eu utilizei fotos profissionais gratuitas do seu setor para que o site já nascesse com um design espetacular. Caso você queira substituir qualquer uma dessas fotos pelas imagens reais do seu negócio, basta me enviar a foto aqui no chat e me dizer em qual seção deseja colocar (ex: 'troque a foto do topo por essa'), que eu faço a substituição imediatamente para você!"`;
 }
 
 
