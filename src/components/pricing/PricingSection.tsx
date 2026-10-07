@@ -113,7 +113,7 @@ export function PricingSection() {
             Não quer aprender sozinho? Eu faço o seu site pra você.
           </h3>
           <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-6 leading-relaxed">
-            Sites simples, rápidos e profissionais a partir de <strong className="text-emerald-300">R$ 200,00</strong> - o valor varia de acordo com o tamanho do seu projeto.
+            Site moderno, rápido e profissional a partir de <strong className="text-emerald-300">R$ 250,00</strong> - o valor varia de acordo com o tamanho do seu projeto.
           </p>
           
           <div className="flex flex-col items-center justify-center max-w-md mx-auto">
@@ -187,6 +187,7 @@ export function PricingSection() {
     </section>
   );
 }
+
 
 
 
