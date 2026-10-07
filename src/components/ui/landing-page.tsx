@@ -168,7 +168,7 @@ export function ScrollGlobe({
       id: "fase-4-renda-extra",
       badge: "Fase 04 — Trilha Renda Extra",
       title: "Fature Criando Sites",
-      subtitle: "A PARTIR DE R$ 200 POR PROJETO",
+      subtitle: "TENHA UMA RENDA EXTRA",
       description: "Muitos negócios locais ainda não possuem uma presença digital estruturada. Use o mesmo método para oferecer criação de sites na sua cidade de forma ética.",
       align: "center",
       icon: <TrendingUp className="w-5 h-5 text-purple-400" />,
@@ -629,5 +629,6 @@ export function ScrollGlobe({
 }
 
 export default ScrollGlobe;
+
 
 
