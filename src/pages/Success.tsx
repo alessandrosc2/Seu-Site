@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 export default function Success() {
   useEffect(() => {
     const meta = document.createElement('meta');
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Purchase', {value: 47.90, currency: 'BRL'});
+    }
     meta.name = "robots";
     meta.content = "noindex";
     document.head.appendChild(meta);
@@ -60,3 +63,4 @@ export default function Success() {
     </div>
   );
 }
+
