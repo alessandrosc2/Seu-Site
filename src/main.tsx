@@ -14,6 +14,9 @@ const PoliticaDePrivacidade = lazy(() => import('./pages/PoliticaDePrivacidade.t
 const PoliticaDeReembolso = lazy(() => import('./pages/PoliticaDeReembolso.tsx'));
 const Success = lazy(() => import('./pages/Success.tsx'));
 const PrivateRoute = lazy(() => import('./components/auth/PrivateRoute.tsx'));
+const BriefingForm = lazy(() => import('./pages/BriefingForm.tsx'));
+const AdminBriefings = lazy(() => import('./pages/AdminBriefings.tsx'));
+import { Toaster } from 'sonner';
 
 // 3. Landing Page V2 (experiência alternativa de venda) — rota isolada e lazy.
 //    A landing original em "/" continua exatamente como está.
@@ -28,10 +31,15 @@ const PageLoader = () => (
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
+      <Toaster position="top-right" richColors theme="dark" />
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/v2" element={<LandingV2 />} />
+          <Route path="/briefing" element={<BriefingForm />} />
+          <Route path="/Briefing" element={<BriefingForm />} />
+          <Route path="/admin" element={<AdminBriefings />} />
+          <Route path="/admin/briefings" element={<AdminBriefings />} />
           <Route path="/login" element={<Login />} />
           <Route path="/success" element={<Success />} />
           <Route path="/termos-de-uso" element={<TermosDeUso />} />
